@@ -1,33 +1,7 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
-  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/glad.c" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/glad.c.o"
-  )
-set(CMAKE_C_COMPILER_ID "AppleClang")
-
-# The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/usr/local/include"
-  "../GLAD/glad"
-  "../GLAD"
-  "/usr/local/Cellar/glfw/3.2.1/include"
-  )
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/main.cpp" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/main.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include"
-  "../GLAD/glad"
-  "../GLAD"
-  "/usr/local/Cellar/glfw/3.2.1/include"
-  )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES

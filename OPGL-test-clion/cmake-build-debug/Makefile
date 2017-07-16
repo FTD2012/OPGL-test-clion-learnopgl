@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion"
+CMAKE_SOURCE_DIR = /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named OPGL_test_clion_static
+
+# Build rule for target.
+OPGL_test_clion_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OPGL_test_clion_static
+.PHONY : OPGL_test_clion_static
+
+# fast build rule for target.
+OPGL_test_clion_static/fast:
+	$(MAKE) -f openl_lib/CMakeFiles/OPGL_test_clion_static.dir/build.make openl_lib/CMakeFiles/OPGL_test_clion_static.dir/build
+.PHONY : OPGL_test_clion_static/fast
+
+#=============================================================================
 # Target rules for targets named OPGL_test_clion
 
 # Build rule for target.
@@ -120,62 +133,34 @@ OPGL_test_clion: cmake_check_build_system
 
 # fast build rule for target.
 OPGL_test_clion/fast:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/build
+	$(MAKE) -f openl_lib/CMakeFiles/OPGL_test_clion.dir/build.make openl_lib/CMakeFiles/OPGL_test_clion.dir/build
 .PHONY : OPGL_test_clion/fast
 
-glad.o: glad.c.o
+#=============================================================================
+# Target rules for targets named hello_window
 
-.PHONY : glad.o
+# Build rule for target.
+hello_window: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello_window
+.PHONY : hello_window
 
-# target to build an object file
-glad.c.o:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/glad.c.o
-.PHONY : glad.c.o
+# fast build rule for target.
+hello_window/fast:
+	$(MAKE) -f hello_window/CMakeFiles/hello_window.dir/build.make hello_window/CMakeFiles/hello_window.dir/build
+.PHONY : hello_window/fast
 
-glad.i: glad.c.i
+#=============================================================================
+# Target rules for targets named hello_triangle
 
-.PHONY : glad.i
+# Build rule for target.
+hello_triangle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello_triangle
+.PHONY : hello_triangle
 
-# target to preprocess a source file
-glad.c.i:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/glad.c.i
-.PHONY : glad.c.i
-
-glad.s: glad.c.s
-
-.PHONY : glad.s
-
-# target to generate assembly for a file
-glad.c.s:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/glad.c.s
-.PHONY : glad.c.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/main.cpp.s
-.PHONY : main.cpp.s
+# fast build rule for target.
+hello_triangle/fast:
+	$(MAKE) -f hello_triangle/CMakeFiles/hello_triangle.dir/build.make hello_triangle/CMakeFiles/hello_triangle.dir/build
+.PHONY : hello_triangle/fast
 
 # Help Target
 help:
@@ -185,13 +170,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... OPGL_test_clion_static"
 	@echo "... OPGL_test_clion"
-	@echo "... glad.o"
-	@echo "... glad.i"
-	@echo "... glad.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... hello_window"
+	@echo "... hello_triangle"
 .PHONY : help
 
 

@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion"
+CMAKE_SOURCE_DIR = /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OPGL_test_clion.dir/depend.make
@@ -57,78 +57,7 @@ include CMakeFiles/OPGL_test_clion.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/OPGL_test_clion.dir/flags.make
 
-CMakeFiles/OPGL_test_clion.dir/main.cpp.o: CMakeFiles/OPGL_test_clion.dir/flags.make
-CMakeFiles/OPGL_test_clion.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OPGL_test_clion.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OPGL_test_clion.dir/main.cpp.o -c "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/main.cpp"
-
-CMakeFiles/OPGL_test_clion.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OPGL_test_clion.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/main.cpp" > CMakeFiles/OPGL_test_clion.dir/main.cpp.i
-
-CMakeFiles/OPGL_test_clion.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OPGL_test_clion.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/main.cpp" -o CMakeFiles/OPGL_test_clion.dir/main.cpp.s
-
-CMakeFiles/OPGL_test_clion.dir/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/OPGL_test_clion.dir/main.cpp.o.requires
-
-CMakeFiles/OPGL_test_clion.dir/main.cpp.o.provides: CMakeFiles/OPGL_test_clion.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/OPGL_test_clion.dir/main.cpp.o.provides
-
-CMakeFiles/OPGL_test_clion.dir/main.cpp.o.provides.build: CMakeFiles/OPGL_test_clion.dir/main.cpp.o
-
-
-CMakeFiles/OPGL_test_clion.dir/glad.c.o: CMakeFiles/OPGL_test_clion.dir/flags.make
-CMakeFiles/OPGL_test_clion.dir/glad.c.o: ../glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/OPGL_test_clion.dir/glad.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/OPGL_test_clion.dir/glad.c.o   -c "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/glad.c"
-
-CMakeFiles/OPGL_test_clion.dir/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/OPGL_test_clion.dir/glad.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/glad.c" > CMakeFiles/OPGL_test_clion.dir/glad.c.i
-
-CMakeFiles/OPGL_test_clion.dir/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/OPGL_test_clion.dir/glad.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/glad.c" -o CMakeFiles/OPGL_test_clion.dir/glad.c.s
-
-CMakeFiles/OPGL_test_clion.dir/glad.c.o.requires:
-
-.PHONY : CMakeFiles/OPGL_test_clion.dir/glad.c.o.requires
-
-CMakeFiles/OPGL_test_clion.dir/glad.c.o.provides: CMakeFiles/OPGL_test_clion.dir/glad.c.o.requires
-	$(MAKE) -f CMakeFiles/OPGL_test_clion.dir/build.make CMakeFiles/OPGL_test_clion.dir/glad.c.o.provides.build
-.PHONY : CMakeFiles/OPGL_test_clion.dir/glad.c.o.provides
-
-CMakeFiles/OPGL_test_clion.dir/glad.c.o.provides.build: CMakeFiles/OPGL_test_clion.dir/glad.c.o
-
-
-# Object files for target OPGL_test_clion
-OPGL_test_clion_OBJECTS = \
-"CMakeFiles/OPGL_test_clion.dir/main.cpp.o" \
-"CMakeFiles/OPGL_test_clion.dir/glad.c.o"
-
-# External object files for target OPGL_test_clion
-OPGL_test_clion_EXTERNAL_OBJECTS =
-
-OPGL_test_clion: CMakeFiles/OPGL_test_clion.dir/main.cpp.o
-OPGL_test_clion: CMakeFiles/OPGL_test_clion.dir/glad.c.o
-OPGL_test_clion: CMakeFiles/OPGL_test_clion.dir/build.make
-OPGL_test_clion: /usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib
-OPGL_test_clion: /usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib
-OPGL_test_clion: CMakeFiles/OPGL_test_clion.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable OPGL_test_clion"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OPGL_test_clion.dir/link.txt --verbose=$(VERBOSE)
-
-# Rule to build all files generated by this target.
-CMakeFiles/OPGL_test_clion.dir/build: OPGL_test_clion
-
-.PHONY : CMakeFiles/OPGL_test_clion.dir/build
-
-CMakeFiles/OPGL_test_clion.dir/requires: CMakeFiles/OPGL_test_clion.dir/main.cpp.o.requires
-CMakeFiles/OPGL_test_clion.dir/requires: CMakeFiles/OPGL_test_clion.dir/glad.c.o.requires
+CMakeFiles/OPGL_test_clion.dir/requires:
 
 .PHONY : CMakeFiles/OPGL_test_clion.dir/requires
 
@@ -137,6 +66,6 @@ CMakeFiles/OPGL_test_clion.dir/clean:
 .PHONY : CMakeFiles/OPGL_test_clion.dir/clean
 
 CMakeFiles/OPGL_test_clion.dir/depend:
-	cd "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OPGL_test_clion.dir/depend
 

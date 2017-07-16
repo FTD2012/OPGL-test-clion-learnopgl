@@ -2,7 +2,10 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
+      <config projectName="OPGL_test_clion" targetName="OPGL_test_clion_static" />
+      <config projectName="OPGL_test_clion" targetName="hello_triangle" />
       <config projectName="OPGL_test_clion" targetName="OPGL_test_clion" />
+      <config projectName="OPGL_test_clion" targetName="hello_window" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -11,7 +14,47 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f7d383-39de-4ecd-879d-9b898fb824e2" name="Default" comment="" />
+    <list default="true" id="67f7d383-39de-4ecd-879d-9b898fb824e2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/main.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/glad.c" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/GLAD/glad/glad.c" afterPath="$PROJECT_DIR$/openl_lib/glad.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../OPGL-test-clion.xcodeproj/project.xcworkspace/xcuserdata/invoker.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../OPGL-test-clion.xcodeproj/project.xcworkspace/xcuserdata/invoker.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_C.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_C.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_CXX.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/glad.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/glad.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/OPGL_test_clion" afterPath="$PROJECT_DIR$/cmake-build-debug/OPGL_test_clion" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/invoker.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/invoker.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCCompiler.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCCompiler.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCXXCompiler.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCXXCompiler.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeSystem.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeSystem.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/CXX.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/cmake_clean.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir/progress.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/OPGL_test_clion.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/OPGL_test_clion.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,129 +65,137 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cmake_install.cmake" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glfw3.h" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1471519947000" expanded="false" signature="3681:3707" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glad.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/glad.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glad.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31160">
-              <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
-              <folding>
-                <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glad.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32262">
-              <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
-              <folding>
-                <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-                <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gl.h" pinned="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40945">
-              <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
-              <folding>
-                <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
-                <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.24725275">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/main.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="glad.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="731">
+                  <caret line="1676" column="19" lean-forward="false" selection-start-line="1676" selection-start-column="19" selection-end-line="1676" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/hello_window/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="114">
+                  <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hello_window.cpp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/hello_window/hello_window.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="743">
+                  <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#0#22#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/hello_window/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="76">
+                  <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/hello_triangle/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="95">
+                  <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hello_triangle.cpp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/hello_triangle/hello_triangle.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="316">
+                  <caret line="181" column="37" lean-forward="true" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#22#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="383">
+                  <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/openl_lib/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="266">
+                  <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>main</find>
       <find>glview</find>
       <find>glViewport</find>
-      <find>glad_glViewport</find>
       <find>FNGLVIEWPORTPROC glad_glViewport</find>
+      <find>GLFW_FALSE</find>
+      <find>GLFW_TRUE</find>
+      <find>window_hints</find>
+      <find>window_windowed_full_screen</find>
+      <find>glBindSampler</find>
+      <find>glad_glClearColor</find>
+      <find>glad_glViewport</find>
+      <find>ttiger</find>
+      <find>hello_window</find>
     </findStrings>
+    <replaceStrings>
+      <replace>OPGL_test_clion</replace>
+      <replace>hello_triangle</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -152,6 +203,11 @@
         <option value="$PROJECT_DIR$/RedBook/main.cpp" />
         <option value="$PROJECT_DIR$/glad-fake.c.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/a_openl_lib/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/openl_lib/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/hello_window/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/hello_triangle/hello_window.cpp" />
+        <option value="$PROJECT_DIR$/hello_triangle/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
@@ -164,11 +220,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="400" />
-    <option name="y" value="270" />
-    <option name="width" value="1486" />
-    <option name="height" value="756" />
+    <option name="width" value="1680" />
+    <option name="height" value="1046" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -206,7 +261,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GLAD" />
+              <option name="myItemId" value="openl_lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -220,11 +275,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GLAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glad" />
+              <option name="myItemId" value="hello_window" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -238,7 +289,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cmake-build-debug" />
+              <option name="myItemId" value="hello_triangle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -248,6 +299,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/openl_lib" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -261,7 +318,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.OPGL_test_clion">
+  <component name="RunManager" selected="Application.hello_triangle">
     <configuration default="true" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="" />
@@ -460,13 +517,28 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="OPGL_test_clion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="OPGL_test_clion">
+    <configuration default="false" name="hello_triangle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="hello_triangle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="hello_triangle">
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="hello_window" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="hello_window" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="hello_window">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="OPGL_test_clion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="OPGL_test_clion_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion_static" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.OPGL_test_clion" />
+      <item index="1" class="java.lang.String" itemvalue="Application.hello_triangle" />
+      <item index="2" class="java.lang.String" itemvalue="Application.hello_window" />
+      <item index="3" class="java.lang.String" itemvalue="Application.OPGL_test_clion" />
+      <item index="4" class="java.lang.String" itemvalue="Application.OPGL_test_clion_static" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -482,11 +554,12 @@
       <workItem from="1499609715807" duration="10099000" />
       <workItem from="1499700213077" duration="4329000" />
       <workItem from="1500206194268" duration="671000" />
+      <workItem from="1500217376857" duration="8566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15099000" />
+    <option name="totallyTimeSpent" value="29703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,19 +571,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="400" y="270" width="1486" height="756" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1046" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22884013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47805643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21052632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32543105" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23425414" sideWeight="0.502442" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844827" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47737068" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21306472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24908425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40840518" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -519,7 +593,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -534,40 +607,63 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>130</line>
-          <option name="timeStamp" value="4" />
+          <line>31</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>29</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/GLAD/glad/glad.c</url>
-          <line>1754</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>51</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>49</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>38</line>
-          <option name="timeStamp" value="9" />
+          <line>20</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/glad.cpp" />
+    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33307">
+          <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openl_lib/glad.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-426">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1935">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -580,21 +676,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/glad.c">
+    <entry file="file://$PROJECT_DIR$/openl_lib/glad.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -603,18 +692,7 @@
         <state relative-caret-position="31806">
           <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
           <folding>
-            <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
+            <element signature="e#524#608#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,15 +701,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33307">
           <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -639,10 +709,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52269">
           <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
-          <folding>
-            <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
-            <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -666,21 +733,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/glad.c">
+    <entry file="file://$PROJECT_DIR$/openl_lib/glad.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -689,18 +749,7 @@
         <state relative-caret-position="31806">
           <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
           <folding>
-            <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
+            <element signature="e#524#608#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,15 +758,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33307">
           <caret line="1753" column="41" lean-forward="true" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -725,21 +766,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52269">
           <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
-          <folding>
-            <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
-            <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/GLFW/glfw3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6764">
-          <caret line="356" column="8" lean-forward="false" selection-start-line="356" selection-start-column="8" selection-end-line="356" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/include/GLFW/glfw3.h" />
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1805">
@@ -773,111 +804,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40945">
-          <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
-          <folding>
-            <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
-            <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/GLFW/glfw3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6764">
-          <caret line="356" column="8" lean-forward="false" selection-start-line="356" selection-start-column="8" selection-end-line="356" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31160">
-          <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/include/GLFW/glfw3.h" />
     <entry file="file://$PROJECT_DIR$/glad-fake.c.cpp" />
     <entry file="file://$PROJECT_DIR$/glad.cpp" />
-    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32262">
-          <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-          </folding>
+        <state relative-caret-position="-582">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-65">
+          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/glad.c">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/assert.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
-            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
-          </folding>
+        <state relative-caret-position="239">
+          <caret line="91" column="8" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="2498" column="39" lean-forward="false" selection-start-line="2498" selection-start-column="20" selection-end-line="2498" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52288">
+          <caret line="2752" column="0" lean-forward="false" selection-start-line="2752" selection-start-column="0" selection-end-line="2752" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="2760" column="27" lean-forward="false" selection-start-line="2760" selection-start-column="13" selection-end-line="2760" selection-end-column="27" />
           <folding>
             <marker date="1471519947000" expanded="false" signature="3681:3707" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/Hello Window/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="1296" column="47" lean-forward="false" selection-start-line="1296" selection-start-column="47" selection-end-line="1296" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="1676" column="19" lean-forward="false" selection-start-line="1676" selection-start-column="19" selection-end-line="1676" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openl_lib/glad.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello_window/hello_window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello_window/glad.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello_window/fff.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openl_lib/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openl_lib/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello_window/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello_triangle/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="383">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hello_triangle/hello_triangle.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="181" column="37" lean-forward="true" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

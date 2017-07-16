@@ -1,3 +1,12 @@
-/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles/OPGL_test_clion.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/openl_lib/CMakeFiles/rebuild_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/openl_lib/CMakeFiles/edit_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/openl_lib/CMakeFiles/OPGL_test_clion_static.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/openl_lib/CMakeFiles/OPGL_test_clion.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/hello_window/CMakeFiles/rebuild_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/hello_window/CMakeFiles/edit_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/hello_window/CMakeFiles/hello_window.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/hello_triangle/CMakeFiles/rebuild_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/hello_triangle/CMakeFiles/edit_cache.dir
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/hello_triangle/CMakeFiles/hello_triangle.dir

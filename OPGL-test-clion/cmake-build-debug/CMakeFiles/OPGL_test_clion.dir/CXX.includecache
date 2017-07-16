@@ -36,15 +36,17 @@ stdint.h
 inttypes.h
 -
 
-/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/main.cpp
+/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/main.cpp
 glad/glad.h
 -
 GLFW/glfw3.h
 -
 iostream
 -
+cassert
+-
 
-/usr/local/include/GLFW/glfw3.h
+/usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h
 stddef.h
 -
 stdint.h

@@ -37,6 +37,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.7.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeSystem.cmake"
+  "../hello_triangle/CMakeLists.txt"
+  "../hello_window/CMakeLists.txt"
+  "../openl_lib/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -48,9 +51,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "openl_lib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "hello_window/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "hello_triangle/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake"
+  "openl_lib/CMakeFiles/OPGL_test_clion_static.dir/DependInfo.cmake"
+  "openl_lib/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake"
+  "hello_window/CMakeFiles/hello_window.dir/DependInfo.cmake"
+  "hello_triangle/CMakeFiles/hello_triangle.dir/DependInfo.cmake"
   )

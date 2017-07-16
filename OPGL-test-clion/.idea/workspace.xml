@@ -23,11 +23,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,13 +43,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1935">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="57">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="glfw3.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <marker date="1471519947000" expanded="false" signature="3681:3707" ph="..." />
               </folding>
             </state>
           </provider>
@@ -58,9 +68,15 @@
       <file leaf-file-name="glad.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/glad.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-426">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="130">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,16 +84,21 @@
       <file leaf-file-name="glad.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31806">
+            <state relative-caret-position="31160">
               <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
               <folding>
-                <marker date="1499594878000" expanded="false" signature="2209:2230" ph="..." />
-                <marker date="1499594878000" expanded="false" signature="2278:2549" ph="..." />
-                <marker date="1499594878000" expanded="false" signature="2591:2612" ph="..." />
-                <marker date="1499594878000" expanded="false" signature="2657:2676" ph="..." />
-                <marker date="1499594878000" expanded="false" signature="2726:2823" ph="..." />
-                <marker date="1499594878000" expanded="false" signature="2867:2886" ph="..." />
-                <marker date="1499594878000" expanded="false" signature="2909:2993" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
               </folding>
             </state>
           </provider>
@@ -86,10 +107,16 @@
       <file leaf-file-name="glad.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33307">
+            <state relative-caret-position="32262">
               <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
               <folding>
-                <element signature="e#471#489#0" expanded="true" />
+                <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+                <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,14 +125,11 @@
       <file leaf-file-name="gl.h" pinned="false" current-in-tab="false">
         <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52269">
+            <state relative-caret-position="40945">
               <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
               <folding>
-                <marker date="1488861829000" expanded="false" signature="120:234" ph="..." />
-                <marker date="1488861829000" expanded="true" signature="243:1721" ph="/.../" />
-                <marker date="1488861829000" expanded="true" signature="1723:1804" ph="//..." />
-                <marker date="1488861829000" expanded="false" signature="1860:1885" ph="..." />
-                <marker date="1488861829000" expanded="false" signature="66692:113093" ph="..." />
+                <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
+                <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,8 +151,8 @@
       <list>
         <option value="$PROJECT_DIR$/RedBook/main.cpp" />
         <option value="$PROJECT_DIR$/glad-fake.c.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -140,8 +164,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1680" />
-    <option name="height" value="1046" />
+    <option name="x" value="400" />
+    <option name="y" value="270" />
+    <option name="width" value="1486" />
+    <option name="height" value="756" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -166,51 +192,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OPGL_test_clion" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OPGL_test_clion" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GL" />
+              <option name="myItemId" value="OPGL-test-clion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -221,6 +203,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="OPGL-test-clion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GLAD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OPGL_test_clion" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OPGL-test-clion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GLAD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -477,11 +481,12 @@
       <updated>1499609713444</updated>
       <workItem from="1499609715807" duration="10099000" />
       <workItem from="1499700213077" duration="4329000" />
+      <workItem from="1500206194268" duration="671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14428000" />
+    <option name="totallyTimeSpent" value="15099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,17 +498,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1046" extended-state="6" />
+    <frame x="400" y="270" width="1486" height="756" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265086" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22952586" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22884013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18376069" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47805643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21052632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40840518" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -565,6 +570,92 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glad.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31806">
+          <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
+          <folding>
+            <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33307">
+          <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
+          <folding>
+            <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52269">
+          <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
+          <folding>
+            <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
+            <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
@@ -583,7 +674,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -592,13 +689,18 @@
         <state relative-caret-position="31806">
           <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
           <folding>
-            <marker date="1499594878000" expanded="false" signature="2209:2230" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2278:2549" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2591:2612" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2657:2676" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2726:2823" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2867:2886" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2909:2993" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -608,7 +710,13 @@
         <state relative-caret-position="33307">
           <caret line="1753" column="41" lean-forward="true" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
           <folding>
-            <element signature="e#471#489#0" expanded="true" />
+            <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
           </folding>
         </state>
       </provider>
@@ -618,11 +726,8 @@
         <state relative-caret-position="52269">
           <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
           <folding>
-            <marker date="1488861829000" expanded="false" signature="120:234" ph="..." />
-            <marker date="1488861829000" expanded="true" signature="243:1721" ph="/.../" />
-            <marker date="1488861829000" expanded="true" signature="1723:1804" ph="//..." />
-            <marker date="1488861829000" expanded="false" signature="1860:1885" ph="..." />
-            <marker date="1488861829000" expanded="false" signature="66692:113093" ph="..." />
+            <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
+            <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
           </folding>
         </state>
       </provider>
@@ -639,9 +744,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1805">
           <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -667,23 +770,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="1185" column="0" lean-forward="false" selection-start-line="1185" selection-start-column="0" selection-end-line="1185" selection-end-column="0" />
-          <folding>
-            <marker date="1469321017000" expanded="true" signature="4845:5016" ph="/.../" />
-            <marker date="1469321017000" expanded="true" signature="6890:6998" ph="/.../" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52269">
+        <state relative-caret-position="40945">
           <caret line="2751" column="12" lean-forward="false" selection-start-line="2751" selection-start-column="12" selection-end-line="2751" selection-end-column="12" />
           <folding>
-            <marker date="1488861829000" expanded="false" signature="120:234" ph="..." />
-            <marker date="1488861829000" expanded="true" signature="243:1721" ph="/.../" />
-            <marker date="1488861829000" expanded="true" signature="1723:1804" ph="//..." />
-            <marker date="1488861829000" expanded="false" signature="1860:1885" ph="..." />
-            <marker date="1488861829000" expanded="false" signature="66692:113093" ph="..." />
+            <marker date="1462314083000" expanded="false" signature="1913:1925" ph="..." />
+            <marker date="1462314083000" expanded="false" signature="152603:152604" ph="..." />
           </folding>
         </state>
       </provider>
@@ -698,16 +794,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31806">
+        <state relative-caret-position="31160">
           <caret line="1674" column="8" lean-forward="false" selection-start-line="1674" selection-start-column="8" selection-end-line="1674" selection-end-column="8" />
           <folding>
-            <marker date="1499594878000" expanded="false" signature="2209:2230" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2278:2549" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2591:2612" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2657:2676" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2726:2823" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2867:2886" ph="..." />
-            <marker date="1499594878000" expanded="false" signature="2909:2993" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2209:2230" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2278:2549" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2591:2612" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2657:2676" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2726:2823" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2867:2886" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2909:2993" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3620:3646" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3899:3921" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4080:4104" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4317:4342" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4504:4531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -716,19 +817,17 @@
     <entry file="file://$PROJECT_DIR$/glad.cpp" />
     <entry file="file://$PROJECT_DIR$/GLAD/glad/glad.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33307">
+        <state relative-caret-position="32262">
           <caret line="1753" column="41" lean-forward="false" selection-start-line="1753" selection-start-column="41" selection-end-line="1753" selection-end-column="41" />
           <folding>
-            <element signature="e#471#489#0" expanded="true" />
+            <marker date="1500206084000" expanded="false" signature="1450:1731" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="2029:2038" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/glad.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-426">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,21 +839,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/glad.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="130">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1500206084000" expanded="false" signature="3022:3057" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3285:3311" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="3413:3890" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4108:4134" ph="..." />
+            <marker date="1500206084000" expanded="false" signature="4762:4982" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471519947000" expanded="false" signature="3681:3707" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1935">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

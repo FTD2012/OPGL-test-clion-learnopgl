@@ -3,15 +3,15 @@
 
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
-C_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk  
+C_FLAGS = -g  
 
 C_DEFINES = 
 
-C_INCLUDES = -I/usr/local/include -I/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/GLAD -I/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/GLAD/glad -I/usr/local/Cellar/glfw/3.2.1/include 
+C_INCLUDES = -I/usr/local/include -I"/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD/glad" -I"/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD" -I/usr/local/Cellar/glfw/3.2.1/include 
 
-CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk   -std=gnu++11
+CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include -I/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/GLAD -I/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/GLAD/glad -I/usr/local/Cellar/glfw/3.2.1/include 
+CXX_INCLUDES = -I/usr/local/include -I"/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD/glad" -I"/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD" -I/usr/local/Cellar/glfw/3.2.1/include 
 

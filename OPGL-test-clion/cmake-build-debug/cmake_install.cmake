@@ -1,4 +1,4 @@
-# Install script for directory: /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion
+# Install script for directory: /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

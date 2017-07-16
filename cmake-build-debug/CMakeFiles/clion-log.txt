@@ -1,1 +1,1 @@
-CMakeLists.txt not found in /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion
+CMakeLists.txt not found in /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl

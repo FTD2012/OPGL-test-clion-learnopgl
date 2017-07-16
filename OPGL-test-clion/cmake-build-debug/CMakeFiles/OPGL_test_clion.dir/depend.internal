@@ -4,9 +4,9 @@
 CMakeFiles/OPGL_test_clion.dir/glad.c.o
  ../GLAD/KHR/khrplatform.h
  ../GLAD/glad/glad.h
- /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/glad.c
+ /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/glad.c
 CMakeFiles/OPGL_test_clion.dir/main.cpp.o
  ../GLAD/KHR/khrplatform.h
  ../GLAD/glad/glad.h
- /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/main.cpp
- /usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h
+ /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/main.cpp
+ /usr/local/include/GLFW/glfw3.h

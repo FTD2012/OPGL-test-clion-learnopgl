@@ -8,5 +8,5 @@ CMakeFiles/OPGL_test_clion.dir/glad.c.o: ../glad.c
 CMakeFiles/OPGL_test_clion.dir/main.cpp.o: ../GLAD/KHR/khrplatform.h
 CMakeFiles/OPGL_test_clion.dir/main.cpp.o: ../GLAD/glad/glad.h
 CMakeFiles/OPGL_test_clion.dir/main.cpp.o: ../main.cpp
-CMakeFiles/OPGL_test_clion.dir/main.cpp.o: /usr/local/Cellar/glfw/3.2.1/include/GLFW/glfw3.h
+CMakeFiles/OPGL_test_clion.dir/main.cpp.o: /usr/local/include/GLFW/glfw3.h
 

@@ -162,6 +162,19 @@ hello_triangle/fast:
 	$(MAKE) -f hello_triangle/CMakeFiles/hello_triangle.dir/build.make hello_triangle/CMakeFiles/hello_triangle.dir/build
 .PHONY : hello_triangle/fast
 
+#=============================================================================
+# Target rules for targets named rectangle
+
+# Build rule for target.
+rectangle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rectangle
+.PHONY : rectangle
+
+# fast build rule for target.
+rectangle/fast:
+	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/build
+.PHONY : rectangle/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,6 +187,7 @@ help:
 	@echo "... OPGL_test_clion"
 	@echo "... hello_window"
 	@echo "... hello_triangle"
+	@echo "... rectangle"
 .PHONY : help
 
 

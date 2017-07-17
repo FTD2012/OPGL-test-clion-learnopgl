@@ -40,6 +40,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../hello_triangle/CMakeLists.txt"
   "../hello_window/CMakeLists.txt"
   "../openl_lib/CMakeLists.txt"
+  "../rectangle/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -54,6 +55,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "openl_lib/CMakeFiles/CMakeDirectoryInformation.cmake"
   "hello_window/CMakeFiles/CMakeDirectoryInformation.cmake"
   "hello_triangle/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "rectangle/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -62,4 +64,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "openl_lib/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake"
   "hello_window/CMakeFiles/hello_window.dir/DependInfo.cmake"
   "hello_triangle/CMakeFiles/hello_triangle.dir/DependInfo.cmake"
+  "rectangle/CMakeFiles/rectangle.dir/DependInfo.cmake"
   )

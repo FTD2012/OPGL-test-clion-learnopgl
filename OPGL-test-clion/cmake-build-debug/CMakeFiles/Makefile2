@@ -264,6 +264,61 @@ clean: hello_triangle/CMakeFiles/hello_triangle.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory rectangle
+
+# Convenience name for "all" pass in the directory.
+rectangle/all: rectangle/CMakeFiles/rectangle.dir/all
+
+.PHONY : rectangle/all
+
+# Convenience name for "clean" pass in the directory.
+rectangle/clean: rectangle/CMakeFiles/rectangle.dir/clean
+
+.PHONY : rectangle/clean
+
+# Convenience name for "preinstall" pass in the directory.
+rectangle/preinstall:
+
+.PHONY : rectangle/preinstall
+
+#=============================================================================
+# Target rules for target rectangle/CMakeFiles/rectangle.dir
+
+# All Build rule for target.
+rectangle/CMakeFiles/rectangle.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
+	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/depend
+	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=9,10 "Built target rectangle"
+.PHONY : rectangle/CMakeFiles/rectangle.dir/all
+
+# Include target in all.
+all: rectangle/CMakeFiles/rectangle.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rectangle/CMakeFiles/rectangle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 rectangle/CMakeFiles/rectangle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
+.PHONY : rectangle/CMakeFiles/rectangle.dir/rule
+
+# Convenience name for target.
+rectangle: rectangle/CMakeFiles/rectangle.dir/rule
+
+.PHONY : rectangle
+
+# clean rule for target.
+rectangle/CMakeFiles/rectangle.dir/clean:
+	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/clean
+.PHONY : rectangle/CMakeFiles/rectangle.dir/clean
+
+# clean rule for target.
+clean: rectangle/CMakeFiles/rectangle.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

@@ -53,9 +53,14 @@ if(hello_triangle)
     add_subdirectory(hello_triangle)
 endif(hello_triangle)
 
+if(rectangle)
+    add_subdirectory(rectangle)
+endif(rectangle)
+
 ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(hello_window)
 ADD_SUBDIRECTORY(hello_triangle)
+ADD_SUBDIRECTORY(rectangle)
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

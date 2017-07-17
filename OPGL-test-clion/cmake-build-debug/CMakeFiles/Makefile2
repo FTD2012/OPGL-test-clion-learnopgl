@@ -54,10 +54,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion
+CMAKE_SOURCE_DIR = "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for directory openl_lib
@@ -86,7 +86,7 @@ openl_lib/preinstall:
 openl_lib/CMakeFiles/OPGL_test_clion_static.dir/all:
 	$(MAKE) -f openl_lib/CMakeFiles/OPGL_test_clion_static.dir/build.make openl_lib/CMakeFiles/OPGL_test_clion_static.dir/depend
 	$(MAKE) -f openl_lib/CMakeFiles/OPGL_test_clion_static.dir/build.make openl_lib/CMakeFiles/OPGL_test_clion_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target OPGL_test_clion_static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=3,4 "Built target OPGL_test_clion_static"
 .PHONY : openl_lib/CMakeFiles/OPGL_test_clion_static.dir/all
 
 # Include target in all.
@@ -96,9 +96,9 @@ all: openl_lib/CMakeFiles/OPGL_test_clion_static.dir/all
 
 # Build rule for subdir invocation for target.
 openl_lib/CMakeFiles/OPGL_test_clion_static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 2
 	$(MAKE) -f CMakeFiles/Makefile2 openl_lib/CMakeFiles/OPGL_test_clion_static.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
 .PHONY : openl_lib/CMakeFiles/OPGL_test_clion_static.dir/rule
 
 # Convenience name for target.
@@ -123,7 +123,7 @@ clean: openl_lib/CMakeFiles/OPGL_test_clion_static.dir/clean
 openl_lib/CMakeFiles/OPGL_test_clion.dir/all:
 	$(MAKE) -f openl_lib/CMakeFiles/OPGL_test_clion.dir/build.make openl_lib/CMakeFiles/OPGL_test_clion.dir/depend
 	$(MAKE) -f openl_lib/CMakeFiles/OPGL_test_clion.dir/build.make openl_lib/CMakeFiles/OPGL_test_clion.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target OPGL_test_clion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target OPGL_test_clion"
 .PHONY : openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 
 # Include target in all.
@@ -133,9 +133,9 @@ all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 
 # Build rule for subdir invocation for target.
 openl_lib/CMakeFiles/OPGL_test_clion.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 2
 	$(MAKE) -f CMakeFiles/Makefile2 openl_lib/CMakeFiles/OPGL_test_clion.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
 .PHONY : openl_lib/CMakeFiles/OPGL_test_clion.dir/rule
 
 # Convenience name for target.
@@ -178,7 +178,7 @@ hello_window/preinstall:
 hello_window/CMakeFiles/hello_window.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f hello_window/CMakeFiles/hello_window.dir/build.make hello_window/CMakeFiles/hello_window.dir/depend
 	$(MAKE) -f hello_window/CMakeFiles/hello_window.dir/build.make hello_window/CMakeFiles/hello_window.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target hello_window"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=7,8 "Built target hello_window"
 .PHONY : hello_window/CMakeFiles/hello_window.dir/all
 
 # Include target in all.
@@ -188,9 +188,9 @@ all: hello_window/CMakeFiles/hello_window.dir/all
 
 # Build rule for subdir invocation for target.
 hello_window/CMakeFiles/hello_window.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 hello_window/CMakeFiles/hello_window.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
 .PHONY : hello_window/CMakeFiles/hello_window.dir/rule
 
 # Convenience name for target.
@@ -233,7 +233,7 @@ hello_triangle/preinstall:
 hello_triangle/CMakeFiles/hello_triangle.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f hello_triangle/CMakeFiles/hello_triangle.dir/build.make hello_triangle/CMakeFiles/hello_triangle.dir/depend
 	$(MAKE) -f hello_triangle/CMakeFiles/hello_triangle.dir/build.make hello_triangle/CMakeFiles/hello_triangle.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target hello_triangle"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=5,6 "Built target hello_triangle"
 .PHONY : hello_triangle/CMakeFiles/hello_triangle.dir/all
 
 # Include target in all.
@@ -243,9 +243,9 @@ all: hello_triangle/CMakeFiles/hello_triangle.dir/all
 
 # Build rule for subdir invocation for target.
 hello_triangle/CMakeFiles/hello_triangle.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 hello_triangle/CMakeFiles/hello_triangle.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/invoker/Documents/Workspace/OPGL/OPGL-test-clion/OPGL-test-clion/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
 .PHONY : hello_triangle/CMakeFiles/hello_triangle.dir/rule
 
 # Convenience name for target.

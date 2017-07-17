@@ -1,0 +1,12 @@
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/CMakeFiles/rebuild_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/CMakeFiles/edit_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/openl_lib/CMakeFiles/rebuild_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/openl_lib/CMakeFiles/edit_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/openl_lib/CMakeFiles/OPGL_test_clion.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/hello_window/CMakeFiles/rebuild_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/hello_window/CMakeFiles/edit_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/hello_window/CMakeFiles/hello_window.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/hello_triangle/CMakeFiles/rebuild_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/hello_triangle/CMakeFiles/edit_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/build/hello_triangle/CMakeFiles/hello_triangle.dir

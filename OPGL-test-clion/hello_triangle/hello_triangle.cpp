@@ -1,3 +1,12 @@
+/*
+ * @name hello_triangle.cpp
+ * @project OPGL_test_clion
+ * @author lvjiaming
+ * @date 17/07/17-01:36
+ * @ref [https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/]
+ */
+
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 

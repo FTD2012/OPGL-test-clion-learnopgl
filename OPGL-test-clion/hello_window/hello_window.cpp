@@ -1,3 +1,12 @@
+/*
+ * @name hello_window.cpp
+ * @project OPGL_test_clion
+ * @author lvjiaming
+ * @date 17/07/16-19:43
+ * @ref [https://learnopengl-cn.github.io/01%20Getting%20started/03%20Hello%20Window/]
+ */
+
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 

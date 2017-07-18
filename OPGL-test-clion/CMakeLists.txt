@@ -57,10 +57,15 @@ if(rectangle)
     add_subdirectory(rectangle)
 endif(rectangle)
 
+if(C++_base_test)
+    add_subdirectory(C++_base_test)
+endif(C++_base_test)
+
 ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(hello_window)
 ADD_SUBDIRECTORY(hello_triangle)
 ADD_SUBDIRECTORY(rectangle)
+ADD_SUBDIRECTORY(C++_base_test)
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

@@ -175,6 +175,19 @@ rectangle/fast:
 	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/build
 .PHONY : rectangle/fast
 
+#=============================================================================
+# Target rules for targets named C++_base_test
+
+# Build rule for target.
+C++_base_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 C++_base_test
+.PHONY : C++_base_test
+
+# fast build rule for target.
+C++_base_test/fast:
+	$(MAKE) -f C++_base_test/CMakeFiles/C++_base_test.dir/build.make C++_base_test/CMakeFiles/C++_base_test.dir/build
+.PHONY : C++_base_test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -188,6 +201,7 @@ help:
 	@echo "... hello_window"
 	@echo "... hello_triangle"
 	@echo "... rectangle"
+	@echo "... C++_base_test"
 .PHONY : help
 
 

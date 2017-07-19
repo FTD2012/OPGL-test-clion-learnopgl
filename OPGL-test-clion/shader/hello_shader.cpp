@@ -56,8 +56,7 @@ int main()
     // build and compile our shader program
     // ------------------------------------
     // vertex shader
-//    Shader ourShader("triangle_fragment_shader.vs", "triangle_vertex_shader.fs");
-    Shader ourShader("vs.vs", "fs.fs");
+    Shader ourShader("triangle_vertex_shader.vs", "triangle_fragment_shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------

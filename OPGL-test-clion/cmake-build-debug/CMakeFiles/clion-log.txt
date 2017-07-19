@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion"
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug
+-- Build files have been written to: /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug

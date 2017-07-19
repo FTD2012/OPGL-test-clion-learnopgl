@@ -23,24 +23,6 @@ public:
     // ------------------------------------------------------------------------
     Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath = nullptr)
     {
-
-
-        std::ifstream fin;
-//        fin.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-
-        try {
-            fin.open(vertexPath);
-
-            if (!fin.is_open()) {
-                std::cout << "fin is not open" << std::endl;
-            }
-        } catch (std::ifstream::failure &e) {
-            std::cout << "fin open failure : " << e.code() << "  what : " << e.what() << std::endl;
-        }
-
-
-
-
         // 1. retrieve the vertex/fragment source code from filePath
         std::string vertexCode;
         std::string fragmentCode;
@@ -49,22 +31,14 @@ public:
         std::ifstream fShaderFile;
         std::ifstream gShaderFile;
         // ensure ifstream objects can throw exceptions:
-//        vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-//        fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-//        gShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+        vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+        fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+        gShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
         try
         {
             // open files
             vShaderFile.open(vertexPath);
             fShaderFile.open(fragmentPath);
-
-            if (!vShaderFile.is_open()) {
-                std::cout << "vertex is not open" << std::endl;
-            }
-            if (!fShaderFile.is_open()) {
-                std::cout << "fragment is not open" << std::endl;
-            }
-
 
             std::stringstream vShaderStream, fShaderStream;
             // read file's buffer contents into streams
@@ -97,8 +71,8 @@ public:
         const char * fShaderCode = fragmentCode.c_str();
 
 
-        std::cout << "vShaderCode = " << vShaderCode << std::endl;
-        std::cout << "fShaderCode = " << fShaderCode << std::endl;
+//        std::cout << "vShaderCode = " << vShaderCode << std::endl;
+//        std::cout << "fShaderCode = " << fShaderCode << std::endl;
 
 
         // 2. compile shaders

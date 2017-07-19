@@ -7,7 +7,7 @@
  */
 
 
-#include "shader.h"
+#include "../openl_lib/shader.h"
 
 
 

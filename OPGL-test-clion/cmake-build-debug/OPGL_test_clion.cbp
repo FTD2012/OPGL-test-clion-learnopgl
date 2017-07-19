@@ -401,6 +401,9 @@
 			<Option target="OPGL_test_clion_static"/>
 			<Option target="OPGL_test_clion"/>
 		</Unit>
+		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/openl_lib/shader.h">
+			<Option target="shader"/>
+		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/rectangle/rectangle.cpp">
 			<Option target="rectangle"/>
 		</Unit>
@@ -408,12 +411,6 @@
 			<Option target="shader"/>
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/shader/shader.cpp">
-			<Option target="shader"/>
-		</Unit>
-		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/shader/shader.h">
-			<Option target="shader"/>
-		</Unit>
-		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/shader/vs.vs">
 			<Option target="shader"/>
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/CMakeLists.txt">

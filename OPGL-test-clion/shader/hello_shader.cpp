@@ -56,7 +56,7 @@ int main()
     // build and compile our shader program
     // ------------------------------------
     // vertex shader
-    Shader ourShader("triangle_vertex_shader.vs", "triangle_fragment_shader.fs");
+    Shader ourShader("../../shader/triangle_vertex_shader.vs", "../../shader/triangle_fragment_shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -104,6 +104,7 @@ int main()
 
         // render the triangle
         ourShader.use();
+        ourShader.setFloat("offsetX", 0.3);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 

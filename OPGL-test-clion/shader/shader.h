@@ -44,8 +44,6 @@ public:
             // read file's buffer contents into streams
             vShaderStream << vShaderFile.rdbuf();
             fShaderStream << fShaderFile.rdbuf();
-            vShaderStream << "\0";
-            fShaderStream << "\0";
 
             // close file handlers
             vShaderFile.close();

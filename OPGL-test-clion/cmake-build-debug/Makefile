@@ -188,6 +188,19 @@ C++_base_test/fast:
 	$(MAKE) -f C++_base_test/CMakeFiles/C++_base_test.dir/build.make C++_base_test/CMakeFiles/C++_base_test.dir/build
 .PHONY : C++_base_test/fast
 
+#=============================================================================
+# Target rules for targets named shader
+
+# Build rule for target.
+shader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 shader
+.PHONY : shader
+
+# fast build rule for target.
+shader/fast:
+	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/build
+.PHONY : shader/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -202,6 +215,7 @@ help:
 	@echo "... hello_triangle"
 	@echo "... rectangle"
 	@echo "... C++_base_test"
+	@echo "... shader"
 .PHONY : help
 
 

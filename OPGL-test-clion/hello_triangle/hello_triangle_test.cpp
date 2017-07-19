@@ -8,6 +8,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <cmath>
 
 void processInput(GLFWwindow *);
 void framebuffer_size_callback(GLFWwindow *, int, int);
@@ -15,18 +16,40 @@ void framebuffer_size_callback(GLFWwindow *, int, int);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
+//const char *vertexShaderSource =
+//        "#version 330 core\n"
+//        "layout (location = 0) in vec3 aPos;\n"
+//        "out vec4 vertexColor;\n"
+//        "void main()\n"
+//        "{\n"
+//        "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+//        "   vertexColor = vec4(0.5f, 0.0f, 0.0f, 1.0f);\n"
+//        "}\0";
+//
+//const char *fragmentShaderSource =
+//        "#version 330 core\n"
+//        "out vec4 FragColor;\n"
+//        "in vec4 vertexColor;\n"
+//        "void main()\n"
+//        "{\n"
+//        "   FragColor = vertexColor;\n"
+//        "}\n\0";
+
 const char *vertexShaderSource = "#version 330 core\n"
         "layout (location = 0) in vec3 aPos;\n"
+        "layout (location = 1) in vec3 aColor;\n"
+        "out vec3 ourColor;\n"
         "void main()\n"
         "{\n"
-        "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+        "   gl_Position = vec4(aPos, 1.0);\n"
+        "   ourColor = aColor;\n"
         "}\0";
-
 const char *fragmentShaderSource = "#version 330 core\n"
         "out vec4 FragColor;\n"
+        "in vec3 ourColor;\n"
         "void main()\n"
         "{\n"
-        "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+        "   FragColor = vec4(ourColor, 1.0f);\n"
         "}\n\0";
 
 
@@ -97,9 +120,10 @@ int main (int argc, char **argv) {
 
     // vertex
     float vertices[] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+            // position          // color
+            -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f, // right
+            0.5f,  -0.5f, 0.0f,  0.0f, 1.0f, 0.0f, // left
+            0.0f,  0.5f,  0.0f,  0.0f, 0.0f, 1.0f  // top
     };
 
     unsigned int VBO, VAO;
@@ -115,8 +139,11 @@ int main (int argc, char **argv) {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -130,6 +157,14 @@ int main (int argc, char **argv) {
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(shaderProgram);
+
+        float timeValue = glfwGetTime();
+        float greenValue = sin(timeValue) / 2.0f + 0.5f;
+        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+
+        glUseProgram(shaderProgram);
+        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 

@@ -16,3 +16,6 @@
 /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/C++_base_test/CMakeFiles/rebuild_cache.dir
 /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/C++_base_test/CMakeFiles/edit_cache.dir
 /Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/C++_base_test/CMakeFiles/C++_base_test.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/CMakeFiles/rebuild_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/CMakeFiles/edit_cache.dir
+/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/CMakeFiles/shader.dir

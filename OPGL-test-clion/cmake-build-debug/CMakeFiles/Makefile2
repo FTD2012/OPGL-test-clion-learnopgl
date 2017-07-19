@@ -374,6 +374,61 @@ clean: C++_base_test/CMakeFiles/C++_base_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory shader
+
+# Convenience name for "all" pass in the directory.
+shader/all: shader/CMakeFiles/shader.dir/all
+
+.PHONY : shader/all
+
+# Convenience name for "clean" pass in the directory.
+shader/clean: shader/CMakeFiles/shader.dir/clean
+
+.PHONY : shader/clean
+
+# Convenience name for "preinstall" pass in the directory.
+shader/preinstall:
+
+.PHONY : shader/preinstall
+
+#=============================================================================
+# Target rules for target shader/CMakeFiles/shader.dir
+
+# All Build rule for target.
+shader/CMakeFiles/shader.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
+	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/depend
+	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" --progress-num=13,14,15 "Built target shader"
+.PHONY : shader/CMakeFiles/shader.dir/all
+
+# Include target in all.
+all: shader/CMakeFiles/shader.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+shader/CMakeFiles/shader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 5
+	$(MAKE) -f CMakeFiles/Makefile2 shader/CMakeFiles/shader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lvjiaming/WorkSpace/untitled folder/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles" 0
+.PHONY : shader/CMakeFiles/shader.dir/rule
+
+# Convenience name for target.
+shader: shader/CMakeFiles/shader.dir/rule
+
+.PHONY : shader
+
+# clean rule for target.
+shader/CMakeFiles/shader.dir/clean:
+	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/clean
+.PHONY : shader/CMakeFiles/shader.dir/clean
+
+# clean rule for target.
+clean: shader/CMakeFiles/shader.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

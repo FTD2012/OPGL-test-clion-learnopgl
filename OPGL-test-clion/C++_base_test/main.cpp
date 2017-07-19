@@ -8,16 +8,24 @@
 
 
 #include <iostream>
-const char *fragmentShaderSource = "#version 330 core\n" "#3333#\n"
-        "out vec4 FragColor;\n"
-        "void main()\n"
-        "{\n"
-        "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-        "}\n\0";
+#include <fstream>
+#include <string>
+#include <sstream>
 
 int main (int argc, char **argv) {
 
-    std::cout << "fragmentShaderSource = " << fragmentShaderSource << std::endl;
+    std::ifstream fin;
+    fin.open("./CMakeLists.txt");
+    if (!fin.is_open()) {
+        std::cout << "fin is not open" << std::endl;
+
+
+
+
+    }
+
+
+
 
     return EXIT_SUCCESS;
 }

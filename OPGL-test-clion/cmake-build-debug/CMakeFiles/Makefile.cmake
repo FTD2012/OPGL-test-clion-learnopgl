@@ -43,6 +43,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../openl_lib/CMakeLists.txt"
   "../rectangle/CMakeLists.txt"
   "../shader/CMakeLists.txt"
+  "../texture/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -60,6 +61,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "rectangle/CMakeFiles/CMakeDirectoryInformation.cmake"
   "C++_base_test/CMakeFiles/CMakeDirectoryInformation.cmake"
   "shader/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "texture/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -71,4 +73,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "rectangle/CMakeFiles/rectangle.dir/DependInfo.cmake"
   "C++_base_test/CMakeFiles/C++_base_test.dir/DependInfo.cmake"
   "shader/CMakeFiles/shader.dir/DependInfo.cmake"
+  "texture/CMakeFiles/texture.dir/DependInfo.cmake"
   )

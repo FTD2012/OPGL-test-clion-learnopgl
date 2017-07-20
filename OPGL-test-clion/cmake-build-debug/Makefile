@@ -201,6 +201,19 @@ shader/fast:
 	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/build
 .PHONY : shader/fast
 
+#=============================================================================
+# Target rules for targets named texture
+
+# Build rule for target.
+texture: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 texture
+.PHONY : texture
+
+# fast build rule for target.
+texture/fast:
+	$(MAKE) -f texture/CMakeFiles/texture.dir/build.make texture/CMakeFiles/texture.dir/build
+.PHONY : texture/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,6 +229,7 @@ help:
 	@echo "... rectangle"
 	@echo "... C++_base_test"
 	@echo "... shader"
+	@echo "... texture"
 .PHONY : help
 
 

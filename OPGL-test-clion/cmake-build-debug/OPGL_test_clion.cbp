@@ -5,7 +5,7 @@
 		<Option title="OPGL_test_clion"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="clang"/>
-		<Option virtualFolders="CMake Files\;CMake Files\openl_lib\;CMake Files\hello_window\;CMake Files\hello_triangle\;CMake Files\rectangle\;CMake Files\C++_base_test\;CMake Files\shader\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\openl_lib\;CMake Files\hello_window\;CMake Files\hello_triangle\;CMake Files\rectangle\;CMake Files\C++_base_test\;CMake Files\shader\;CMake Files\texture\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug"/>
@@ -387,6 +387,56 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="texture">
+				<Option output="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/texture" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD/glad"/>
+					<Add directory="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD"/>
+					<Add directory="/usr/local/Cellar/glfw/3.2.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 texture"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="texture/fast">
+				<Option output="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/texture" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD/glad"/>
+					<Add directory="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/GLAD"/>
+					<Add directory="/usr/local/Cellar/glfw/3.2.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 texture/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/C++_base_test/main.cpp">
 			<Option target="C++_base_test"/>
@@ -403,6 +453,11 @@
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/openl_lib/shader.h">
 			<Option target="shader"/>
+			<Option target="texture"/>
+		</Unit>
+		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/openl_lib/stb_image.h">
+			<Option target="OPGL_test_clion_static"/>
+			<Option target="OPGL_test_clion"/>
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/rectangle/rectangle.cpp">
 			<Option target="rectangle"/>
@@ -412,6 +467,9 @@
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/shader/shader.cpp">
 			<Option target="shader"/>
+		</Unit>
+		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/texture/hello_texture.cpp">
+			<Option target="texture"/>
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
@@ -433,6 +491,9 @@
 		</Unit>
 		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/shader/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\shader\"/>
+		</Unit>
+		<Unit filename="/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/texture/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\texture\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

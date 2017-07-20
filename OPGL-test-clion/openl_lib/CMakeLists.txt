@@ -3,6 +3,7 @@ PROJECT(OPGL_test_clion)
 
 SET(OPGL_test_clion_SRCS
         glad.c
+        stb_image.h
         )
 
 # shared library

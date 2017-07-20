@@ -44,7 +44,6 @@ list( APPEND TARGET_LIB ${OPENGL_gl_LIBRARY} )
 
 LINK_DIRECTORIES(${TARGET_LIB})
 
-
 if(hello_window)
     add_subdirectory(hellow_window)
 endif(hello_window)
@@ -65,15 +64,20 @@ if(shader)
     add_subdirectory(shader)
 endif(shader)
 
+if(texture)
+    add_subdirectory(texture)
+endif(texture)
+
 ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(hello_window)
 ADD_SUBDIRECTORY(hello_triangle)
 ADD_SUBDIRECTORY(rectangle)
 ADD_SUBDIRECTORY(C++_base_test)
 ADD_SUBDIRECTORY(shader)
+ADD_SUBDIRECTORY(texture)
 
-SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+#SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+#SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 
 

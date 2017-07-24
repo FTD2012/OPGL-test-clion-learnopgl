@@ -40,6 +40,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.7.2/CMakeSystem.cmake"
   "../hello_triangle/CMakeLists.txt"
   "../hello_window/CMakeLists.txt"
+  "../matrix/CMakeLists.txt"
   "../openl_lib/CMakeLists.txt"
   "../rectangle/CMakeLists.txt"
   "../shader/CMakeLists.txt"
@@ -61,6 +62,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "rectangle/CMakeFiles/CMakeDirectoryInformation.cmake"
   "C++_base_test/CMakeFiles/CMakeDirectoryInformation.cmake"
   "shader/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "matrix/CMakeFiles/CMakeDirectoryInformation.cmake"
   "texture/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -73,5 +75,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "rectangle/CMakeFiles/rectangle.dir/DependInfo.cmake"
   "C++_base_test/CMakeFiles/C++_base_test.dir/DependInfo.cmake"
   "shader/CMakeFiles/shader.dir/DependInfo.cmake"
+  "matrix/CMakeFiles/matrix.dir/DependInfo.cmake"
   "texture/CMakeFiles/texture.dir/DependInfo.cmake"
   )

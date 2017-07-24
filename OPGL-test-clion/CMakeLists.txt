@@ -68,12 +68,17 @@ if(texture)
     add_subdirectory(texture)
 endif(texture)
 
+if(matrix)
+    add_subdirectory(matrix)
+endif(matrix)
+
 ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(hello_window)
 ADD_SUBDIRECTORY(hello_triangle)
 ADD_SUBDIRECTORY(rectangle)
 ADD_SUBDIRECTORY(C++_base_test)
 ADD_SUBDIRECTORY(shader)
+ADD_SUBDIRECTORY(matrix)
 ADD_SUBDIRECTORY(texture)
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

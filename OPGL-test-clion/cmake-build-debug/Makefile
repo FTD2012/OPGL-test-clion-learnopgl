@@ -202,6 +202,19 @@ shader/fast:
 .PHONY : shader/fast
 
 #=============================================================================
+# Target rules for targets named matrix
+
+# Build rule for target.
+matrix: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 matrix
+.PHONY : matrix
+
+# fast build rule for target.
+matrix/fast:
+	$(MAKE) -f matrix/CMakeFiles/matrix.dir/build.make matrix/CMakeFiles/matrix.dir/build
+.PHONY : matrix/fast
+
+#=============================================================================
 # Target rules for targets named texture
 
 # Build rule for target.
@@ -229,6 +242,7 @@ help:
 	@echo "... rectangle"
 	@echo "... C++_base_test"
 	@echo "... shader"
+	@echo "... matrix"
 	@echo "... texture"
 .PHONY : help
 

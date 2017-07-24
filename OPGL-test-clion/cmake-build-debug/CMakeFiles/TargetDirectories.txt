@@ -19,6 +19,9 @@
 /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/CMakeFiles/rebuild_cache.dir
 /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/CMakeFiles/edit_cache.dir
 /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/CMakeFiles/shader.dir
+/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/matrix/CMakeFiles/rebuild_cache.dir
+/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/matrix/CMakeFiles/edit_cache.dir
+/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/matrix/CMakeFiles/matrix.dir
 /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/CMakeFiles/rebuild_cache.dir
 /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/CMakeFiles/edit_cache.dir
 /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/CMakeFiles/texture.dir

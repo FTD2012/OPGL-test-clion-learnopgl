@@ -227,6 +227,19 @@ texture/fast:
 	$(MAKE) -f texture/CMakeFiles/texture.dir/build.make texture/CMakeFiles/texture.dir/build
 .PHONY : texture/fast
 
+#=============================================================================
+# Target rules for targets named coordinate
+
+# Build rule for target.
+coordinate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 coordinate
+.PHONY : coordinate
+
+# fast build rule for target.
+coordinate/fast:
+	$(MAKE) -f coordinate/CMakeFiles/coordinate.dir/build.make coordinate/CMakeFiles/coordinate.dir/build
+.PHONY : coordinate/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -244,6 +257,7 @@ help:
 	@echo "... shader"
 	@echo "... matrix"
 	@echo "... texture"
+	@echo "... coordinate"
 .PHONY : help
 
 

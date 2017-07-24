@@ -37,6 +37,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/shader/cmake_install.cmake")
   include("/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/matrix/cmake_install.cmake")
   include("/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/texture/cmake_install.cmake")
+  include("/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/coordinate/cmake_install.cmake")
 
 endif()
 

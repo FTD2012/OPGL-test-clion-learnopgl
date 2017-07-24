@@ -38,6 +38,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.7.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeSystem.cmake"
+  "../coordinate/CMakeLists.txt"
   "../hello_triangle/CMakeLists.txt"
   "../hello_window/CMakeLists.txt"
   "../matrix/CMakeLists.txt"
@@ -64,6 +65,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "shader/CMakeFiles/CMakeDirectoryInformation.cmake"
   "matrix/CMakeFiles/CMakeDirectoryInformation.cmake"
   "texture/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "coordinate/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -77,4 +79,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "shader/CMakeFiles/shader.dir/DependInfo.cmake"
   "matrix/CMakeFiles/matrix.dir/DependInfo.cmake"
   "texture/CMakeFiles/texture.dir/DependInfo.cmake"
+  "coordinate/CMakeFiles/coordinate.dir/DependInfo.cmake"
   )

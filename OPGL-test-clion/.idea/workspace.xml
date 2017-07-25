@@ -24,176 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f7d383-39de-4ecd-879d-9b898fb824e2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/C++_base_test" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/main.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/C++_base_test.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/C++_base_test/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeCache.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CMakeCCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CMakeCXXCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CMakeSystem.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.8.2/CompilerIdCXX/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/hello_coordinate.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/coordinate.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coordinate/coordinate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/hello_triangle_test.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/hello_triangle.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_triangle/hello_triangle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/hello_window_test.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/hello_window.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/hello_window/hello_window" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/hello_matrix.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/matrix.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/matrix/matrix" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/C.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/glad.c.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/C.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/cmake_clean_target.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/glad.c.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/OPGL_test_clion_static.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/libOPGL_test_clion.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/openl_lib/libOPGL_test_clion.dylib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/CMakeFiles/rectangle.dir/rectangle.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/rectangle/rectangle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/hello_shader.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/CMakeFiles/shader.dir/shader.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/shader/shader" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/progress.marks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/CXX.includecache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/DependInfo.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/build.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/cmake_clean.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/depend.internal" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/depend.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/flags.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/hello_texture.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/link.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/CMakeFiles/texture.dir/progress.make" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/cmake_install.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/texture/texture" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -249,8 +80,8 @@
         <entry file="file://$PROJECT_DIR$/../README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="228">
-                <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <first_editor relative-caret-position="418">
+                <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -887,12 +718,12 @@
       <workItem from="1500217376857" duration="8566000" />
       <workItem from="1500394198395" duration="430000" />
       <workItem from="1500395260722" duration="8010000" />
-      <workItem from="1500435115879" duration="49660000" />
+      <workItem from="1500435115879" duration="49773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113816000" />
+    <option name="totallyTimeSpent" value="113929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -905,6 +736,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1076" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218391" sideWeight="0.45175064" order="7" side_tool="false" content_ui="tabs" />
@@ -913,7 +745,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20271683" sideWeight="0.4546505" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36951983" sideWeight="0.49361023" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2703549" sideWeight="0.7896699" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.057507988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.057507988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24908425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1446,8 +1278,8 @@
     <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="228">
-            <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <first_editor relative-caret-position="418">
+            <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor />

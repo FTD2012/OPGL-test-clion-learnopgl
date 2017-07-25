@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/author-%40FTD2012-blue.svg)]()   [![Platform](https://img.shields.io/badge/Platform-%20MacOs-green.svg)]()  [![GitHub stars](https://img.shields.io/github/stars/FTD2012/OPGL-test-clion-learnopgl.svg)](https://github.com/FTD2012/OPGL-test-clion-learnopgl/stargazers)  [![GitHub license](https://img.shields.io/badge/license-GPLv3-yellowgreen.svg)](https://raw.githubusercontent.com/FTD2012/OPGL-test-clion-learnopgl/master/LICENSE)
 
-> OPGL-test-clion-learnopgl 为learnopgl的代码实现。[https://learnopengl-cn.github.io]
+> The implementation of learnopgl. [https://learnopengl-cn.github.io]
 
 ## Basic Environment
 

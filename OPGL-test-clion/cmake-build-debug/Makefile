@@ -240,6 +240,19 @@ coordinate/fast:
 	$(MAKE) -f coordinate/CMakeFiles/coordinate.dir/build.make coordinate/CMakeFiles/coordinate.dir/build
 .PHONY : coordinate/fast
 
+#=============================================================================
+# Target rules for targets named camera
+
+# Build rule for target.
+camera: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera
+.PHONY : camera
+
+# fast build rule for target.
+camera/fast:
+	$(MAKE) -f camera/CMakeFiles/camera.dir/build.make camera/CMakeFiles/camera.dir/build
+.PHONY : camera/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -258,6 +271,7 @@ help:
 	@echo "... matrix"
 	@echo "... texture"
 	@echo "... coordinate"
+	@echo "... camera"
 .PHONY : help
 
 

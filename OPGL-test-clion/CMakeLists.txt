@@ -76,6 +76,10 @@ if(coordinate)
     add_subdirectory(coordinate)
 endif(coordinate)
 
+if(camera)
+    add_subdirectory(camera)
+endif(camera)
+
 ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(hello_window)
 ADD_SUBDIRECTORY(hello_triangle)
@@ -85,6 +89,7 @@ ADD_SUBDIRECTORY(shader)
 ADD_SUBDIRECTORY(matrix)
 ADD_SUBDIRECTORY(texture)
 ADD_SUBDIRECTORY(coordinate)
+ADD_SUBDIRECTORY(camera)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

@@ -178,7 +178,7 @@ hello_window/preinstall:
 hello_window/CMakeFiles/hello_window.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f hello_window/CMakeFiles/hello_window.dir/build.make hello_window/CMakeFiles/hello_window.dir/depend
 	$(MAKE) -f hello_window/CMakeFiles/hello_window.dir/build.make hello_window/CMakeFiles/hello_window.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target hello_window"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target hello_window"
 .PHONY : hello_window/CMakeFiles/hello_window.dir/all
 
 # Include target in all.
@@ -233,7 +233,7 @@ hello_triangle/preinstall:
 hello_triangle/CMakeFiles/hello_triangle.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f hello_triangle/CMakeFiles/hello_triangle.dir/build.make hello_triangle/CMakeFiles/hello_triangle.dir/depend
 	$(MAKE) -f hello_triangle/CMakeFiles/hello_triangle.dir/build.make hello_triangle/CMakeFiles/hello_triangle.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target hello_triangle"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target hello_triangle"
 .PHONY : hello_triangle/CMakeFiles/hello_triangle.dir/all
 
 # Include target in all.
@@ -288,7 +288,7 @@ rectangle/preinstall:
 rectangle/CMakeFiles/rectangle.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/depend
 	$(MAKE) -f rectangle/CMakeFiles/rectangle.dir/build.make rectangle/CMakeFiles/rectangle.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target rectangle"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target rectangle"
 .PHONY : rectangle/CMakeFiles/rectangle.dir/all
 
 # Include target in all.
@@ -398,7 +398,7 @@ shader/preinstall:
 shader/CMakeFiles/shader.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/depend
 	$(MAKE) -f shader/CMakeFiles/shader.dir/build.make shader/CMakeFiles/shader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=17,18,19 "Built target shader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=19,20,21 "Built target shader"
 .PHONY : shader/CMakeFiles/shader.dir/all
 
 # Include target in all.
@@ -453,7 +453,7 @@ matrix/preinstall:
 matrix/CMakeFiles/matrix.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f matrix/CMakeFiles/matrix.dir/build.make matrix/CMakeFiles/matrix.dir/depend
 	$(MAKE) -f matrix/CMakeFiles/matrix.dir/build.make matrix/CMakeFiles/matrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target matrix"
 .PHONY : matrix/CMakeFiles/matrix.dir/all
 
 # Include target in all.
@@ -508,7 +508,7 @@ texture/preinstall:
 texture/CMakeFiles/texture.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f texture/CMakeFiles/texture.dir/build.make texture/CMakeFiles/texture.dir/depend
 	$(MAKE) -f texture/CMakeFiles/texture.dir/build.make texture/CMakeFiles/texture.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=20,21 "Built target texture"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=22,23 "Built target texture"
 .PHONY : texture/CMakeFiles/texture.dir/all
 
 # Include target in all.
@@ -563,7 +563,7 @@ coordinate/preinstall:
 coordinate/CMakeFiles/coordinate.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
 	$(MAKE) -f coordinate/CMakeFiles/coordinate.dir/build.make coordinate/CMakeFiles/coordinate.dir/depend
 	$(MAKE) -f coordinate/CMakeFiles/coordinate.dir/build.make coordinate/CMakeFiles/coordinate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target coordinate"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target coordinate"
 .PHONY : coordinate/CMakeFiles/coordinate.dir/all
 
 # Include target in all.
@@ -590,6 +590,61 @@ coordinate/CMakeFiles/coordinate.dir/clean:
 
 # clean rule for target.
 clean: coordinate/CMakeFiles/coordinate.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory camera
+
+# Convenience name for "all" pass in the directory.
+camera/all: camera/CMakeFiles/camera.dir/all
+
+.PHONY : camera/all
+
+# Convenience name for "clean" pass in the directory.
+camera/clean: camera/CMakeFiles/camera.dir/clean
+
+.PHONY : camera/clean
+
+# Convenience name for "preinstall" pass in the directory.
+camera/preinstall:
+
+.PHONY : camera/preinstall
+
+#=============================================================================
+# Target rules for target camera/CMakeFiles/camera.dir
+
+# All Build rule for target.
+camera/CMakeFiles/camera.dir/all: openl_lib/CMakeFiles/OPGL_test_clion.dir/all
+	$(MAKE) -f camera/CMakeFiles/camera.dir/build.make camera/CMakeFiles/camera.dir/depend
+	$(MAKE) -f camera/CMakeFiles/camera.dir/build.make camera/CMakeFiles/camera.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target camera"
+.PHONY : camera/CMakeFiles/camera.dir/all
+
+# Include target in all.
+all: camera/CMakeFiles/camera.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+camera/CMakeFiles/camera.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 camera/CMakeFiles/camera.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/cmake-build-debug/CMakeFiles 0
+.PHONY : camera/CMakeFiles/camera.dir/rule
+
+# Convenience name for target.
+camera: camera/CMakeFiles/camera.dir/rule
+
+.PHONY : camera
+
+# clean rule for target.
+camera/CMakeFiles/camera.dir/clean:
+	$(MAKE) -f camera/CMakeFiles/camera.dir/build.make camera/CMakeFiles/camera.dir/clean
+.PHONY : camera/CMakeFiles/camera.dir/clean
+
+# clean rule for target.
+clean: camera/CMakeFiles/camera.dir/clean
 
 .PHONY : clean
 

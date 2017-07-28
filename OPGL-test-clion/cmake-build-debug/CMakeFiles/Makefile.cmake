@@ -35,6 +35,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.7/Modules/ProcessorCount.cmake"
   "../C++_base_test/CMakeLists.txt"
   "../CMakeLists.txt"
+  "../camera/CMakeLists.txt"
   "CMakeFiles/3.7.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeSystem.cmake"
@@ -66,6 +67,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "matrix/CMakeFiles/CMakeDirectoryInformation.cmake"
   "texture/CMakeFiles/CMakeDirectoryInformation.cmake"
   "coordinate/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "camera/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -80,4 +82,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "matrix/CMakeFiles/matrix.dir/DependInfo.cmake"
   "texture/CMakeFiles/texture.dir/DependInfo.cmake"
   "coordinate/CMakeFiles/coordinate.dir/DependInfo.cmake"
+  "camera/CMakeFiles/camera.dir/DependInfo.cmake"
   )

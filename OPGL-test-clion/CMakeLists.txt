@@ -80,6 +80,10 @@ if(camera)
     add_subdirectory(camera)
 endif(camera)
 
+if(colors)
+    add_subdirectory(colors)
+endif(colors)
+
 ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(hello_window)
 ADD_SUBDIRECTORY(hello_triangle)
@@ -90,6 +94,7 @@ ADD_SUBDIRECTORY(matrix)
 ADD_SUBDIRECTORY(texture)
 ADD_SUBDIRECTORY(coordinate)
 ADD_SUBDIRECTORY(camera)
+ADD_SUBDIRECTORY(colors)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

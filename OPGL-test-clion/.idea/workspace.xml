@@ -7,11 +7,11 @@
     <generated>
       <config projectName="OPGL_test_clion" targetName="colors" />
       <config projectName="OPGL_test_clion" targetName="OPGL_test_clion_static" />
-      <config projectName="OPGL_test_clion" targetName="shader" />
-      <config projectName="OPGL_test_clion" targetName="camera" />
-      <config projectName="OPGL_test_clion" targetName="hello_window" />
-      <config projectName="OPGL_test_clion" targetName="hello_triangle" />
       <config projectName="OPGL_test_clion" targetName="C++_base_test" />
+      <config projectName="OPGL_test_clion" targetName="hello_window" />
+      <config projectName="OPGL_test_clion" targetName="shader" />
+      <config projectName="OPGL_test_clion" targetName="hello_triangle" />
+      <config projectName="OPGL_test_clion" targetName="camera" />
       <config projectName="OPGL_test_clion" targetName="OPGL_test_clion" />
       <config projectName="OPGL_test_clion" targetName="coordinate" />
       <config projectName="OPGL_test_clion" targetName="matrix" />
@@ -26,23 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f7d383-39de-4ecd-879d-9b898fb824e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/colors/lamp_fragment_shader.fs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/colors/lamp_vertex_shader.vs" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCXXCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeSystem.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../OPGL-test-clion.xcodeproj/project.xcworkspace/xcuserdata/invoker.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../OPGL-test-clion.xcodeproj/project.xcworkspace/xcuserdata/invoker.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/invoker.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/invoker.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camera/hello_camera.cpp" afterPath="$PROJECT_DIR$/camera/hello_camera.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
@@ -51,10 +36,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/OPGL_test_clion.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/OPGL_test_clion.cbp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colors/colors_fragment_shader.fs" afterPath="$PROJECT_DIR$/colors/colors_fragment_shader.fs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colors/colors_vertex_shader.vs" afterPath="$PROJECT_DIR$/colors/colors_vertex_shader.vs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colors/hello_colors.cpp" afterPath="$PROJECT_DIR$/colors/hello_colors.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openl_lib/camera.h" afterPath="$PROJECT_DIR$/openl_lib/camera.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -73,6 +61,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="OPGL_test_clion" />
     <favorites_list name="Unnamed">
@@ -83,14 +72,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hello_colors.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="camera.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/openl_lib/camera.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="805">
+              <caret line="138" column="6" lean-forward="true" selection-start-line="138" selection-start-column="6" selection-end-line="138" selection-end-column="6" />
+              <folding>
+                <element signature="e#146#168#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hello_texture.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/texture/hello_texture.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2926">
+              <caret line="154" column="59" lean-forward="false" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
+              <folding>
+                <element signature="e#197#219#0" expanded="true" />
+                <element signature="e#374#409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stb_image.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openl_lib/stb_image.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20634">
+              <caret line="1086" column="82" lean-forward="false" selection-start-line="1086" selection-start-column="82" selection-end-line="1086" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../UnrealEngine/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="494">
+                <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hello_colors.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/colors/hello_colors.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="245" column="1" lean-forward="true" selection-start-line="245" selection-start-column="1" selection-end-line="245" selection-end-column="1" />
+            <state relative-caret-position="4788">
+              <caret line="252" column="24" lean-forward="false" selection-start-line="252" selection-start-column="24" selection-end-line="252" selection-end-column="24" />
               <folding>
-                <element signature="e#199#221#0" expanded="true" />
-                <element signature="e#376#411#0" expanded="true" />
+                <element signature="e#199#229#0" expanded="true" />
+                <element signature="e#384#419#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,38 +136,8 @@
       <file leaf-file-name="shader.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openl_lib/shader.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="94" column="58" lean-forward="true" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string" pinned="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1796" column="0" lean-forward="false" selection-start-line="1796" selection-start-column="0" selection-end-line="1796" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors_fragment_shader.fs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/colors/colors_fragment_shader.fs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors_vertex_shader.vs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/colors/colors_vertex_shader.vs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="2774">
+              <caret line="146" column="9" lean-forward="false" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -139,8 +146,8 @@
       <file leaf-file-name="lamp_vertex_shader.vs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/colors/lamp_vertex_shader.vs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="171">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,11 +163,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/colors/CMakeLists.txt">
+      <file leaf-file-name="colors_vertex_shader.vs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/colors/colors_vertex_shader.vs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="29" />
+            <state relative-caret-position="342">
+              <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors_fragment_shader.fs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/colors/colors_fragment_shader.fs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -181,8 +198,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>glVertextarr</find>
-      <find>glDrawArrays</find>
       <find>glGenBuffers</find>
       <find>rectangle</find>
       <find>vertexColor</find>
@@ -211,6 +226,8 @@
       <find>coordinate</find>
       <find>camera</find>
       <find>ERROR::SHADER_COMPILATION_ERROR of type:</find>
+      <find>lightPos</find>
+      <find>Right</find>
     </findStrings>
     <replaceStrings>
       <replace>OPGL_test_clion</replace>
@@ -275,17 +292,17 @@
         <option value="$PROJECT_DIR$/../README.md" />
         <option value="$PROJECT_DIR$/coordinate/hello_coordinate.cpp" />
         <option value="$PROJECT_DIR$/camera/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/openl_lib/camera.h" />
         <option value="$PROJECT_DIR$/openl_lib/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/camera/hello_camera.cpp" />
         <option value="$PROJECT_DIR$/colors/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/colors/hello_camera.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/colors/colors_vertex_shader.vs" />
         <option value="$PROJECT_DIR$/colors/lamp_vertex_shader.vs" />
         <option value="$PROJECT_DIR$/colors/lamp_fragment_shader.fs" />
+        <option value="$PROJECT_DIR$/colors/colors_vertex_shader.vs" />
         <option value="$PROJECT_DIR$/colors/colors_fragment_shader.fs" />
         <option value="$PROJECT_DIR$/colors/hello_colors.cpp" />
+        <option value="$PROJECT_DIR$/openl_lib/camera.h" />
       </list>
     </option>
   </component>
@@ -296,9 +313,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1090" />
-    <option name="height" value="1046" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="761" />
+    <option name="y" value="4" />
+    <option name="width" value="1448" />
+    <option name="height" value="1076" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -334,23 +353,30 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="OPGL_test_clion" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="OPGL-test-clion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OPGL_test_clion" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="OPGL-test-clion" type="462c0819:PsiDirectoryNode" />
-              <item name="camera" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OPGL_test_clion" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="OPGL-test-clion" type="462c0819:PsiDirectoryNode" />
-              <item name="colors" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OPGL_test_clion" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OPGL-test-clion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OPGL_test_clion" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OPGL-test-clion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -358,7 +384,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -382,29 +408,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.colors">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration default="true" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="ALTERNATE_INTERPRETER" value="false" />
       <envs />
-    </configuration>
-    <configuration name="C++_base_test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="C++_base_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="C++_base_test">
-      <envs />
-    </configuration>
-    <configuration name="OPGL_test_clion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
-    <configuration name="OPGL_test_clion_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion_static" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
     </configuration>
     <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
       <method />
@@ -501,16 +515,18 @@
       <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
-    <configuration default="true" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="ALTERNATE_INTERPRETER" value="false" />
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
       <envs />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -586,32 +602,57 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration name="camera" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="camera" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="camera">
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
+      <method />
     </configuration>
-    <configuration name="colors" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="colors" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="colors">
+    <configuration default="false" name="C++_base_test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="C++_base_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="C++_base_test">
       <envs />
+      <method />
     </configuration>
-    <configuration name="coordinate" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="coordinate" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="coordinate">
+    <configuration default="false" name="camera" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="camera" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="camera">
       <envs />
+      <method />
     </configuration>
-    <configuration name="hello_triangle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="hello_triangle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="hello_triangle">
+    <configuration default="false" name="colors" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="colors" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="colors">
       <envs />
+      <method />
     </configuration>
-    <configuration name="hello_window" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="hello_window" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="hello_window">
+    <configuration default="false" name="coordinate" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="coordinate" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="coordinate">
       <envs />
+      <method />
     </configuration>
-    <configuration name="matrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="matrix">
+    <configuration default="false" name="hello_triangle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="hello_triangle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="hello_triangle">
       <envs />
+      <method />
     </configuration>
-    <configuration name="rectangle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="rectangle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="rectangle">
+    <configuration default="false" name="hello_window" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="hello_window" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="hello_window">
       <envs />
+      <method />
     </configuration>
-    <configuration name="shader" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="shader" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="shader">
+    <configuration default="false" name="matrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="matrix">
       <envs />
+      <method />
     </configuration>
-    <configuration name="texture" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="texture" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="texture">
+    <configuration default="false" name="OPGL_test_clion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion" CONFIG_NAME="Debug">
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="OPGL_test_clion_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="OPGL_test_clion_static" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="rectangle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="rectangle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="rectangle">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="shader" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="shader" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="shader">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="texture" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OPGL_test_clion" TARGET_NAME="texture" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OPGL_test_clion" RUN_TARGET_NAME="texture">
+      <envs />
+      <method />
     </configuration>
     <list size="13">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
@@ -651,11 +692,14 @@
       <workItem from="1501328126575" duration="3000" />
       <workItem from="1501388531378" duration="4144000" />
       <workItem from="1501393293791" duration="3297000" />
+      <workItem from="1501489682290" duration="7802000" />
+      <workItem from="1501743060042" duration="19000" />
+      <workItem from="1501906340714" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133372000" />
+    <option name="totallyTimeSpent" value="142906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,23 +711,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1046" extended-state="6" />
-    <editor active="true" />
+    <frame x="761" y="4" width="1448" height="1076" extended-state="0" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16998577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32004312" sideWeight="0.40362597" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.49587232" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4073276" sideWeight="0.27862597" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36853448" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20150863" sideWeight="0.5200382" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26939654" sideWeight="0.76622134" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15934066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4073276" sideWeight="0.27862597" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20146137" sideWeight="0.5200382" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36853448" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24908425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26931107" sideWeight="0.76622134" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4073276" sideWeight="0.72137403" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31941545" sideWeight="0.40362597" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -693,7 +736,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.fs" />
@@ -773,7 +816,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/colors/hello_colors.cpp</url>
-          <line>88</line>
+          <line>89</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
@@ -789,14 +832,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/openl_lib/glad.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1044" column="21" lean-forward="false" selection-start-line="1044" selection-start-column="4" selection-end-line="1044" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/texture/container.png" />
     <entry file="file://$PROJECT_DIR$/Makefile" />
     <entry file="file://$PROJECT_DIR$/temp-log" />
     <entry file="file://$PROJECT_DIR$/texture/container.jpg">
@@ -867,8 +902,8 @@
     </entry>
     <entry file="file:///usr/local/include/glm/detail/type_vec.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="106" column="49" lean-forward="false" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
+        <state relative-caret-position="1995">
+          <caret line="105" column="47" lean-forward="false" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -952,8 +987,8 @@
     </entry>
     <entry file="file:///usr/local/include/glm/detail/type_vec3.inl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12274">
-          <caret line="646" column="27" lean-forward="false" selection-start-line="646" selection-start-column="27" selection-end-line="646" selection-end-column="27" />
+        <state relative-caret-position="12863">
+          <caret line="677" column="5" lean-forward="false" selection-start-line="677" selection-start-column="5" selection-end-line="677" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -983,8 +1018,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/openl_lib/stb_image.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="444" column="13" lean-forward="false" selection-start-line="444" selection-start-column="13" selection-end-line="444" selection-end-column="13" />
+        <state relative-caret-position="20634">
+          <caret line="1086" column="82" lean-forward="false" selection-start-line="1086" selection-start-column="82" selection-end-line="1086" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -997,8 +1033,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/texture/hello_texture.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="2926">
+          <caret line="154" column="59" lean-forward="false" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
           <folding>
             <element signature="e#197#219#0" expanded="true" />
             <element signature="e#374#409#0" expanded="true" />
@@ -1006,22 +1042,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openl_lib/camera.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+    <entry file="file://$PROJECT_DIR$/../../../UnrealEngine/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="494">
+            <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UnrealEngine/README.md" />
     <entry file="file://$PROJECT_DIR$/coordinate/hello_coordinate.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7334">
           <caret line="386" column="19" lean-forward="false" selection-start-line="386" selection-start-column="19" selection-end-line="386" selection-end-column="19" />
-          <folding>
-            <element signature="e#199#221#0" expanded="true" />
-            <element signature="e#376#411#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3201">
           <caret line="240" column="35" lean-forward="false" selection-start-line="240" selection-start-column="35" selection-end-line="240" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,22 +1092,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1796" column="0" lean-forward="false" selection-start-line="1796" selection-start-column="0" selection-end-line="1796" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openl_lib/shader.h">
+    <entry file="file:///usr/local/include/glm/detail/type_vec3.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="94" column="58" lean-forward="true" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="5339">
+          <caret line="281" column="38" lean-forward="false" selection-start-line="281" selection-start-column="38" selection-end-line="281" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/colors/colors_vertex_shader.vs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="342">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/glm/glm.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colors/lamp_vertex_shader.vs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1087,29 +1133,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/colors/lamp_vertex_shader.vs">
+    <entry file="file://$PROJECT_DIR$/openl_lib/shader.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="2774">
+          <caret line="146" column="9" lean-forward="false" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/colors/colors_fragment_shader.fs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="228">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/colors/hello_colors.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="245" column="1" lean-forward="true" selection-start-line="245" selection-start-column="1" selection-end-line="245" selection-end-column="1" />
+        <state relative-caret-position="4788">
+          <caret line="252" column="24" lean-forward="false" selection-start-line="252" selection-start-column="24" selection-end-line="252" selection-end-column="24" />
           <folding>
-            <element signature="e#199#221#0" expanded="true" />
-            <element signature="e#376#411#0" expanded="true" />
+            <element signature="e#199#229#0" expanded="true" />
+            <element signature="e#384#419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openl_lib/camera.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="138" column="6" lean-forward="true" selection-start-line="138" selection-start-column="6" selection-end-line="138" selection-end-column="6" />
+          <folding>
+            <element signature="e#146#168#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -48,53 +48,21 @@ if(hello_window)
     add_subdirectory(hellow_window)
 endif(hello_window)
 
-if(hello_triangle)
-    add_subdirectory(hello_triangle)
-endif(hello_triangle)
-
-if(rectangle)
-    add_subdirectory(rectangle)
-endif(rectangle)
-
 if(C++_base_test)
     add_subdirectory(C++_base_test)
 endif(C++_base_test)
 
-if(shader)
-    add_subdirectory(shader)
-endif(shader)
+if(hello_triangle)
+    add_subdirectory(hello_triangle)
+endif(hello_triangle)
 
-if(texture)
-    add_subdirectory(texture)
-endif(texture)
 
-if(matrix)
-    add_subdirectory(matrix)
-endif(matrix)
-
-if(coordinate)
-    add_subdirectory(coordinate)
-endif(coordinate)
-
-if(camera)
-    add_subdirectory(camera)
-endif(camera)
-
-if(colors)
-    add_subdirectory(colors)
-endif(colors)
 
 ADD_SUBDIRECTORY(openl_lib)
+#ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(hello_window)
-ADD_SUBDIRECTORY(hello_triangle)
-ADD_SUBDIRECTORY(rectangle)
 ADD_SUBDIRECTORY(C++_base_test)
-ADD_SUBDIRECTORY(shader)
-ADD_SUBDIRECTORY(matrix)
-ADD_SUBDIRECTORY(texture)
-ADD_SUBDIRECTORY(coordinate)
-ADD_SUBDIRECTORY(camera)
-ADD_SUBDIRECTORY(colors)
+ADD_SUBDIRECTORY(hello_triangle)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

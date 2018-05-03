@@ -34,8 +34,8 @@ include_directories(${PROJECT_SOURCE_DIR}/GLAD)
 include_directories(/usr/local/Cellar/glfw/3.2.1/include)
 
 
+# brew install glfw
 set(TARGET_LIB
-        "/usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib"
         "/usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib"
         )
 

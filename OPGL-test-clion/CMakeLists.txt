@@ -44,25 +44,25 @@ list( APPEND TARGET_LIB ${OPENGL_gl_LIBRARY} )
 
 LINK_DIRECTORIES(${TARGET_LIB})
 
-if(hello_window)
-    add_subdirectory(hellow_window)
-endif(hello_window)
+if(1.1_hello_window)
+    add_subdirectory(1.1_hellow_window)
+endif(1.1_hello_window)
 
 if(C++_base_test)
     add_subdirectory(C++_base_test)
 endif(C++_base_test)
 
-if(hello_triangle)
-    add_subdirectory(hello_triangle)
-endif(hello_triangle)
+if(1.2_hello_triangle)
+    add_subdirectory(1.2_hello_triangle)
+endif(1.2_hello_triangle)
 
 
 
 ADD_SUBDIRECTORY(openl_lib)
 #ADD_SUBDIRECTORY(GLAD)
-ADD_SUBDIRECTORY(hello_window)
+ADD_SUBDIRECTORY(1.1_hello_window)
 ADD_SUBDIRECTORY(C++_base_test)
-ADD_SUBDIRECTORY(hello_triangle)
+ADD_SUBDIRECTORY(1.2_hello_triangle)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

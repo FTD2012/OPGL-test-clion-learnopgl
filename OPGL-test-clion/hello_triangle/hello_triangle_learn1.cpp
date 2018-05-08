@@ -197,6 +197,17 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    /**
+     * 使用 线框模式(Wireframe Mode) 绘制
+     * 配置OpenGl如何绘制图元
+     * @param1: 将配置应用到三角形的正面和背面
+     * @param2: 使用线来绘制
+     */
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+    /* 使用 填充模式 绘制 */
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
 
     /*
      * MainLoop

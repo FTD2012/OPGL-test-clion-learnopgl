@@ -149,9 +149,14 @@ int main() {
     * 顶点坐标
     */
     float vertices[] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+            // 第一个三角形
+            -0.9f, -0.5f, 0.0f,     // left
+            -0.0f, -0.5f, 0.0f,     // right
+            -0.45f, 0.5f, 0.0f,     // top
+            // 第二个三角形
+            0.0f, -0.5f, 0.0f,      // left
+            0.9f, -0.5f, 0.0f,      // right
+            0.45f, 0.5f, 0.0f       // top
     };
 
     /* 使用一个独一无二的ID, 生成一个VBO对象 */
@@ -207,7 +212,7 @@ int main() {
 
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         /*
          * 交换缓冲区

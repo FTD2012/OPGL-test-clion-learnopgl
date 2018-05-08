@@ -148,40 +148,39 @@ int main() {
     /*
     * 顶点坐标
     */
-    float vertices[] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+    float firstTriangle[] = {
+            -0.9f, -0.5f, 0.0f,  // left
+            -0.0f, -0.5f, 0.0f,  // right
+            -0.45f, 0.5f, 0.0f,  // top
+    };
+    float secondTriangle[] = {
+            0.0f, -0.5f, 0.0f,  // left
+            0.9f, -0.5f, 0.0f,  // right
+            0.45f, 0.5f, 0.0f   // top
     };
 
-    /* 使用一个独一无二的ID, 生成一个VBO对象 */
-    unsigned int VBO;
-    glGenBuffers(1, &VBO);
+    /* 可以在同一时间生成多个VAO和VBO对象 */
+    unsigned int VAO[2], VBO[2];
+    glGenVertexArrays(2, VAO);
+    glGenBuffers(2, VBO);
 
-    /* 创建一个第一无二的ID， 生成一个VBO对象 */
-    /* OpenGL的核心模式要求我们使用VAO，所以它知道该如何处理我们的定点输入 */
-    /** 一个顶点数组会存储：**/
-    /** glEnableVertexAttribArray和glDisableVertexAttribArray的调用 **/
-    /** 通过glVertexAttribPointer设置的顶点属性配置 **/
-    /** 通过glVertexAttribPointer调用与顶点属性关联的顶点缓冲对象 **/
-    unsigned int VAO;
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-
-    /* 将VBO绑定为顶点缓冲对象 */
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    /* 将定点数据复制到顶点缓冲内存中*/
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    /* 设置定点属性指针 */
+    // first triangle
+    glBindVertexArray(VAO[0]);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(firstTriangle), firstTriangle, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-
-    /* 解绑VAO和VBO */
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    // second triangle
+    glBindVertexArray(VAO[1]);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(secondTriangle), secondTriangle, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
 
     /*
      * MainLoop
@@ -206,7 +205,10 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
+        glBindVertexArray(VAO[0]);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+
+        glBindVertexArray(VAO[1]);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
         /*

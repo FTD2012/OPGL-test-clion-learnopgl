@@ -149,20 +149,22 @@ int main() {
     glUseProgram(shaderProgram);
 
     /*
-    * 顶点坐标
+    * 通过两个三角形绘制一个矩形，只标出未重复的定点
     */
     float vertices[] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+            0.5f, 0.5f, 0.0f,   // 右上角
+            0.5f, -0.5f, 0.0f,  // 右下角
+            -0.5f, -0.5f, 0.0f, // 左下角
+            -0.5f, 0.5f, 0.0f   // 左上角
     };
 
-    /* 使用一个独一无二的ID, 生成一个VBO对象 */
-    unsigned int VBO;
-    glGenBuffers(1, &VBO);
+    unsigned int indices[] = {
+            0, 1, 3,    // 第一个三角形
+            1, 2, 3     // 第二个三角形
+    };
 
-    /* 创建一个第一无二的ID， 生成一个VBO对象 */
-    /* OpenGL的核心模式要求我们使用VAO，所以它知道该如何处理我们的定点输入 */
+    /* 创建一个独一无二的ID， 生成一个VBO对象 */
+    /* OpenGL的核心模式要求我们使用VAO，所以它知道该如何处理我们的顶点输入 */
     /** 一个顶点数组会存储：**/
     /** glEnableVertexAttribArray和glDisableVertexAttribArray的调用 **/
     /** 通过glVertexAttribPointer设置的顶点属性配置 **/
@@ -171,19 +173,43 @@ int main() {
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
+    /* 使用一个独一无二的ID, 生成一个VBO对象 */
+    unsigned int VBO;
+    glGenBuffers(1, &VBO);
+
+    /* 使用一个独一无二的ID，生成一个EBO(索引缓冲对象，Element Buffer Object, Index Buffer Object, IBO)对象 */
+    unsigned int EBO;
+    glGenBuffers(1, &EBO);
+
     /* 将VBO绑定为顶点缓冲对象 */
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    /* 将定点数据复制到顶点缓冲内存中*/
+    /* 将顶点数据复制到顶点缓冲内存中*/
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    /* 设置定点属性指针 */
+    /* 将EBO绑定为索引缓冲对象 */
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    /* 将索引数据复制到索引缓冲内存中 */
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+
+    /* 设置顶点属性指针 */
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
     /* 解绑VAO和VBO */
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+
+    /**
+     * 使用 线框模式(Wireframe Mode) 绘制
+     * 配置OpenGl如何绘制图元
+     * @param1: 将配置应用到三角形的正面和背面
+     * @param2: 使用线来绘制
+     */
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+    /* 使用 填充模式 绘制 */
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 
     /*
@@ -210,7 +236,9 @@ int main() {
 
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+//        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+//        glBindVertexArray(0);
 
         /*
          * 交换缓冲区

@@ -30,6 +30,14 @@ int main (int argc, char **argv) {
     std::string vertexCode = vShaderStream.str();
     std::cout << "vertexCode = " << vertexCode << std::endl;
 
+    unsigned int indices[] = {
+            0, 1, 3,    // 第一个三角形
+            1, 2, 3     // 第二个三角形
+    };
+    std::cout << "sizeof(indices) = " << sizeof(indices) << std::endl;
+
+
+
 
 
     return EXIT_SUCCESS;

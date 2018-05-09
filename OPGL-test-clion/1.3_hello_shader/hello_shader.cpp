@@ -23,16 +23,17 @@ void processInput(GLFWwindow *window) {
 
 const char *vertexShaderSource = "#version 330 core\n"
     "layout (location = 0) in vec3 aPos;\n"
+    "layout (location = 1) in vec3 aColor;\n"
     "out vec4 vertexColor;\n"
     "void main()\n"
     "{\n"
     "gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "vertexColor = vec4(0.5, 0.0, 0.0, 1.0f);\n"
+    "vertexColor = vec4(aColor, 1.0f);\n"
     "}\n\0";
 
 const char *fragmentShaderSource = "#version 330 core\n"
     "out vec4 FragColor;\n"
-    "uniform vec4 vertexColor;\n"
+    "in vec4 vertexColor;\n"
     "void main()\n"
     "{\n"
     "FragColor = vertexColor;\n"
@@ -153,9 +154,10 @@ int main() {
     * 顶点坐标
     */
     float vertices[] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+            // 位置                  // 颜色
+            -0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,
+            0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,
+            0.0f, 0.5f, 0.0f,       0.0f, 0.0f, 1.0f
     };
 
     /* 使用一个独一无二的ID, 生成一个VBO对象 */
@@ -179,12 +181,27 @@ int main() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     /* 设置定点属性指针 */
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3*sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     /* 解绑VAO和VBO */
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+
+    /**
+     * 使用 线框模式(Wireframe Mode) 绘制
+     * 配置OpenGl如何绘制图元
+     * @param1: 将配置应用到三角形的正面和背面
+     * @param2: 使用线来绘制
+     */
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+    /* 使用 填充模式 绘制 */
+//     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
 
 
     /*

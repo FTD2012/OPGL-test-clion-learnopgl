@@ -2,10 +2,12 @@
 // Created by invoker on 2018/4/24.
 //
 
-#include <glad/glad.h>
+#include <glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <cmath>
+#include <Shader.h>
+#include <Config.h>
 
 /*
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -20,25 +22,6 @@ void processInput(GLFWwindow *window) {
         glfwSetWindowShouldClose(window, true);
     }
 }
-
-const char *vertexShaderSource = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "layout (location = 1) in vec3 aColor;\n"
-    "out vec4 vertexColor;\n"
-    "void main()\n"
-    "{\n"
-    "gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "vertexColor = vec4(aColor, 1.0f);\n"
-    "}\n\0";
-
-const char *fragmentShaderSource = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "in vec4 vertexColor;\n"
-    "void main()\n"
-    "{\n"
-    "FragColor = vertexColor;\n"
-    "}\n\0";
-
 
 int main() {
 
@@ -108,47 +91,7 @@ int main() {
         return -1;
     }
 
-    /* 创建一个顶点着色器(vertex shader) */
-    unsigned vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    /* 编译着色器 */
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
-    /* 编译是否成功？*/
-    int sucess;
-    char infoLog[512];
-    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &sucess);
-    if (!sucess) {
-        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-        std::cout << "error::shader::vertex::compilation_failed\n" << infoLog << std::endl;
-    }
-
-    /* 创建一个片段着色器 */
-    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    /* 编译着色器 */
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-    /* 编译是否成功 */
-    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &sucess);
-    if (!sucess) {
-        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-        std::cout << "error::shader::fragment::compilation_failed\n" << infoLog << std::endl;
-    }
-
-    /* 创建一个着色器对象(Shader Program Object) */
-    unsigned int shaderProgram = glCreateProgram();
-    /* 连接着色器 */
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    /* 编译是否成功 */
-    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &sucess);
-    if (!sucess) {
-        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-        std::cout << "error::shader::program::compilation_failed\n" << infoLog << std::endl;
-    }
-
-    /* 使用编译好的着色器对象 */
-    glUseProgram(shaderProgram);
+    Shader shaderProgram(hello_triangle_vertexShaderSource, hello_triangle_fragmentShaderSource);
 
     /*
     * 顶点坐标
@@ -197,10 +140,10 @@ int main() {
      * @param1: 将配置应用到三角形的正面和背面
      * @param2: 使用线来绘制
      */
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     /* 使用 填充模式 绘制 */
-//     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 
 
@@ -226,11 +169,10 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        float timeValue = glfwGetTime();
-        float greenValue = (sin(timeValue)/2.0f) + 0.5f;
-        int vertexColorLocation = glGetUniformLocation(shaderProgram, "vertexColor");   /* 查询一个uniform对象不需要之前使用过着色器 */
-        glUseProgram(shaderProgram);
-        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);    /* 更新一个uniform对象之前需要使用着色器 */
+//        float timeValue = glfwGetTime();
+//        float greenValue = (sin(timeValue)/2.0f) + 0.5f;
+        shaderProgram.use();
+//        shaderProgram.setFloat("vertexColor", greenValue);
 
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
@@ -245,10 +187,6 @@ int main() {
          */
         glfwPollEvents();
     }
-
-    /* 删除着色器 */
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
 
     glfwTerminate();
     return 0;

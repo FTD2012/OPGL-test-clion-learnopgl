@@ -2,7 +2,7 @@
 // Created by invoker on 2018/4/24.
 //
 
-#include <glad/glad.h>
+#include <glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 

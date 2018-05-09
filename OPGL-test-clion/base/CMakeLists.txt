@@ -2,7 +2,12 @@
 PROJECT(OPGL_test_clion)
 
 SET(OPGL_test_clion_SRCS
+        khrplatform.h
+        glad.h
         glad.c
+        Config.h
+        Shader.h
+        Shader.cpp
         )
 
 # shared library

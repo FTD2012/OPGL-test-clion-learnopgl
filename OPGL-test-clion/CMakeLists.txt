@@ -29,8 +29,8 @@ cmake_minimum_required(VERSION 3.7)
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(/usr/local/include)
-include_directories(${PROJECT_SOURCE_DIR}/GLAD/glad)
-include_directories(${PROJECT_SOURCE_DIR}/GLAD)
+include_directories(${PROJECT_SOURCE_DIR}/base)
+include_directories(${PROJECT_SOURCE_DIR}/shader)
 include_directories(/usr/local/Cellar/glfw/3.2.1/include)
 
 
@@ -62,7 +62,7 @@ endif(1.3_hello_shader)
 
 
 
-ADD_SUBDIRECTORY(openl_lib)
+ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
 ADD_SUBDIRECTORY(C++_base_test)

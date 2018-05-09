@@ -170,7 +170,7 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         shaderProgram.use();
-        shaderProgram.setFloat("xOffset", 0.5f);
+        shaderProgram.setFloat("xOffset", 0.0f);
 
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);

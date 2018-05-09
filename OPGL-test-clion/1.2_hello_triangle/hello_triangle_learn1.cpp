@@ -152,10 +152,14 @@ int main() {
     * 通过两个三角形绘制一个矩形，只标出未重复的定点
     */
     float vertices[] = {
-            0.5f, 0.5f, 0.0f,   // 右上角
-            0.5f, -0.5f, 0.0f,  // 右下角
-            -0.5f, -0.5f, 0.0f, // 左下角
-            -0.5f, 0.5f, 0.0f   // 左上角
+            // 第一个三角形
+            -0.9f, -0.5f, 0.0f,     // left
+            -0.0f, -0.5f, 0.0f,     // right
+            -0.45f, 0.5f, 0.0f,     // top
+            // 第二个三角形
+            0.0f, -0.5f, 0.0f,      // left
+            0.9f, -0.5f, 0.0f,      // right
+            0.45f, 0.5f, 0.0f       // top
     };
 
     unsigned int indices[] = {
@@ -236,9 +240,7 @@ int main() {
 
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-//        glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-//        glBindVertexArray(0);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         /*
          * 交换缓冲区

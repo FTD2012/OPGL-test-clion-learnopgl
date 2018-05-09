@@ -56,6 +56,10 @@ if(1.2_hello_triangle)
     add_subdirectory(1.2_hello_triangle)
 endif(1.2_hello_triangle)
 
+if(1.3_hello_shader)
+    add_subdirectory(1.3_hello_shader)
+endif(1.3_hello_shader)
+
 
 
 ADD_SUBDIRECTORY(openl_lib)
@@ -63,6 +67,7 @@ ADD_SUBDIRECTORY(openl_lib)
 ADD_SUBDIRECTORY(1.1_hello_window)
 ADD_SUBDIRECTORY(C++_base_test)
 ADD_SUBDIRECTORY(1.2_hello_triangle)
+ADD_SUBDIRECTORY(1.3_hello_shader)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

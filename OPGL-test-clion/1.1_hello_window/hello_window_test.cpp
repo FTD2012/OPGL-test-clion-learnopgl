@@ -5,7 +5,7 @@
  * @date 2017/7/18-14:58
  */
 
-#include <glad.h>
+#include <external/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 

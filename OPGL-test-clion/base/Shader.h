@@ -5,7 +5,7 @@
 #ifndef OPGL_TEST_CLION_SHADER_H
 #define OPGL_TEST_CLION_SHADER_H
 
-#include <glad.h>
+#include <external/glad.h>
 #include <string>
 #include <iostream>
 

@@ -2,9 +2,10 @@
 PROJECT(OPGL_test_clion)
 
 SET(OPGL_test_clion_SRCS
-        khrplatform.h
-        glad.h
-        glad.c
+        external/khrplatform.h
+        external/glad.h
+        external/glad.c
+        external/stb_image.h
         Config.h
         Shader.h
         Shader.cpp

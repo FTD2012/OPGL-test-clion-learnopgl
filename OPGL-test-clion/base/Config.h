@@ -7,6 +7,8 @@
 
 #include <hello_shader.frag>
 #include <hello_shader.vert>
+#include <texture.vert>
+#include <texture.frag>
 
 
 

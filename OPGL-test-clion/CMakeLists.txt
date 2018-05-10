@@ -31,6 +31,7 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(/usr/local/include)
 include_directories(${PROJECT_SOURCE_DIR}/base)
 include_directories(${PROJECT_SOURCE_DIR}/shader)
+include_directories(texture)
 include_directories(/usr/local/Cellar/glfw/3.2.1/include)
 
 
@@ -43,6 +44,7 @@ find_package( OpenGL REQUIRED )
 list( APPEND TARGET_LIB ${OPENGL_gl_LIBRARY} )
 
 LINK_DIRECTORIES(${TARGET_LIB})
+
 
 if(1.1_hello_window)
     add_subdirectory(1.1_hellow_window)
@@ -60,6 +62,10 @@ if(1.3_hello_shader)
     add_subdirectory(1.3_hello_shader)
 endif(1.3_hello_shader)
 
+if(1.4_texture)
+    add_subdirectory(1.4_texture)
+endif(1.4_texture)
+
 
 
 ADD_SUBDIRECTORY(base)
@@ -68,6 +74,7 @@ ADD_SUBDIRECTORY(1.1_hello_window)
 ADD_SUBDIRECTORY(C++_base_test)
 ADD_SUBDIRECTORY(1.2_hello_triangle)
 ADD_SUBDIRECTORY(1.3_hello_shader)
+ADD_SUBDIRECTORY(1.4_texture)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

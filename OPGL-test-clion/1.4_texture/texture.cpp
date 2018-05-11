@@ -62,7 +62,7 @@ int main() {
     /*
      * 创建一个和OPENGL/OPENGL ES上下文绑定的窗口
      */
-    GLFWwindow *window = glfwCreateWindow(200, 150, "好好学习OPENGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(224, 224, "好好学习OPENGL", NULL, NULL);
     if (!window) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -101,14 +101,15 @@ int main() {
 
     // Image
     /* 使用'stb_image.h'的API把一张图片加载到内存中 */
-    unsigned int texture;
+    unsigned int texture1, texture2;
     int width, height, nrChannels;
+    stbi_set_flip_vertically_on_load(true);
     unsigned char *data = stbi_load("../../texture/container.jpg", &width, &height, &nrChannels, 0);
     if (data) {
         /* 使用一个独一无二的ID，生成一个纹理对象 */
-        glGenTextures(1, &texture);
+        glGenTextures(1, &texture1);
         /* 将texture绑定为2D纹理对象 */
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glBindTexture(GL_TEXTURE_2D, texture1);
 
         /* 设置纹理的环绕模式为GL_REPEAT
          * GL_REPEAT: 对纹理的默认行为，重复纹理图像。
@@ -133,10 +134,27 @@ int main() {
         /* 生成多级渐远纹理(Mipmap) */
         glGenerateMipmap(GL_TEXTURE_2D);
     } else {
-        std::cerr << "Failed to load texture" << std::endl;
+        std::cerr << "Failed to load texture1" << std::endl;
         return EXIT_FAILURE;
     }
     stbi_image_free(data);
+
+    data = stbi_load("../../texture/face.png", &height, &width, &nrChannels, 0);
+    if (data) {
+        glGenTextures(1, &texture2);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    } else {
+        std::cerr << "Failed to load texture2" << std::endl;
+        return EXIT_FAILURE;
+    }
+    stbi_image_free(data);
+
 
     /*
     * 顶点坐标
@@ -144,9 +162,9 @@ int main() {
     float vertices[] = {
             // 位置                  // 颜色                 // 纹理坐标
             0.5f, 0.5f, 0.0f,       1.0f, 0.0f, 0.0f,       1.0f, 1.0f,     // 右上
-            0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,       0.0f, 1.0f,     // 右下
+            0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,       1.0f, 0.0f,     // 右下
             -0.5f, -0.5, 0.0f,      0.0f, 0.0f, 1.0f,       0.0f, 0.0f,     // 左下
-            -0.5f, 0.5f, 0.0f,      1.0f, 1.0f, 1.0f,       1.0f, 0.0f      // 左上
+            -0.5f, 0.5f, 0.0f,      1.0f, 1.0f, 0.0f,       0.0f, 1.0f      // 左上
     };
 
     unsigned int indices[] = {
@@ -204,7 +222,9 @@ int main() {
     /* 使用 填充模式 绘制 */
      glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
-
+    shaderProgram.use();
+    shaderProgram.setInt("texture1", 0);
+    shaderProgram.setInt("texture2", 1);
 
     /*
      * MainLoop
@@ -228,10 +248,13 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
 
         shaderProgram.use();
-
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 

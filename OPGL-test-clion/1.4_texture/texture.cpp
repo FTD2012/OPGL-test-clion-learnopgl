@@ -143,10 +143,10 @@ int main() {
     if (data) {
         glGenTextures(1, &texture2);
         glBindTexture(GL_TEXTURE_2D, texture2);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
     } else {
@@ -161,10 +161,10 @@ int main() {
     */
     float vertices[] = {
             // 位置                  // 颜色                 // 纹理坐标
-            0.5f, 0.5f, 0.0f,       1.0f, 0.0f, 0.0f,       2.0f, 2.0f,     // 右上
-            0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,       2.0f, 0.0f,     // 右下
-            -0.5f, -0.5, 0.0f,      0.0f, 0.0f, 1.0f,       0.0f, 0.0f,     // 左下
-            -0.5f, 0.5f, 0.0f,      1.0f, 1.0f, 0.0f,       0.0f, 2.0f      // 左上
+            0.5f, 0.5f, 0.0f,       1.0f, 0.0f, 0.0f,       0.55f, 0.55f,     // 右上
+            0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,       0.55f, 0.45f,     // 右下
+            -0.5f, -0.5, 0.0f,      0.0f, 0.0f, 1.0f,       0.45f, 0.45f,     // 左下
+            -0.5f, 0.5f, 0.0f,      1.0f, 1.0f, 0.0f,       0.45f, 0.55f      // 左上
     };
 
     unsigned int indices[] = {

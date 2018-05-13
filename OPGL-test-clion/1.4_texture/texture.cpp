@@ -62,7 +62,7 @@ int main() {
     /*
      * 创建一个和OPENGL/OPENGL ES上下文绑定的窗口
      */
-    GLFWwindow *window = glfwCreateWindow(224, 224, "好好学习OPENGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(800, 600, "好好学习OPENGL", NULL, NULL);
     if (!window) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();

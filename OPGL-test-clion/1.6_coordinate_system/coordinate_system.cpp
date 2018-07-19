@@ -322,6 +322,7 @@ int main() {
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
         projection = glm::perspective(glm::radians(90.0f), ScreenWidth / ScreenHeight, 0.1f, 100.0f);
+        projection = glm::translate(projection, glm::vec3(2.8f, 0.0f, 0.0f));
 
         /*
          * 处理用户输入

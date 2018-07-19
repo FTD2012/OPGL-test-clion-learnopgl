@@ -347,7 +347,9 @@ int main() {
         for (int i = 0; i < 10; i++) {
             model = glm::mat4();
             model = glm::translate(model, cubePositions[i]);
-            model = glm::rotate(model, (float)glfwGetTime() * glm::radians(20.0f * (i+1)), glm::vec3(1.0f, 1.0f, 1.0f));
+            if (i%3 == 0 || i == 0) {
+                model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
+            }
 
             shaderProgram.setFloat("mixPercent", mixPercent);
             shaderProgram.setMat4("transform", trans);

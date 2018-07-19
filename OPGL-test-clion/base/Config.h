@@ -21,6 +21,10 @@
 #include <coordinate_system.frag>
 #include <coordinate_system.vert>
 
+// 1.7 camera
+#include <camera.frag>
+#include <camera.vert>
+
 
 
 #endif //OPGL_TEST_CLION_CONFIG_H

@@ -17,6 +17,8 @@
 #include <Config.h>
 
 float mixPercent = 0.2;
+const float ScreenWidth = 200;
+const float ScreenHeight = 150;
 
 /*
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -69,7 +71,7 @@ int main() {
     /*
      * 创建一个和OPENGL/OPENGL ES上下文绑定的窗口
      */
-    GLFWwindow *window = glfwCreateWindow(200, 150, "好好学习OPENGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(ScreenWidth, ScreenHeight, "好好学习OPENGL", NULL, NULL);
     if (!window) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -104,7 +106,7 @@ int main() {
     }
 
     // Shader
-    Shader shaderProgram(glm_vertexShaderSource, glm_fragmentShaderSource);
+    Shader shaderProgram(coordinate_system_vertexShaderSource, coordinate_system_fragmentShaderSource);
 
     // Image
     /* 使用'stb_image.h'的API把一张图片加载到内存中 */
@@ -162,21 +164,82 @@ int main() {
     }
     stbi_image_free(data);
 
+    // 10个立方体的位置
+    glm::vec3 cubePositions[] = {
+            glm::vec3( 0.0f,  0.0f,  0.0f),
+            glm::vec3( 2.0f,  5.0f, -15.0f),
+            glm::vec3(-1.5f, -2.2f, -2.5f),
+            glm::vec3(-3.8f, -2.0f, -12.3f),
+            glm::vec3( 2.4f, -0.4f, -3.5f),
+            glm::vec3(-1.7f,  3.0f, -7.5f),
+            glm::vec3( 1.3f, -2.0f, -2.5f),
+            glm::vec3( 1.5f,  2.0f, -2.5f),
+            glm::vec3( 1.5f,  0.2f, -1.5f),
+            glm::vec3(-1.3f,  1.0f, -1.5f)
+    };
 
     /*
     * 顶点坐标
     */
     float vertices[] = {
-            // 位置                  // 颜色                 // 纹理坐标
-            0.5f, 0.5f, 0.0f,       1.0f, 0.0f, 0.0f,       1.0f, 1.0f,     // 右上
-            0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,       1.0f, 0.0f,     // 右下
-            -0.5f, -0.5, 0.0f,      0.0f, 0.0f, 1.0f,       0.0f, 0.0f,     // 左下
-            -0.5f, 0.5f, 0.0f,      1.0f, 1.0f, 0.0f,       0.0f, 1.0f      // 左上
+            // 位置               // 纹理坐标
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+            0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+
     };
 
     unsigned int indices[] = {
-            0, 1, 3,    // 第一个三角形
-            1, 2, 3     // 第二个三角形
+            0, 1, 2,
+            3, 4, 5,
+            6, 7, 8,
+            9, 10, 11,
+            12, 13, 14,
+            15, 16, 17,
+            18, 19, 20,
+            21, 22, 23,
+            24, 25, 26,
+            27, 28, 29,
+            30, 31, 32,
+            33, 34, 35
     };
 
     /* 使用一个独一无二的ID, 生成一个VBO对象 */
@@ -205,14 +268,11 @@ int main() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     /* 设置定点属性指针 */
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)(3*sizeof(float)));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)(3*sizeof(float)));
     glEnableVertexAttribArray(1);
-
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)(6*sizeof(float)));
-    glEnableVertexAttribArray(2);
 
     /* 解绑VAO和VBO */
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -238,6 +298,11 @@ int main() {
      */
 
     glm::mat4 trans;
+    glm::mat4 model;      // 相对自身坐标系
+    glm::mat4 view;       // 相对世界坐标系
+    glm::mat4 projection; // 相对于摄像机
+
+    glEnable(GL_DEPTH_TEST);
 
     /*
      * - glfwWindowShouldClose 函数在每帧开始时会检测GLFW是否要退出
@@ -247,8 +312,16 @@ int main() {
     while(!glfwWindowShouldClose(window)) {
 
         trans = glm::mat4();
-        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+//        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+        // trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+
+        model = glm::mat4();
+        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
+
+        view = glm::mat4();
+        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
+        projection = glm::perspective(glm::radians(45.0f), ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
         /*
          * 处理用户输入
@@ -259,7 +332,7 @@ int main() {
          * 渲染
          */
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture1);
@@ -268,17 +341,36 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, texture2);
 
         shaderProgram.use();
-        shaderProgram.setFloat("mixPercent", mixPercent);
-        shaderProgram.setMat4("transform", trans);
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        for (int i = 0; i < 10; i++) {
+            model = glm::mat4();
+            model = glm::translate(model, cubePositions[i]);
+            model = glm::rotate(model, (float)glfwGetTime() * glm::radians(20.0f * (i+1)), glm::vec3(1.0f, 1.0f, 1.0f));
+
+            shaderProgram.setFloat("mixPercent", mixPercent);
+            shaderProgram.setMat4("transform", trans);
+            shaderProgram.setMat4("model", model);
+            shaderProgram.setMat4("view", view);
+            shaderProgram.setMat4("projection", projection);
+
+            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+        }
+
 
         /// second container
         trans = glm::mat4();
-        trans = glm::translate(trans, glm::vec3(-0.5f, 0.5f, 0.0f));
-        trans = glm::scale(trans, glm::vec3(sin(glfwGetTime()), sin(glfwGetTime()), sin(glfwGetTime())));
+        trans = glm::translate(trans, glm::vec3(-1.0f, 1.0f, 0.0f));
+        trans = glm::scale(trans, glm::vec3(0.3f, 0.3f, 0.1f));
+        model = glm::mat4();
+        view  = glm::mat4();
+        projection = glm::mat4();
+
         shaderProgram.setMat4("transform", trans);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        shaderProgram.setMat4("model", model);
+        shaderProgram.setMat4("view", view);
+        shaderProgram.setMat4("projection", projection);
+        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 
         /*
          * 交换缓冲区

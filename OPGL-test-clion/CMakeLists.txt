@@ -70,7 +70,9 @@ if(1.5_glm)
     add_subdirectory(1.5_glm)
 endif(1.5_glm)
 
-
+if (1.6_coordinate_system)
+    add_subdirectory(1.6_coordinate_system)
+endif(1.6_coordinate_system)
 
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
@@ -80,6 +82,7 @@ ADD_SUBDIRECTORY(1.2_hello_triangle)
 ADD_SUBDIRECTORY(1.3_hello_shader)
 ADD_SUBDIRECTORY(1.4_texture)
 ADD_SUBDIRECTORY(1.5_glm)
+ADD_SUBDIRECTORY(1.6_coordinate_system)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

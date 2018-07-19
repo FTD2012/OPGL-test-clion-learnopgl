@@ -246,8 +246,8 @@ int main() {
     while(!glfwWindowShouldClose(window)) {
 
         glm::mat4 trans;
-        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
         trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
 
         /*
          * 处理用户输入

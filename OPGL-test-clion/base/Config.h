@@ -9,6 +9,8 @@
 #include <hello_shader.vert>
 #include <texture.vert>
 #include <texture.frag>
+#include <glm.frag>
+#include <glm.vert>
 
 
 

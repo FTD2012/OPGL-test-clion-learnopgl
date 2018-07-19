@@ -66,6 +66,10 @@ if(1.4_texture)
     add_subdirectory(1.4_texture)
 endif(1.4_texture)
 
+if(1.5_glm)
+    add_subdirectory(1.5_glm)
+endif(1.5_glm)
+
 
 
 ADD_SUBDIRECTORY(base)
@@ -75,6 +79,7 @@ ADD_SUBDIRECTORY(C++_base_test)
 ADD_SUBDIRECTORY(1.2_hello_triangle)
 ADD_SUBDIRECTORY(1.3_hello_shader)
 ADD_SUBDIRECTORY(1.4_texture)
+ADD_SUBDIRECTORY(1.5_glm)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

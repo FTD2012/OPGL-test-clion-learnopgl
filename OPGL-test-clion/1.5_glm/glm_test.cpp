@@ -237,6 +237,7 @@ int main() {
      * MainLoop
      */
 
+    glm::mat4 trans;
 
     /*
      * - glfwWindowShouldClose 函数在每帧开始时会检测GLFW是否要退出
@@ -245,9 +246,9 @@ int main() {
      */
     while(!glfwWindowShouldClose(window)) {
 
-        glm::mat4 trans;
-        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        trans = glm::mat4();
         trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
         /*
          * 处理用户输入
@@ -270,6 +271,13 @@ int main() {
         shaderProgram.setFloat("mixPercent", mixPercent);
         shaderProgram.setMat("transform", trans);
         glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        /// second container
+        trans = glm::mat4();
+        trans = glm::translate(trans, glm::vec3(-0.5f, 0.5f, 0.0f));
+        trans = glm::scale(trans, glm::vec3(sin(glfwGetTime()), sin(glfwGetTime()), sin(glfwGetTime())));
+        shaderProgram.setMat("transform", trans);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         /*

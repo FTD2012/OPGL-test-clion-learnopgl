@@ -74,6 +74,10 @@ if (1.6_coordinate_system)
     add_subdirectory(1.6_coordinate_system)
 endif(1.6_coordinate_system)
 
+if (1.7_camera)
+    add_subdirectory(1.7_camera)
+endif(1.7_camera)
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -83,6 +87,7 @@ ADD_SUBDIRECTORY(1.3_hello_shader)
 ADD_SUBDIRECTORY(1.4_texture)
 ADD_SUBDIRECTORY(1.5_glm)
 ADD_SUBDIRECTORY(1.6_coordinate_system)
+ADD_SUBDIRECTORY(1.7_camera)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

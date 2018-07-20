@@ -12,13 +12,24 @@
 
 #include <iostream>
 #include <cmath>
+#include <unistd.h>
 
 #include <Shader.h>
 #include <Config.h>
 
-float mixPercent = 0.2;
+int FPS = 65;
+float frameSecond = 1.0/FPS;
+float deltaTime = 0.0f; // 当前帧与上一帧的时间差
+float lastFrame = 0.0f; // 上一帧的时间
+
+float cameraSpeed = 2.5f;
+float mixPercent = 0.2f;
 const float ScreenWidth = 200;
 const float ScreenHeight = 150;
+
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 /*
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -29,12 +40,33 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
 }
 
 void processInput(GLFWwindow *window) {
+    // space
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, true);
-    } else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+    }
+    // up
+    else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
         mixPercent = fmin(1.0f, mixPercent + 0.01f);
-    } else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
+    }
+    // down
+    else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
         mixPercent = fmax(0.0f, mixPercent - 0.01f);
+    }
+    // w
+    else if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+        cameraPos += cameraSpeed * cameraFront;
+    }
+    // s
+    else if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        cameraPos -= cameraSpeed * cameraFront;
+    }
+    // a
+    else if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+        cameraPos -= cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
+    }
+    // d
+    else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        cameraPos += cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
     }
 }
 
@@ -333,9 +365,21 @@ int main() {
      * - glfwSwapBuffers 函数会交换颜色缓冲区
      */
     while(!glfwWindowShouldClose(window)) {
-        float radius = 5.0f;
-        float camX = sin(glfwGetTime()) * radius;
-        float camZ = cos(glfwGetTime()) * radius;
+
+        // frame time
+        float currentTime = glfwGetTime();
+        deltaTime = currentTime - lastFrame;
+//        if (deltaTime < frameSecond) {
+//            usleep((frameSecond-deltaTime)*10e3);
+//            continue;
+//        }
+        lastFrame = currentTime;
+        cameraSpeed = 2.5f * deltaTime;
+
+         std::cout << "currentTime: " << currentTime << std::endl;
+         std::cout << "deltaTime: " << deltaTime << std::endl;
+         std::cout << "lastFrame: " << lastFrame << std::endl;
+         std::cout << "FPS: " << (int)(1 / deltaTime) << std::endl;
 
         trans = glm::mat4();
         // trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
@@ -345,10 +389,10 @@ int main() {
         model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
 
         view = glm::mat4();
-        view = glm::lookAt(
-                glm::vec3(camX, 0.0f, camZ),    // camera position
-                glm::vec3(0.0f, 0.0f, 0.0f),    // camera target
-                glm::vec3(0.0f, 1.0f, 0.0f)     // up
+        view = glm::lookAt(                 // 摄像机将永远注视前方
+                cameraPos,                  // camera position
+                cameraPos + cameraFront,    // camera target
+                cameraUp                    // up
         );
 
         projection = glm::perspective(glm::radians(90.0f), ScreenWidth / ScreenHeight, 0.1f, 100.0f);

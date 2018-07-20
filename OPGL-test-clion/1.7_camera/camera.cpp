@@ -17,8 +17,8 @@
 #include <Config.h>
 
 float mixPercent = 0.2;
-const float ScreenWidth = 1920;
-const float ScreenHeight = 1080;
+const float ScreenWidth = 200;
+const float ScreenHeight = 150;
 
 /*
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -302,6 +302,29 @@ int main() {
     glm::mat4 view;       // 相对世界坐标系
     glm::mat4 projection; // 相对于摄像机
 
+//    glm::vec3 cameraPosition;   // 摄像机位置
+//    glm::vec3 cameraTarget;     // 摄像机指向的目标
+//    glm::vec3 cameraDirection;  // 摄像机的z轴正方向（与指向的方向相反）
+//
+//    glm::vec3 up;               // 上向量(Up Vector)
+//    glm::vec3 cameraRight;      // 摄像机x轴正方向
+//
+//    glm::vec3 cameraUp;         // 摄像机y轴正方向
+//
+//    // 摄像机z轴正方向
+//    cameraPosition = glm::vec3(0.0f, 0.0f, 3.0f);
+//    cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+//    cameraDirection = glm::normalize(cameraPosition - cameraTarget);    // 向量相减，指向被减 cameraTarget => cameraPosition
+//
+//    // 摄像机x轴正方向
+//    up = glm::vec3(0.0f, 1.0f, 0.0f);
+//    cameraRight = glm::normalize(glm::cross(up, cameraDirection));
+//
+//    // 摄像机y轴正方向
+//    cameraUp = glm::normalize(glm::cross(cameraDirection, cameraRight));
+
+
+
     glEnable(GL_DEPTH_TEST);
 
     /*
@@ -310,16 +333,23 @@ int main() {
      * - glfwSwapBuffers 函数会交换颜色缓冲区
      */
     while(!glfwWindowShouldClose(window)) {
+        float radius = 5.0f;
+        float camX = sin(glfwGetTime()) * radius;
+        float camZ = cos(glfwGetTime()) * radius;
 
         trans = glm::mat4();
-//        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+        // trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
         // trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
         model = glm::mat4();
         model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
 
         view = glm::mat4();
-        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        view = glm::lookAt(
+                glm::vec3(camX, 0.0f, camZ),    // camera position
+                glm::vec3(0.0f, 0.0f, 0.0f),    // camera target
+                glm::vec3(0.0f, 1.0f, 0.0f)     // up
+        );
 
         projection = glm::perspective(glm::radians(90.0f), ScreenWidth / ScreenHeight, 0.1f, 100.0f);
         projection = glm::translate(projection, glm::vec3(2.8f, 0.0f, 0.0f));

@@ -16,58 +16,173 @@
 
 #include <Shader.h>
 #include <Config.h>
+#include <Macro.h>
 
+/**
+ * @property {int} FPS 刷新帧数
+ */
 int FPS = 60;
-float frameSecond = 1.0/FPS;
-float deltaTime = 0.0f; // 当前帧与上一帧的时间差
-float lastFrame = 0.0f; // 上一帧的时间
 
+/**
+ * @property {float} frameSecond 每帧间隔时间
+ */
+float frameSecond = 1.0f/FPS;
+
+/**
+ * @property {float} deltaTime 当前帧与上一帧的时间差
+ * @property {float} lastFrame 上一帧的时间
+ */
+float deltaTime = 0.0f;
+float lastFrame = 0.0f;
+
+/**
+ * @property {float} cameraSpeed 相机移动速度
+ */
 float cameraSpeed = 2.5f;
-float mixPercent = 0.2f;
-const float ScreenWidth = 200;
-const float ScreenHeight = 150;
 
+/**
+ * @property {float} mixPercent 图片颜色混合比例
+ */
+float mixPercent = 0.2f;
+
+/**
+ * @property {int} ScreenWidth  屏幕宽度(Pixel)
+ * @property {int} ScreenHeight 屏幕高度(Pixel)
+ */
+const int ScreenWidth = 1920;
+const int ScreenHeight = 1080;
+
+/**
+ * 摄像机属性
+ * @property {glm::vec3} cameraPos   摄像机在世界坐标系中的位置
+ * @property {glm::vec3} cameraFront 摄像机观察的位置
+ * @property {glm::vec3} cameraUp    摄像机上方
+ */
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
-/*
+/**
+ * 默认光标位置
+ * @property {float} lastCursorX
+ * @property {float} lastCursorY
+ * @property {bool} firstMouse 鼠标位置是否初始化
+ */
+float lastCursorX;
+float lastCursorY;
+bool firstMouse = true;
+
+/**
+ * 俯仰角(Pitch)、偏航角(Yaw)、滚转角(Roll)
+ * @property {float} Pitch
+ * @property {float} Yaw
+ * @property {float} Roll
+ */
+float Pitch = 0.0f;
+float Yaw = -90.0f;
+//float Roll = 0;
+
+/**
+ * 摄像机的视角方位(field of view)
+ */
+float FOV = 45.0f;
+
+
+/**
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
  * 当用户改变窗口大小时，视口也被对应调整
+ * @param {GLFWwindow*} window
+ * @param {int} width  窗口宽度
+ * @param {int} height 窗口高度
  */
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+    UNUSED_PARAM(window);
     glViewport(0, 0, width, height);
 }
 
+/**
+ * 处理键盘输入
+ * @param {GLFWwindow*} window
+*/
 void processInput(GLFWwindow *window) {
     // space
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, true);
     }
-        // up
+    // up
     else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
         mixPercent = fmin(1.0f, mixPercent + 0.01f);
     }
-        // down
+    // down
     else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
         mixPercent = fmax(0.0f, mixPercent - 0.01f);
     }
-        // w
+    // w
     else if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
         cameraPos += cameraSpeed * cameraFront;
     }
-        // s
+    // s
     else if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
         cameraPos -= cameraSpeed * cameraFront;
     }
-        // a
+    // a
     else if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
         cameraPos -= cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
     }
-        // d
+    // d
     else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
         cameraPos += cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
     }
+}
+
+/**
+ * 处理鼠标位置变化，改变摄像机方向
+ * @param {GLFWWindow*} window
+ * @param {int} xPos 鼠标X轴位置(相对于屏幕像素)
+ * @param {int} yPos 鼠标Y轴位置(相对于屏幕像素)
+ */
+void mouse_callback(GLFWwindow *window, double xPos, double yPos) {
+    UNUSED_PARAM(window);
+
+    if (firstMouse) {
+        lastCursorX = (float)xPos;
+        lastCursorY = (float)yPos;
+        firstMouse = false;
+    }
+
+    auto sensitivity = 0.2f;
+    auto xOffset = (float)(xPos - lastCursorX);
+    auto yOffset = (float)(lastCursorY - yPos);
+    lastCursorX = (float)xPos;
+    lastCursorY = (float)yPos;
+
+    xOffset *= sensitivity;
+    yOffset *= sensitivity;
+
+    Pitch += yOffset;
+    Yaw   += xOffset;
+
+    Pitch = (Pitch > 89.0f) ? 89.0f : ((Pitch < -89.0f) ? -89.0f : Pitch);
+
+    glm::vec3 front;
+    front.x = cos(glm::radians(Pitch)) * cos(glm::radians(Yaw));
+    front.y = sin(glm::radians(Pitch));
+    front.z = cos(glm::radians(Pitch)) * sin(glm::radians(Yaw));
+    cameraFront = glm::normalize(front);
+}
+
+/**
+ * 处理滚轮滚动变化，改变摄像机视角范围
+ * @param {GLFWWindow*} window
+ * @param {double} xOffset
+ * @param {double} yOffset
+ */
+void scroll_callback(GLFWwindow *window, double xOffset, double yOffset) {
+    UNUSED_PARAM(window);
+    UNUSED_PARAM(xOffset);
+
+    FOV -= yOffset;
+    FOV = (FOV < 1.0f) ? 1.0f : ((FOV > 45.0f) ? 45.0f : FOV);
 }
 
 int main() {
@@ -103,7 +218,7 @@ int main() {
     /*
      * 创建一个和OPENGL/OPENGL ES上下文绑定的窗口
      */
-    GLFWwindow *window = glfwCreateWindow(ScreenWidth, ScreenHeight, "好好学习OPENGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(ScreenWidth, ScreenHeight, "好好学习OPENGL", nullptr, nullptr);
     if (!window) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -123,6 +238,16 @@ int main() {
      * 注册当窗口大小改变时的回调
      */
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+    /*
+     * 注册鼠标移动的回调
+     */
+    glfwSetCursorPosCallback(window, mouse_callback);
+
+    /*
+     * 注册滚轮变化的回调
+     */
+    glfwSetScrollCallback(window, scroll_callback);
 
     /*
      * GLAD
@@ -300,7 +425,7 @@ int main() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     /* 设置定点属性指针 */
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)nullptr);
     glEnableVertexAttribArray(0);
 
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)(3*sizeof(float)));
@@ -367,11 +492,10 @@ int main() {
     while(!glfwWindowShouldClose(window)) {
 
         // frame time
-        float currentTime = glfwGetTime();
-        float a,b;
+        auto currentTime = (float)glfwGetTime();
         deltaTime = currentTime - lastFrame;
         if (deltaTime < frameSecond) {
-            usleep((frameSecond-deltaTime)*10e3);
+            usleep((unsigned int)((frameSecond-deltaTime)*10e3));
             continue;
         }
         lastFrame = currentTime;
@@ -396,8 +520,7 @@ int main() {
                 cameraUp                    // up
         );
 
-        projection = glm::perspective(glm::radians(90.0f), ScreenWidth / ScreenHeight, 0.1f, 100.0f);
-        projection = glm::translate(projection, glm::vec3(2.8f, 0.0f, 0.0f));
+        projection = glm::perspective(glm::radians(FOV), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
         /*
          * 处理用户输入
@@ -432,7 +555,7 @@ int main() {
             shaderProgram.setMat4("view", view);
             shaderProgram.setMat4("projection", projection);
 
-            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
         }
 
 
@@ -448,7 +571,7 @@ int main() {
         shaderProgram.setMat4("model", model);
         shaderProgram.setMat4("view", view);
         shaderProgram.setMat4("projection", projection);
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
 
         /*
          * 交换缓冲区

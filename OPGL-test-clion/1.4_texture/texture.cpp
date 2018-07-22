@@ -19,7 +19,7 @@ float mixPercent = 0.2;
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
  * 当用户改变窗口大小时，视口也被对应调整
  */
-void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+void frameBuffer_size_callback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
@@ -86,7 +86,7 @@ int main() {
     /*
      * 注册当窗口大小改变时的回调
      */
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, frameBuffer_size_callback);
 
     /*
      * GLAD

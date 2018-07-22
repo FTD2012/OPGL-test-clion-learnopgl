@@ -95,7 +95,7 @@ float FOV = 45.0f;
  * @param {int} width  窗口宽度
  * @param {int} height 窗口高度
  */
-void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+void frameBuffer_size_callback(GLFWwindow *window, int width, int height) {
     UNUSED_PARAM(window);
     glViewport(0, 0, width, height);
 }
@@ -237,7 +237,7 @@ int main() {
     /*
      * 注册当窗口大小改变时的回调
      */
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, frameBuffer_size_callback);
 
     /*
      * 注册鼠标移动的回调

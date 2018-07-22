@@ -2,13 +2,18 @@
 PROJECT(OPGL_test_clion)
 
 SET(OPGL_test_clion_SRCS
+        external
         external/khrplatform.h
         external/glad.h
         external/glad.c
         external/stb_image.h
+        external/glm
+        camera/camera.h
+        camera/camera.cpp
         Config.h
         Shader.h
         Shader.cpp
+        Macro.h
         )
 
 # shared library

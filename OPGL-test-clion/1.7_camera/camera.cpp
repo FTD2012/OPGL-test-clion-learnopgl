@@ -17,6 +17,7 @@
 #include <Shader.h>
 #include <Config.h>
 #include <Macro.h>
+#include <camera/Camera.h>
 
 /**
  * @property {int} FPS 刷新帧数
@@ -36,11 +37,6 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 /**
- * @property {float} cameraSpeed 相机移动速度
- */
-float cameraSpeed = 2.5f;
-
-/**
  * @property {float} mixPercent 图片颜色混合比例
  */
 float mixPercent = 0.2f;
@@ -53,16 +49,6 @@ const int ScreenWidth = 1920;
 const int ScreenHeight = 1080;
 
 /**
- * 摄像机属性
- * @property {glm::vec3} cameraPos   摄像机在世界坐标系中的位置
- * @property {glm::vec3} cameraFront 摄像机观察的位置
- * @property {glm::vec3} cameraUp    摄像机上方
- */
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-
-/**
  * 默认光标位置
  * @property {float} lastCursorX
  * @property {float} lastCursorY
@@ -72,21 +58,7 @@ float lastCursorX;
 float lastCursorY;
 bool firstMouse = true;
 
-/**
- * 俯仰角(Pitch)、偏航角(Yaw)、滚转角(Roll)
- * @property {float} Pitch
- * @property {float} Yaw
- * @property {float} Roll
- */
-float Pitch = 0.0f;
-float Yaw = -90.0f;
-//float Roll = 0;
-
-/**
- * 摄像机的视角方位(field of view)
- */
-float FOV = 45.0f;
-
+Camera camera;
 
 /**
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -119,19 +91,19 @@ void processInput(GLFWwindow *window) {
     }
     // w
     else if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-        cameraPos += cameraSpeed * cameraFront;
+        camera.onMove(Camera::Direction::FORWARD, deltaTime);
     }
     // s
     else if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-        cameraPos -= cameraSpeed * cameraFront;
+        camera.onMove(Camera::Direction::BACKWARD, deltaTime);
     }
     // a
     else if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-        cameraPos -= cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
+        camera.onMove(Camera::Direction::LEFT, deltaTime);
     }
     // d
     else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-        cameraPos += cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
+        camera.onMove(Camera::Direction::RIGHT, deltaTime);
     }
 }
 
@@ -150,25 +122,12 @@ void mouse_callback(GLFWwindow *window, double xPos, double yPos) {
         firstMouse = false;
     }
 
-    auto sensitivity = 0.2f;
     auto xOffset = (float)(xPos - lastCursorX);
     auto yOffset = (float)(lastCursorY - yPos);
     lastCursorX = (float)xPos;
     lastCursorY = (float)yPos;
 
-    xOffset *= sensitivity;
-    yOffset *= sensitivity;
-
-    Pitch += yOffset;
-    Yaw   += xOffset;
-
-    Pitch = (Pitch > 89.0f) ? 89.0f : ((Pitch < -89.0f) ? -89.0f : Pitch);
-
-    glm::vec3 front;
-    front.x = cos(glm::radians(Pitch)) * cos(glm::radians(Yaw));
-    front.y = sin(glm::radians(Pitch));
-    front.z = cos(glm::radians(Pitch)) * sin(glm::radians(Yaw));
-    cameraFront = glm::normalize(front);
+    camera.onMouseMove(xOffset, yOffset);
 }
 
 /**
@@ -181,8 +140,7 @@ void scroll_callback(GLFWwindow *window, double xOffset, double yOffset) {
     UNUSED_PARAM(window);
     UNUSED_PARAM(xOffset);
 
-    FOV -= yOffset;
-    FOV = (FOV < 1.0f) ? 1.0f : ((FOV > 45.0f) ? 45.0f : FOV);
+    camera.onZoom((float)yOffset);
 }
 
 int main() {
@@ -441,7 +399,7 @@ int main() {
      * @param1: 将配置应用到三角形的正面和背面
      * @param2: 使用线来绘制
      */
-//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     /* 使用 填充模式 绘制 */
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -480,8 +438,6 @@ int main() {
 //    // 摄像机y轴正方向
 //    cameraUp = glm::normalize(glm::cross(cameraDirection, cameraRight));
 
-
-
     glEnable(GL_DEPTH_TEST);
 
     /*
@@ -491,7 +447,9 @@ int main() {
      */
     while(!glfwWindowShouldClose(window)) {
 
-        // frame time
+        /**
+         * frame time
+         */
         auto currentTime = (float)glfwGetTime();
         deltaTime = currentTime - lastFrame;
         if (deltaTime < frameSecond) {
@@ -499,12 +457,14 @@ int main() {
             continue;
         }
         lastFrame = currentTime;
-        cameraSpeed = 2.5f * deltaTime;
 
-        // std::cout << "currentTime: " << currentTime << std::endl;
-        // std::cout << "deltaTime: " << deltaTime << std::endl;
-        // std::cout << "lastFrame: " << lastFrame << std::endl;
-        // std::cout << "FPS: " << (int)(1 / deltaTime) << std::endl;
+        // TODO: ljm >>> add log
+#ifdef DEBUG
+        std::cout << "currentTime: " << currentTime << std::endl;
+        std::cout << "deltaTime: " << deltaTime << std::endl;
+        std::cout << "lastFrame: " << lastFrame << std::endl;
+        std::cout << "FPS: " << (int)(1 / deltaTime) << std::endl;
+#endif
 
         trans = glm::mat4();
         // trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
@@ -513,14 +473,9 @@ int main() {
         model = glm::mat4();
         model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
 
-        view = glm::mat4();
-        view = glm::lookAt(                 // 摄像机将永远注视前方
-                cameraPos,                  // camera position
-                cameraPos + cameraFront,    // camera target
-                cameraUp                    // up
-        );
+        view = camera.getViewMatrix();
 
-        projection = glm::perspective(glm::radians(FOV), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
+        projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
         /*
          * 处理用户输入

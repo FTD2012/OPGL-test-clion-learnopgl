@@ -51,6 +51,8 @@ void Camera::onMove(const Camera::Direction &direction, const float &deltaTime) 
             // TODO: ljm >>> error log
             break;
     }
+
+    position.y = 0.0f;
 }
 
 void Camera::onMouseMove(float xOffset, float yOffset, bool constrainPitch) {

@@ -25,6 +25,11 @@
 #include <camera.frag>
 #include <camera.vert>
 
+// 2.1 color
+#include <color.frag>
+#include <color.vert>
+#include <color_light.frag>
+
 
 
 #endif //OPGL_TEST_CLION_CONFIG_H

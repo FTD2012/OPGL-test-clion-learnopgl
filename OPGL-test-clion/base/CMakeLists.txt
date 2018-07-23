@@ -8,7 +8,7 @@ SET(OPGL_test_clion_SRCS
         external/glad.c
         external/stb_image.h
         external/glm
-        camera/camera.h
+        camera/Camera.h
         camera/camera.cpp
         Config.h
         Shader.h

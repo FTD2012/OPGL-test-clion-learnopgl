@@ -71,7 +71,8 @@ public:
 private:
     void updateCameraVectors();
 
-
+    glm::mat4 calculateLookAtMatrix(glm::vec3 position, glm::vec3 target, glm::vec3 up) const;
+    
 private:
     /**
      * 摄像机在世界坐标系中的位置

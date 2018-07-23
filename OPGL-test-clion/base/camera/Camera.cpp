@@ -21,11 +21,16 @@ Camera::Camera(const glm::vec3 &cameraPos, const glm::vec3 &cameraUp, const floa
 }
 
 glm::mat4 Camera::getViewMatrix() const {
-    return glm::lookAt(           // 摄像机将永远注视前方
-            position,             // camera position
-            position + front,     // camera target
-            up                    // up
-    );
+    return calculateLookAtMatrix(
+            position,
+            position + front,
+            up
+            );
+//    return glm::lookAt(           // 摄像机将永远注视前方
+//            position,             // camera position
+//            position + front,     // camera target
+//            up                    // up
+//    );
 }
 
 void Camera::onMove(const Camera::Direction &direction, const float &deltaTime) {
@@ -84,4 +89,32 @@ void Camera::updateCameraVectors() {
     vec.y = sin(glm::radians(pitch));
     vec.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
     front = glm::normalize(vec);
+}
+
+glm::mat4 Camera::calculateLookAtMatrix(const glm::vec3 position, const glm::vec3 target, const glm::vec3 up) const {
+    // 1. Position = known
+    // 2. Calculate cameraDirection
+    glm::vec3 zAxis = glm::normalize(position - target);
+    // 3. Get positive right axis vector
+    glm::vec3 xAxis = glm::normalize(glm::cross(glm::normalize(up), zAxis));
+    // 4. Calculate camera up vector
+    glm::vec3 yAxis = glm::cross(zAxis, xAxis);
+
+    // Create translation and rotation matrix
+    // In glm we access elements as mat[col][row] due to column-major layout
+    glm::mat4 translation, rotation; // Identity matrix by default
+    translation[3][0] = -position.x; // Third column, first row
+    translation[3][1] = -position.y;
+    translation[3][2] = -position.z;
+    rotation[0][0] = xAxis.x; // First column, first row
+    rotation[1][0] = xAxis.y;
+    rotation[2][0] = xAxis.z;
+    rotation[0][1] = yAxis.x; // First column, second row
+    rotation[1][1] = yAxis.y;
+    rotation[2][1] = yAxis.z;
+    rotation[0][2] = zAxis.x; // First column, third row
+    rotation[1][2] = zAxis.y;
+    rotation[2][2] = zAxis.z;
+
+    return rotation * translation;
 }

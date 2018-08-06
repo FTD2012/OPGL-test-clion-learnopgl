@@ -351,6 +351,7 @@ int main() {
     glm::mat4 model;      // 相对自身坐标系
     glm::mat4 view;       // 相对世界坐标系
     glm::mat4 projection; // 相对于摄像机
+    glm::vec3 cameraPos = camera.getPosition();  // 摄像机位置
     glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
     glm::vec3 objectColor = glm::vec3(1.0f, 0.5f, 0.31f);
     glm::vec3 lightPosition = glm::vec3(1.2f, 1.0f, 2.0f);
@@ -360,6 +361,7 @@ int main() {
     shaderProgram.setVec3("lightPos", lightPosition);
     shaderProgram.setVec3("lightColor", lightColor);
     shaderProgram.setVec3("objectColor", objectColor);
+    shaderProgram.setVec3("viewPos", cameraPos);
 
     lightShaderProgram.use();
     lightShaderProgram.setVec3("lightColor", lightColor);
@@ -417,6 +419,7 @@ int main() {
         /// object
         shaderProgram.use();
         for (int i = 0; i < 1; i++) {
+            cameraPos = camera.getPosition();
             model = glm::mat4();
             model = glm::translate(model, cubePositions[i]);
             if (i%3 == 0 || i == 0) {
@@ -427,6 +430,7 @@ int main() {
             shaderProgram.setMat4("model", model);
             shaderProgram.setMat4("view", view);
             shaderProgram.setMat4("projection", projection);
+            shaderProgram.setVec3("viewPos", cameraPos);
 
             glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
         }

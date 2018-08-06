@@ -82,6 +82,10 @@ if (2.1_color)
     add_subdirectory(2.1_color)
 endif(2.1_color)
 
+if (2.2_basic_lighting)
+    add_subdirectory(2.2_basic_lighting)
+endif(2.2_basic_lighting)
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -93,6 +97,7 @@ ADD_SUBDIRECTORY(1.5_glm)
 ADD_SUBDIRECTORY(1.6_coordinate_system)
 ADD_SUBDIRECTORY(1.7_camera)
 ADD_SUBDIRECTORY(2.1_color)
+ADD_SUBDIRECTORY(2.2_basic_lighting)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

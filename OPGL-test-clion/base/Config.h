@@ -30,6 +30,9 @@
 #include <color.vert>
 #include <color_light.frag>
 
+// 2.2 basic_lighting
+#include <basic_lighting.vert>
+#include <basic_lighting.frag>
 
 
 #endif //OPGL_TEST_CLION_CONFIG_H

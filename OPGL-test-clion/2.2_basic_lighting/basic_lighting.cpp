@@ -351,18 +351,39 @@ int main() {
     glm::mat4 model;      // 相对自身坐标系
     glm::mat4 view;       // 相对世界坐标系
     glm::mat4 projection; // 相对于摄像机
-    glm::vec3 cameraPos = camera.getPosition();  // 摄像机位置
-    glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
-    glm::vec3 objectColor = glm::vec3(1.0f, 0.5f, 0.31f);
+    glm::vec3 cameraPos     = camera.getPosition();  // 摄像机位置
+    glm::vec3 lightColor    = glm::vec3(1.0f, 1.0f, 1.0f);
+    glm::vec3 objectColor   = glm::vec3(1.0f, 0.5f, 0.31f);
     glm::vec3 lightPosition = glm::vec3(1.2f, 0.0f, 2.0f);
-    auto radius = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
 
+    /**
+     * material
+     */
+    glm::vec3 mAmbient      = glm::vec3(1.0f, 0.5f, 0.31f);
+    glm::vec3 mDiffuse      = glm::vec3(1.0f, 0.5f, 0.31f);
+    glm::vec3 mSpecular     = glm::vec3(0.5f, 0.5f, 0.5f);
+    auto mShininess         = 32.0f;
 
+    /**
+     * light
+     */
+    glm::vec3 lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
+    glm::vec3 lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
+    glm::vec3 lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
+
+    auto radius             = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
 
     shaderProgram.use();
     shaderProgram.setVec3("lightColor", lightColor);
     shaderProgram.setVec3("objectColor", objectColor);
     shaderProgram.setVec3("viewPos", cameraPos);
+    shaderProgram.setVec3("material.ambient", mAmbient);
+    shaderProgram.setVec3("material.diffuse", mDiffuse);
+    shaderProgram.setVec3("material.specular", mSpecular);
+    shaderProgram.setFloat("material.shininess", mShininess);
+    shaderProgram.setVec3("light.ambient", lAmbient);
+    shaderProgram.setVec3("light.diffuse", lDiffuse);
+    shaderProgram.setVec3("light.specular", lSpecular);
 
     lightShaderProgram.use();
     lightShaderProgram.setVec3("lightColor", lightColor);

@@ -354,11 +354,12 @@ int main() {
     glm::vec3 cameraPos = camera.getPosition();  // 摄像机位置
     glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
     glm::vec3 objectColor = glm::vec3(1.0f, 0.5f, 0.31f);
-    glm::vec3 lightPosition = glm::vec3(1.2f, 1.0f, 2.0f);
+    glm::vec3 lightPosition = glm::vec3(1.2f, 0.0f, 2.0f);
+    auto radius = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
+
 
 
     shaderProgram.use();
-    shaderProgram.setVec3("lightPos", lightPosition);
     shaderProgram.setVec3("lightColor", lightColor);
     shaderProgram.setVec3("objectColor", objectColor);
     shaderProgram.setVec3("viewPos", cameraPos);
@@ -403,6 +404,8 @@ int main() {
 
         projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
+        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
+
         /*
          * 处理用户输入
          */
@@ -426,6 +429,7 @@ int main() {
                 model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
             }
 
+            shaderProgram.setVec3("lightPos", lightPosition);
             shaderProgram.setMat4("transform", trans);
             shaderProgram.setMat4("model", model);
             shaderProgram.setMat4("view", view);

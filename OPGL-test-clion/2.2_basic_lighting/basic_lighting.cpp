@@ -358,17 +358,18 @@ int main() {
 
     /**
      * material
+     * @link http://devernay.free.fr/cours/opengl/materials.html
      */
-    auto mAmbient      = glm::vec3(1.0f, 0.5f, 0.31f);
-    auto mDiffuse      = glm::vec3(1.0f, 0.5f, 0.31f);
-    auto mSpecular     = glm::vec3(0.5f, 0.5f, 0.5f);
+    auto mAmbient      = glm::vec3(0.0f, 0.1f, 0.06f);
+    auto mDiffuse      = glm::vec3(0.0f, 0.50980392f, 0.50980392f);
+    auto mSpecular     = glm::vec3(0.50196078f, 0.50196078f, 0.50196078f);
     auto mShininess    = 32.0f;
 
     /**
      * light
      */
-    auto lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
-    auto lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
+    auto lAmbient      = glm::vec3(1.0f, 1.0f, 1.0f);
+    auto lDiffuse      = glm::vec3(1.0f, 1.0f, 1.0f);
     auto lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
 
     shaderProgram.use();
@@ -424,10 +425,10 @@ int main() {
 
         projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
-        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
+        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, fabs(glm::sin(glfwGetTime()) * radius));
 
-        lDiffuse = glm::vec3(sin(glfwGetTime()*2.0f), sin(glfwGetTime()*0.7f), sin(glfwGetTime()*1.3f)) * glm::vec3(0.5f);
-        lAmbient = lDiffuse * glm::vec3(0.2f);
+        // lDiffuse = glm::vec3(sin(glfwGetTime()*2.0f), sin(glfwGetTime()*0.7f), sin(glfwGetTime()*1.3f)) * glm::vec3(0.5f);
+        // lAmbient = lDiffuse * glm::vec3(0.2f);
 
         /*
          * 处理用户输入

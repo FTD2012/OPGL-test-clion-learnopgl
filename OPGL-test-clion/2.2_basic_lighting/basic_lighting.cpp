@@ -215,7 +215,7 @@ int main() {
 
     // Shader
     Shader shaderProgram(basic_lighting_vertexShaderSource, basic_lighting_fragmentShaderSource);
-    Shader lightShaderProgram(color_vertexShaderSource, color_light_fragmentShaderSource);
+    Shader lightShaderProgram(color_vertexShaderSource, material_light_fragmentShaderSource);
 
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {
@@ -351,30 +351,27 @@ int main() {
     glm::mat4 model;      // 相对自身坐标系
     glm::mat4 view;       // 相对世界坐标系
     glm::mat4 projection; // 相对于摄像机
-    glm::vec3 cameraPos     = camera.getPosition();  // 摄像机位置
-    glm::vec3 lightColor    = glm::vec3(1.0f, 1.0f, 1.0f);
-    glm::vec3 objectColor   = glm::vec3(1.0f, 0.5f, 0.31f);
-    glm::vec3 lightPosition = glm::vec3(1.2f, 0.0f, 2.0f);
+    auto cameraPos     = camera.getPosition();  // 摄像机位置
+    auto objectColor   = glm::vec3(1.0f, 0.5f, 0.31f);
+    auto lightPosition = glm::vec3(1.2f, 0.0f, 2.0f);
+    auto radius        = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
 
     /**
      * material
      */
-    glm::vec3 mAmbient      = glm::vec3(1.0f, 0.5f, 0.31f);
-    glm::vec3 mDiffuse      = glm::vec3(1.0f, 0.5f, 0.31f);
-    glm::vec3 mSpecular     = glm::vec3(0.5f, 0.5f, 0.5f);
-    auto mShininess         = 32.0f;
+    auto mAmbient      = glm::vec3(1.0f, 0.5f, 0.31f);
+    auto mDiffuse      = glm::vec3(1.0f, 0.5f, 0.31f);
+    auto mSpecular     = glm::vec3(0.5f, 0.5f, 0.5f);
+    auto mShininess    = 32.0f;
 
     /**
      * light
      */
-    glm::vec3 lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
-    glm::vec3 lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
-    glm::vec3 lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
-
-    auto radius             = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
+    auto lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
+    auto lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
+    auto lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
 
     shaderProgram.use();
-    shaderProgram.setVec3("lightColor", lightColor);
     shaderProgram.setVec3("objectColor", objectColor);
     shaderProgram.setVec3("viewPos", cameraPos);
     shaderProgram.setVec3("material.ambient", mAmbient);
@@ -386,7 +383,9 @@ int main() {
     shaderProgram.setVec3("light.specular", lSpecular);
 
     lightShaderProgram.use();
-    lightShaderProgram.setVec3("lightColor", lightColor);
+    lightShaderProgram.setVec3("light.ambient", lAmbient);
+    lightShaderProgram.setVec3("light.diffuse", lDiffuse);
+    lightShaderProgram.setVec3("light.specular", lSpecular);
 
     /*
      * - glfwWindowShouldClose 函数在每帧开始时会检测GLFW是否要退出
@@ -427,6 +426,9 @@ int main() {
 
         lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
 
+        lDiffuse = glm::vec3(sin(glfwGetTime()*2.0f), sin(glfwGetTime()*0.7f), sin(glfwGetTime()*1.3f)) * glm::vec3(0.5f);
+        lAmbient = lDiffuse * glm::vec3(0.2f);
+
         /*
          * 处理用户输入
          */
@@ -456,6 +458,8 @@ int main() {
             shaderProgram.setMat4("view", view);
             shaderProgram.setMat4("projection", projection);
             shaderProgram.setVec3("viewPos", cameraPos);
+            shaderProgram.setVec3("light.ambient", lAmbient);
+            shaderProgram.setVec3("light.diffuse", lDiffuse);
 
             glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
         }
@@ -472,6 +476,8 @@ int main() {
         lightShaderProgram.setMat4("model", model);
         lightShaderProgram.setMat4("view", view);
         lightShaderProgram.setMat4("projection", projection);
+        lightShaderProgram.setVec3("light.ambient", lAmbient);
+        lightShaderProgram.setVec3("light.diffuse", lDiffuse);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
 
 

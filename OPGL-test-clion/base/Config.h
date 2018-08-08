@@ -34,5 +34,7 @@
 #include <basic_lighting.vert>
 #include <basic_lighting.frag>
 
+// 2.3 material
+#include <material_light.frag>
 
 #endif //OPGL_TEST_CLION_CONFIG_H

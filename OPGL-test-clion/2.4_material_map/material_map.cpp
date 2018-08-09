@@ -225,6 +225,7 @@ int main() {
     // Image
     auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
     auto texture2 = Loader::getInstance()->loadTexture("../../texture/lighting_maps_specular_color.png");
+    auto texture3 = Loader::getInstance()->loadTexture("../../texture/matrix.jpg");
 
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {
@@ -387,6 +388,7 @@ int main() {
     shaderProgram.setVec3("viewPos", cameraPos);
     shaderProgram.setInt("material.diffuse", 0);
     shaderProgram.setInt("material.specular", 1);
+    shaderProgram.setInt("material.emission", 2);
     shaderProgram.setFloat("material.shininess", mShininess);
     shaderProgram.setVec3("light.ambient", lAmbient);
     shaderProgram.setVec3("light.diffuse", lDiffuse);
@@ -407,6 +409,8 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, texture3);
         /**
          * frame time
          */

@@ -2,6 +2,7 @@ const char *material_map_fragmentShaderSource = R"(#version 330 core
 struct Material {
     sampler2D diffuse;
     sampler2D specular;
+    sampler2D emission;
     float shininess;
 };
 
@@ -42,7 +43,10 @@ void main()
         float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
         vec3 specular = light.specular * (spec * (vec3(1.0f) - texture(material.specular, TextureCoord).rgb));
 
-        FragColor = vec4(ambient + diffuse + specular, 1.0f);
+        // Emission Map 放射光贴图
+        vec3 emission = texture(material.emission, TextureCoord).rgb;
+
+        FragColor = vec4(ambient + diffuse + specular + emission, 1.0f);
     }
 }
 )";

@@ -367,7 +367,6 @@ int main() {
     glm::mat4 view;                                         // 相对世界坐标系
     glm::mat4 projection;                                   // 相对于摄像机
     auto cameraPos     = camera.getPosition();              // 摄像机位置
-    auto lightDir      = glm::vec3(0.0f, 0.0f, -0.3f);    // 平行光的方向
     auto lightPosition = glm::vec3(1.2f, 0.0f, 1.0f);
     auto radius        = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
 
@@ -379,10 +378,18 @@ int main() {
 
     /**
      * light
+     *
+     * 点光源光照强度衰减(Attenuation)公式
+     *               1.0
+     * Fatt = --------------------
+     *         Kc + Kl*d + Kq*d^2
      */
     auto lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
     auto lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
     auto lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
+    auto Kc            = 1.0f;
+    auto Kl            = 0.045f;
+    auto Kq            = 0.0075f;
 
     shaderProgram.use();
     shaderProgram.setVec3("viewPos", cameraPos);
@@ -392,7 +399,9 @@ int main() {
     shaderProgram.setVec3("light.ambient", lAmbient);
     shaderProgram.setVec3("light.diffuse", lDiffuse);
     shaderProgram.setVec3("light.specular", lSpecular);
-    shaderProgram.setVec3("light.direction", lightDir);
+    shaderProgram.setFloat("light.constant", Kc);
+    shaderProgram.setFloat("light.linear", Kl);
+    shaderProgram.setFloat("light.quadratic", Kq);
 
     lightShaderProgram.use();
     lightShaderProgram.setVec3("light.ambient", lAmbient);
@@ -439,7 +448,7 @@ int main() {
 
         projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
-        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, fabs(glm::sin(glfwGetTime()) * radius));
+        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
 
         // lDiffuse = glm::vec3(sin(glfwGetTime()*2.0f), sin(glfwGetTime()*0.7f), sin(glfwGetTime()*1.3f)) * glm::vec3(0.5f);
         // lAmbient = lDiffuse * glm::vec3(0.2f);

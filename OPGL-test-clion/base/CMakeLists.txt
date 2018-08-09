@@ -10,6 +10,8 @@ SET(OPGL_test_clion_SRCS
         external/glm
         camera/Camera.h
         camera/camera.cpp
+        loader/Loader.h
+        loader/Loader.cpp
         Config.h
         Shader.h
         Shader.cpp

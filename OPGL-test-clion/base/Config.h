@@ -37,4 +37,8 @@
 // 2.3 material
 #include <material_light.frag>
 
+// 2.5 material map
+#include <material_map.vert>
+#include <material_map.frag>
+
 #endif //OPGL_TEST_CLION_CONFIG_H

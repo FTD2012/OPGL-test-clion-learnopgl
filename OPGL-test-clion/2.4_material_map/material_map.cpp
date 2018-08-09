@@ -224,7 +224,7 @@ int main() {
 
     // Image
     auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
-    auto texture2 = Loader::getInstance()->loadTexture("../../texture/container2_specular.png");
+    auto texture2 = Loader::getInstance()->loadTexture("../../texture/lighting_maps_specular_color.png");
 
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {
@@ -462,8 +462,8 @@ int main() {
             model = glm::mat4();
             model = glm::translate(model, cubePositions[i]);
             if (i%3 == 0 || i == 0) {
-//                model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
-                model = glm::rotate(model, glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
+                model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
+//                model = glm::rotate(model, glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
             }
 
             shaderProgram.setVec3("lightPos", lightPosition);

@@ -223,7 +223,8 @@ int main() {
     Shader lightShaderProgram(color_vertexShaderSource, material_light_fragmentShaderSource);
 
     // Image
-    unsigned texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
+    auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
+    auto texture2 = Loader::getInstance()->loadTexture("../../texture/container2_specular.png");
 
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {
@@ -366,31 +367,26 @@ int main() {
     glm::mat4 view;       // 相对世界坐标系
     glm::mat4 projection; // 相对于摄像机
     auto cameraPos     = camera.getPosition();  // 摄像机位置
-    auto lightPosition = glm::vec3(1.2f, 0.0f, 2.0f);
+    auto lightPosition = glm::vec3(1.2f, 0.0f, 1.0f);
     auto radius        = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
 
     /**
      * material
      * @link http://devernay.free.fr/cours/opengl/materials.html
      */
-    auto mAmbient      = glm::vec3(0.0f, 0.1f, 0.06f);
-    auto mDiffuse      = glm::vec3(0.0f, 0.50980392f, 0.50980392f);
-    auto mSpecular     = glm::vec3(0.50196078f, 0.50196078f, 0.50196078f);
-    auto mShininess    = 32.0f;
+    auto mShininess    = 256.0f;
 
     /**
      * light
      */
-    auto lAmbient      = glm::vec3(1.0f, 1.0f, 1.0f);
-    auto lDiffuse      = glm::vec3(1.0f, 1.0f, 1.0f);
+    auto lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
+    auto lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
     auto lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
 
     shaderProgram.use();
     shaderProgram.setVec3("viewPos", cameraPos);
     shaderProgram.setInt("material.diffuse", 0);
-    shaderProgram.setVec3("material.ambient", mAmbient);
-    shaderProgram.setVec3("material.diffuse", mDiffuse);
-    shaderProgram.setVec3("material.specular", mSpecular);
+    shaderProgram.setInt("material.specular", 1);
     shaderProgram.setFloat("material.shininess", mShininess);
     shaderProgram.setVec3("light.ambient", lAmbient);
     shaderProgram.setVec3("light.diffuse", lDiffuse);
@@ -409,6 +405,8 @@ int main() {
     while(!glfwWindowShouldClose(window)) {
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture1);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
         /**
          * frame time
          */

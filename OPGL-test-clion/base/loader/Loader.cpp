@@ -69,4 +69,5 @@ unsigned int Loader::loadTexture(char const *path) {
         return EXIT_FAILURE;
     }
     stbi_image_free(data);
+    return texture;
 }

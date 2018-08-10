@@ -87,6 +87,10 @@ glm::vec3 Camera::getPosition() const {
     return position;
 }
 
+glm::vec3 Camera::getFront() const {
+    return front;
+}
+
 void Camera::updateCameraVectors() {
     glm::vec3 vec;
     vec.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));

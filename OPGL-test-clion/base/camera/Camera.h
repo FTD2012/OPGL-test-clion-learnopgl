@@ -69,6 +69,7 @@ public:
     float getFov() const;
 
     glm::vec3 getPosition() const;
+    glm::vec3 getFront() const;
 
 private:
     void updateCameraVectors();

@@ -5,6 +5,9 @@
 #ifndef OPGL_TEST_CLION_CONFIG_H
 #define OPGL_TEST_CLION_CONFIG_H
 
+#include <line.vert>
+#include <line.frag>
+
 // 1.3 shader
 #include <hello_shader.frag>
 #include <hello_shader.vert>

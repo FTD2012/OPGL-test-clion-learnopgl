@@ -221,6 +221,7 @@ int main() {
     // Shader
     Shader shaderProgram(light_caster_vertexShaderSource, light_caster_fragmentShaderSource);
     Shader lightShaderProgram(color_vertexShaderSource, material_light_fragmentShaderSource);
+    Shader lineShaderProgram(line_vertexShaderSource, line_fragmentShaderSource);
 
     // Image
     auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
@@ -341,6 +342,30 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    // line
+    float lineVertices[] = {
+            // position          // color
+            -1.0f,  0.0f,  0.0f, 1.0f, 0.0f, 0.0f,
+             1.0f,  0.0f,  0.0f, 1.0f, 0.0f, 0.0f,
+             0.0f,  1.0f,  0.0f, 0.0f, 1.0f, 0.0f,
+             0.0f, -1.0f,  0.0f, 0.0f, 1.0f, 0.0f,
+             0.0f,  0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
+             0.0f,  0.0f,  1.0f, 0.0f, 0.0f, 1.0f
+    };
+    unsigned int VAOLine, VBOLine;
+    glGenBuffers(1, &VBOLine);
+    glGenVertexArrays(1, &VAOLine);
+    glBindVertexArray(VAOLine);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOLine);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(lineVertices), lineVertices, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)nullptr);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+
     /**
      * 使用 线框模式(Wireframe Mode) 绘制
      * 配置OpenGl如何绘制图元
@@ -367,7 +392,9 @@ int main() {
     glm::mat4 view;                                         // 相对世界坐标系
     glm::mat4 projection;                                   // 相对于摄像机
     auto cameraPos     = camera.getPosition();              // 摄像机位置
-    auto lightPosition = glm::vec3(1.2f, 0.0f, 1.0f);
+    auto cameraFnt     = camera.getFront();                 // 摄像机的方向
+    auto lightPosition = glm::vec3(0.0f, 0.0f, 2.0f);
+    auto lightDir      = glm::vec3(0.0f, 0.0f, 0.0f) - lightPosition;
     auto radius        = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
 
     /**
@@ -390,6 +417,8 @@ int main() {
     auto Kc            = 1.0f;
     auto Kl            = 0.045f;
     auto Kq            = 0.0075f;
+    auto cutOff        = glm::cos(glm::radians(1.5f));
+    auto outerCutOff   = glm::cos(glm::radians(7.5f));
 
     shaderProgram.use();
     shaderProgram.setVec3("viewPos", cameraPos);
@@ -402,6 +431,8 @@ int main() {
     shaderProgram.setFloat("light.constant", Kc);
     shaderProgram.setFloat("light.linear", Kl);
     shaderProgram.setFloat("light.quadratic", Kq);
+    shaderProgram.setFloat("light.cutOff", cutOff);
+    shaderProgram.setFloat("light.outerCutOff", outerCutOff);
 
     lightShaderProgram.use();
     lightShaderProgram.setVec3("light.ambient", lAmbient);
@@ -442,14 +473,14 @@ int main() {
         // trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
         model = glm::mat4();
-        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
+//        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
 
         view = camera.getViewMatrix();
 
         projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
 
-        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
-
+//        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
+//        lightDir = glm::vec3(0.0f, 0.0f, 0.0f) - lightPosition;
         // lDiffuse = glm::vec3(sin(glfwGetTime()*2.0f), sin(glfwGetTime()*0.7f), sin(glfwGetTime()*1.3f)) * glm::vec3(0.5f);
         // lAmbient = lDiffuse * glm::vec3(0.2f);
 
@@ -464,20 +495,30 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glBindVertexArray(VAO);
+
+        // line
+        glBindVertexArray(VAOLine);
+        lineShaderProgram.use();
+        lineShaderProgram.setMat4("model", model);
+        lineShaderProgram.setMat4("view", view);
+        lineShaderProgram.setMat4("projection", projection);
+        glDrawArrays(GL_LINES, 0, 6);
 
         /// object
+        glBindVertexArray(VAO);
         shaderProgram.use();
         for (int i = 0; i < 10; i++) {
             cameraPos = camera.getPosition();
+            cameraFnt = camera.getFront();
             model = glm::mat4();
             model = glm::translate(model, cubePositions[i]);
             if (i%3 == 0 || i == 0) {
-                model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
+//                model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
 //                model = glm::rotate(model, glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
             }
 
             shaderProgram.setVec3("lightPos", lightPosition);
+            shaderProgram.setVec3("lightDir", lightDir);
             shaderProgram.setMat4("transform", trans);
             shaderProgram.setMat4("model", model);
             shaderProgram.setMat4("view", view);
@@ -489,10 +530,11 @@ int main() {
             glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
         }
 
+
         /// light
+        glBindVertexArray(VAO);
         lightShaderProgram.use();
         trans = glm::mat4();
-
         model = glm::mat4();
         model = glm::translate(model, lightPosition);
         model = glm::scale(model, glm::vec3(0.2f));
@@ -505,8 +547,8 @@ int main() {
         lightShaderProgram.setVec3("light.diffuse", lDiffuse);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
 
-
         /// top left container
+        glBindVertexArray(VAO);
         shaderProgram.use();
         trans = glm::mat4();
         trans = glm::translate(trans, glm::vec3(-1.0f, 1.0f, 0.0f));
@@ -520,6 +562,8 @@ int main() {
         shaderProgram.setMat4("view", view);
         shaderProgram.setMat4("projection", projection);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
+
+
 
         /*
          * 交换缓冲区

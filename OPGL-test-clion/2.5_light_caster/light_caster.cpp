@@ -18,6 +18,7 @@
 #include <Macro.h>
 #include <camera/Camera.h>
 #include <loader/Loader.h>
+#include <render/Line/Line.h>
 
 /**
  * @property {int} FPS 刷新帧数
@@ -222,6 +223,7 @@ int main() {
     Shader shaderProgram(light_caster_vertexShaderSource, light_caster_fragmentShaderSource);
     Shader lightShaderProgram(color_vertexShaderSource, material_light_fragmentShaderSource);
     Shader lineShaderProgram(line_vertexShaderSource, line_fragmentShaderSource);
+    Shader panelShaderProgram(panel_vertexShaderSource, panel_fragmentShaderSource);
 
     // Image
     auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
@@ -343,25 +345,76 @@ int main() {
     glBindVertexArray(0);
 
     // line
-    float lineVertices[] = {
-            // position          // color
-            -1.0f,  0.0f,  0.0f, 1.0f, 0.0f, 0.0f,
-             1.0f,  0.0f,  0.0f, 1.0f, 0.0f, 0.0f,
-             0.0f,  1.0f,  0.0f, 0.0f, 1.0f, 0.0f,
-             0.0f, -1.0f,  0.0f, 0.0f, 1.0f, 0.0f,
-             0.0f,  0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
-             0.0f,  0.0f,  1.0f, 0.0f, 0.0f, 1.0f
+    int worldWidth = 500;   // x
+    int worldHeight = 500;  // y
+    int worldDepth = 500;   // z
+    Line lineRender;
+    lineRender.drawLine({0.0f,  0.0f, 0.0f}, {static_cast<float>(worldWidth), 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f});
+    lineRender.drawLine({-1.0f * static_cast<float>(worldWidth),  0.0f, 0.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+
+    lineRender.drawLine({0.0f,  0.0f, 0.0f}, {0.0f, static_cast<float>(worldHeight), 0.0f}, {0.0f, 1.0f, 0.0f, 1.0f});
+    lineRender.drawLine({0.0f, -1.0f * static_cast<float>(worldHeight), 0.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+
+    lineRender.drawLine({0.0f,  0.0f, 0.0f}, {0.0f, 0.0f, static_cast<float>(worldDepth)}, {0.0f, 0.0f, 1.0f, 1.0f});
+    lineRender.drawLine({0.0f, 0.0f, -1.0f * static_cast<float>(worldDepth)}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+
+    // xz平面垂直于x轴的线
+    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
+        if (i != 0.0f) {
+            lineRender.drawLine({static_cast<float>(i), 0.0f, -1 * static_cast<float>(worldDepth)}, {static_cast<float>(i), 0.0f, static_cast<float>(worldDepth)}, {1.0f, 1.0f, 1.0f, 1.0f});
+        }
+    }
+    // xz平面垂直于z轴的线
+    for (int i = -1 * worldDepth; i <= worldDepth; i++) {
+        if (i != 0.0f) {
+            lineRender.drawLine({-1 * static_cast<float>(worldWidth), 0.0f, static_cast<float>(i)}, {static_cast<float>(worldWidth), 0.0f, static_cast<float>(i)}, {1.0f, 1.0f, 1.0f, 1.0f});
+        }
+    }
+//    // xy平面垂直于x轴的线
+//    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
+//        if (i != 0.0f) {
+//            lineRender.drawLine({static_cast<float>(i), -1 * static_cast<float>(worldHeight), 0.0f}, {static_cast<float>(i), static_cast<float>(worldHeight), 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+//    // xy平面垂直于y轴的线
+//    for (int i = -1 * worldHeight; i <= worldHeight; i++) {
+//        if (i != 0.0f) {
+//            lineRender.drawLine({-1 * static_cast<float>(worldWidth), static_cast<float>(i), 0.0f}, {static_cast<float>(worldWidth), static_cast<float>(i), 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+//    // yz平面垂直于y轴的线
+//    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
+//        if (i != 0.0f) {
+//            lineRender.drawLine({0.0f, static_cast<float>(i), -1 * static_cast<float>(worldDepth)}, {0.0f, static_cast<float>(i), static_cast<float>(worldDepth)}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+//    // yz平面垂直于z轴的线
+//    for (int i = -1 * worldDepth; i <= worldDepth; i++) {
+//        if (i != 0.0f) {
+//            lineRender.drawLine({0.0f, -1 * static_cast<float>(worldWidth), static_cast<float>(i)}, {0.0f, static_cast<float>(worldWidth), static_cast<float>(i)}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+
+
+    // horizontal panel
+    float panelSize = 50.0f;
+    float panelVertices[] = {
+        -1.0f * panelSize, 0.0f,  1.0f * panelSize,  // top left
+         1.0f * panelSize, 0.0f,  1.0f * panelSize,  // top right
+        -1.0f * panelSize, 0.0f, -1.0f * panelSize,  // bottom left
+
+         1.0f * panelSize, 0.0f,  1.0f * panelSize,  // top right
+        -1.0f * panelSize, 0.0f, -1.0f * panelSize,  // bottom left
+         1.0f * panelSize, 0.0f, -1.0f * panelSize,  // bottom right
     };
-    unsigned int VAOLine, VBOLine;
-    glGenBuffers(1, &VBOLine);
-    glGenVertexArrays(1, &VAOLine);
-    glBindVertexArray(VAOLine);
-    glBindBuffer(GL_ARRAY_BUFFER, VBOLine);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(lineVertices), lineVertices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)nullptr);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3 * sizeof(float)));
+    unsigned int VAOPanel, VBOPanel;
+    glGenBuffers(1, &VBOPanel);
+    glGenVertexArrays(1, &VAOPanel);
+    glBindVertexArray(VAOPanel);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOPanel);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(panelVertices), panelVertices, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*) nullptr);
     glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
@@ -469,20 +522,11 @@ int main() {
 #endif
 
         trans = glm::mat4();
-        // trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-        // trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-
         model = glm::mat4();
-//        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(1.0f, 1.0f, 0.0f));
-
         view = camera.getViewMatrix();
-
         projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
-
-//        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
-//        lightDir = glm::vec3(0.0f, 0.0f, 0.0f) - lightPosition;
-        // lDiffuse = glm::vec3(sin(glfwGetTime()*2.0f), sin(glfwGetTime()*0.7f), sin(glfwGetTime()*1.3f)) * glm::vec3(0.5f);
-        // lAmbient = lDiffuse * glm::vec3(0.2f);
+        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
+        lightDir = glm::vec3(0.0f, 0.0f, 0.0f) - lightPosition;
 
         /*
          * 处理用户输入
@@ -492,17 +536,20 @@ int main() {
         /*
          * 渲染
          */
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+//        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // panel
+        glBindVertexArray(VAOPanel);
+        panelShaderProgram.use();
+        panelShaderProgram.setMat4("model", model);
+        panelShaderProgram.setMat4("view", view);
+        panelShaderProgram.setMat4("projection", projection);
+//        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         // line
-        glBindVertexArray(VAOLine);
-        lineShaderProgram.use();
-        lineShaderProgram.setMat4("model", model);
-        lineShaderProgram.setMat4("view", view);
-        lineShaderProgram.setMat4("projection", projection);
-        glDrawArrays(GL_LINES, 0, 6);
+        lineRender.onDrawLine(model, view, projection);
 
         /// object
         glBindVertexArray(VAO);

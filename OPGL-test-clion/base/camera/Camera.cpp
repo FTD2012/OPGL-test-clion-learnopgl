@@ -5,7 +5,7 @@
 #include <camera/Camera.h>
 #include <Macro.h>
 
-const glm::vec3 Camera::POSITION = glm::vec3(0.0f, 0.0f, 13.0f);
+const glm::vec3 Camera::POSITION = glm::vec3(0.0f, 2.0f, 13.0f);
 const glm::vec3 Camera::FRONT = glm::vec3(0.0f, 0.0f, -1.0f);
 const glm::vec3 Camera::UP = glm::vec3(0.0f, 1.0f, 0.0f);
 const float Camera::PITCH = 0.0f;
@@ -16,7 +16,16 @@ const float Camera::SENSITIVITY = 0.1f;
 const float Camera::FOV = 45.0f;
 
 Camera::Camera(const glm::vec3 &cameraPos, const glm::vec3 &cameraUp, const float pitch, const float yaw, const float roll, const float speed, const float sensitivity, const float fov)
-       :position(cameraPos), front(Camera::FRONT), up(cameraUp), pitch(pitch), yaw(yaw), roll(roll), speed(speed), sensitivity(sensitivity), fov(fov) {
+: position(cameraPos)
+, front(Camera::FRONT)
+, up(cameraUp)
+, pitch(pitch)
+, yaw(yaw)
+, roll(roll)
+, speed(speed)
+, sensitivity(sensitivity)
+, fov(fov)
+{
     updateCameraVectors();
 }
 
@@ -56,8 +65,6 @@ void Camera::onMove(const Camera::Direction &direction, const float &deltaTime) 
             // TODO: ljm >>> error log
             break;
     }
-
-    position.y = 0.0f;
 }
 
 void Camera::onMouseMove(float xOffset, float yOffset, bool constrainPitch) {

@@ -8,6 +8,9 @@
 #include <line.vert>
 #include <line.frag>
 
+#include <horizontalPanel.vert>
+#include <horizontalPanel.frag>
+
 // 1.3 shader
 #include <hello_shader.frag>
 #include <hello_shader.vert>

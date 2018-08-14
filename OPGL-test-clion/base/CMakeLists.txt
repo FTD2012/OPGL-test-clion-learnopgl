@@ -8,10 +8,23 @@ SET(OPGL_test_clion_SRCS
         external/glad.c
         external/stb_image.h
         external/glm
+
+        camera
         camera/Camera.h
         camera/camera.cpp
+
+        loader
         loader/Loader.h
         loader/Loader.cpp
+
+        render
+        render/Line
+        render/Line/Line.h
+        render/Line/Line.cpp
+
+        render/types
+        render/types/types.h
+
         Config.h
         Shader.h
         Shader.cpp

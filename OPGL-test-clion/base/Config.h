@@ -5,50 +5,29 @@
 #ifndef OPGL_TEST_CLION_CONFIG_H
 #define OPGL_TEST_CLION_CONFIG_H
 
-#include <line.vert>
-#include <line.frag>
-
-#include <horizontalPanel.vert>
-#include <horizontalPanel.frag>
-
-// 1.3 shader
-#include <hello_shader.frag>
-#include <hello_shader.vert>
-
-// 1.4 texture
-#include <texture.vert>
-#include <texture.frag>
-
-// 1.5 glm
-#include <glm.frag>
-#include <glm.vert>
-
-// 1.6 coordinate system
-#include <coordinate_system.frag>
-#include <coordinate_system.vert>
-
-// 1.7 camera
-#include <camera.frag>
-#include <camera.vert>
-
-// 2.1 color
-#include <color.frag>
-#include <color.vert>
-#include <color_light.frag>
-
-// 2.2 basic_lighting
-#include <basic_lighting.vert>
-#include <basic_lighting.frag>
-
-// 2.3 material
-#include <material_light.frag>
-
-// 2.4 material map
-#include <material_map.vert>
-#include <material_map.frag>
-
-// 2.5 light caster
-#include <light_caster.vert>
-#include <light_caster.frag>
+extern const char *line_vertexShaderSource;
+extern const char *line_fragmentShaderSource;
+extern const char *hello_triangle_fragmentShaderSource;
+extern const char *hello_triangle_vertexShaderSource;
+extern const char *texture_vertexShaderSource;
+extern const char *texture_fragmentShaderSource;
+extern const char *glm_fragmentShaderSource;
+extern const char *glm_vertexShaderSource;
+extern const char *coordinate_system_fragmentShaderSource;
+extern const char *coordinate_system_vertexShaderSource;
+extern const char *camera_fragmentShaderSource;
+extern const char *camera_vertexShaderSource;
+extern const char *color_fragmentShaderSource;
+extern const char *color_vertexShaderSource;
+extern const char *color_light_fragmentShaderSource;
+extern const char *basic_lighting_vertexShaderSource;
+extern const char *basic_lighting_fragmentShaderSource;
+extern const char *material_light_fragmentShaderSource;
+extern const char *material_map_vertexShaderSource;
+extern const char *material_map_fragmentShaderSource;
+extern const char *light_caster_vertexShaderSource;
+extern const char *light_caster_fragmentShaderSource;
+extern const char *cube_vertexShaderSource;
+extern const char *cube_fragmentShaderSource;
 
 #endif //OPGL_TEST_CLION_CONFIG_H

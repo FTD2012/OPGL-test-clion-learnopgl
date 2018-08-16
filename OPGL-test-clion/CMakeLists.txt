@@ -94,6 +94,10 @@ if (2.5_light_caster)
     add_subdirectory(2.5_light_caster)
 endif(2.5_light_caster)
 
+if (2.6_multiple_lights)
+    add_subdirectory(2.6_multiple_lights)
+endif(2.6_multiple_lights)
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -108,6 +112,7 @@ ADD_SUBDIRECTORY(2.1_color)
 ADD_SUBDIRECTORY(2.2_basic_lighting)
 ADD_SUBDIRECTORY(2.4_material_map)
 ADD_SUBDIRECTORY(2.5_light_caster)
+ADD_SUBDIRECTORY(2.6_multiple_lights)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

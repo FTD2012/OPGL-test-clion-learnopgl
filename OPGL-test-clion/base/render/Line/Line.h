@@ -5,8 +5,6 @@
 #ifndef OPGL_TEST_CLION_LINE_H
 #define OPGL_TEST_CLION_LINE_H
 
-#endif //OPGL_TEST_CLION_LINE_H
-
 #include <cstddef>
 
 #include <render/types/types.h>
@@ -60,3 +58,5 @@ private:
     static const unsigned int LINE_WIDTH;
 
 };
+
+#endif //OPGL_TEST_CLION_LINE_H

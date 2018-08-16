@@ -1,9 +1,6 @@
 //
 // Created by lvjiaming on 2018/8/8.
 //
-
-#include <exception>
-
 #include <external/stb_image.h>
 #include <external/glad.h>
 
@@ -21,14 +18,24 @@ Loader *Loader::getInstance() {
     return s_ShaderLoader;
 }
 
-unsigned int Loader::loadTexture(char const *path) {
+
+unsigned int Loader::loadTexture(const std::string &path) {
+    auto it = _textures.find(path);
+    if (it != _textures.end()) {
+        return it->second;
+    } else {
+        return _loadTexture(path);
+    }
+}
+
+unsigned int Loader::_loadTexture(const std::string &path) {
     // Image
     /* 使用'stb_image.h'的API把一张图片加载到内存中 */
     GLenum format = GL_RGBA;
     unsigned int texture;
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load(path, &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
     if (data) {
         if (nrChannels == 1)
             format = GL_RED;
@@ -64,6 +71,8 @@ unsigned int Loader::loadTexture(char const *path) {
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         /* 生成多级渐远纹理(Mipmap) */
         glGenerateMipmap(GL_TEXTURE_2D);
+
+        _textures.insert(std::make_pair(path, texture));
     } else {
         std::cerr << "Failed to load texture" << std::endl;
         return EXIT_FAILURE;

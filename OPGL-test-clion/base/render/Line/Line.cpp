@@ -6,7 +6,7 @@
 
 #include <external/glad.h>
 #include <Macro.h>
-#include <render/Line/Line.h>
+#include <render/line/Line.h>
 #include <Config.h>
 
 const unsigned int Line::LINE_WIDTH = 2;

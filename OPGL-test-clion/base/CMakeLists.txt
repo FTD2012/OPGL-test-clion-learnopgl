@@ -13,19 +13,33 @@ SET(OPGL_test_clion_SRCS
         camera/Camera.h
         camera/camera.cpp
 
+        light
+        light/directionLight
+        light/directionLight/DirectionLight.h
+        light/directionLight/DirectionLight.cpp
+
+        light/pointLight
+        light/pointLight/PointLight.h
+        light/pointLight/PointLight.cpp
+
         loader
         loader/Loader.h
         loader/Loader.cpp
 
         render
-        render/Line
-        render/Line/Line.h
-        render/Line/Line.cpp
+        render/cube
+        render/cube/Cube.h
+        render/cube/Cube.cpp
+
+        render/line
+        render/line/Line.h
+        render/line/Line.cpp
 
         render/types
         render/types/types.h
 
         Config.h
+        Config.cpp
         Shader.h
         Shader.cpp
         Macro.h

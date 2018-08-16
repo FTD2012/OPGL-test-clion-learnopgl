@@ -15,10 +15,14 @@
 
 #include <Shader.h>
 #include <Config.h>
+#include <Config.h>
 #include <Macro.h>
 #include <camera/Camera.h>
 #include <loader/Loader.h>
-#include <render/Line/Line.h>
+#include <render/line/Line.h>
+#include <render/cube/Cube.h>
+#include <light/directionLight/DirectionLight.h>
+#include <light/pointLight/PointLight.h>
 
 /**
  * @property {int} FPS 刷新帧数
@@ -219,17 +223,19 @@ int main() {
         return -1;
     }
 
-    // Shader
-    Shader shaderProgram(light_caster_vertexShaderSource, light_caster_fragmentShaderSource);
-    Shader lightShaderProgram(color_vertexShaderSource, material_light_fragmentShaderSource);
-    Shader lineShaderProgram(line_vertexShaderSource, line_fragmentShaderSource);
-
-    // Image
-    auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
-    auto texture2 = Loader::getInstance()->loadTexture("../../texture/container2_specular.png");
-
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {
+//            glm::vec3( 0.0f,  0.0f,  0.0f),
+//            glm::vec3( 2.0f,  0.0f,  0.0f),
+//            glm::vec3(-2.0f,  0.0f,  0.0f),
+//            glm::vec3( 0.0f,  2.0f,  0.0f),
+//            glm::vec3( 2.0f,  2.0f,  0.0f),
+//            glm::vec3(-2.0f,  2.0f,  0.0f),
+//            glm::vec3( 1.3f, -2.0f, -2.5f),
+//            glm::vec3( 1.5f,  2.0f, -2.5f),
+//            glm::vec3( 1.5f,  0.2f, -1.5f),
+//            glm::vec3(-1.3f,  1.0f, -1.5f)
+
             glm::vec3( 0.0f,  0.0f,  0.0f),
             glm::vec3( 2.0f,  5.0f, -15.0f),
             glm::vec3(-1.5f, -2.2f, -2.5f),
@@ -242,106 +248,55 @@ int main() {
             glm::vec3(-1.3f,  1.0f, -1.5f)
     };
 
-    /*
-    * 顶点坐标
-    */
-    float vertices[] = {
-            // 顶点位置            // 法线向量           // 纹理坐标
-            // positions          // normals           // texture coords
-            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
-             0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
+    // direction light
+    DirectionLight directionLight;
 
-            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
+    // point light
+    PointLight pointLight({1.2f, 0.0f, 2.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
 
-            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
 
-             0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+    // cube
+    Cube lightCube, cubeRender[10];
+//    for (size_t i = 0 ; i < 10; i++) {
+////        cubeRender[i].setMaterial("../../texture/container2.png", "../../texture/container2_specular.png", 32.0f);
+////        cubeRender[i].addDirectionLight(directionLight);
+////        cubeRender[i].addPointLight(pointLight);
+////        cubeRender[i].setPosition(cubePositions[i]);
+//        cubeRender[i].setMaterial(glm::vec3(0.0f, 0.1f, 0.06f), glm::vec3(0.0f, 0.50980392f, 0.50980392f), glm::vec3(0.50196078f, 0.50196078f, 0.50196078f), 128.0f);
+//        cubeRender[i].addDirectionLight(directionLight);
+//        cubeRender[i].addPointLight(pointLight);
+//        cubeRender[i].setPosition(cubePositions[i]);
+//    }
 
-            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
+    cubeRender[0].setMaterial("../../texture/container2.png", "../../texture/container2_specular.png", 32.0f);
+    cubeRender[0].addDirectionLight(directionLight);
+    cubeRender[0].addPointLight(pointLight);
+    cubeRender[0].setPosition(cubePositions[0]);
 
-            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
-    };
+    cubeRender[1].setMaterial(glm::vec3(1.0f, 0.5f, 0.31f), glm::vec3(1.0f, 0.5f, 0.31f), glm::vec3(1.0f, 1.0f, 1.0f), 32.0f);
+    cubeRender[1].addDirectionLight(directionLight);
+    cubeRender[1].addPointLight(pointLight);
+    cubeRender[1].setPosition(cubePositions[1]);
 
-    unsigned int indices[] = {
-            0, 1, 2,
-            3, 4, 5,
-            6, 7, 8,
-            9, 10, 11,
-            12, 13, 14,
-            15, 16, 17,
-            18, 19, 20,
-            21, 22, 23,
-            24, 25, 26,
-            27, 28, 29,
-            30, 31, 32,
-            33, 34, 35
-    };
+    cubeRender[2].setMaterial(glm::vec3(0.0f, 0.1f, 0.06f), glm::vec3(0.0f, 0.50980392f, 0.50980392f), glm::vec3(0.50196078f, 0.50196078f, 0.50196078f), 32.f);
+    cubeRender[2].addDirectionLight(directionLight);
+    cubeRender[2].addPointLight(pointLight);
+    cubeRender[2].setPosition(cubePositions[2]);
 
-    /* 使用一个独一无二的ID, 生成一个VBO对象 */
-    unsigned int VBO;
-    glGenBuffers(1, &VBO);
+    cubeRender[3].setMaterial("../../texture/container2.png", "../../texture/container2_specular.png", 32.0f);
+    cubeRender[3].addDirectionLight(directionLight);
+    cubeRender[3].addPointLight(pointLight);
+    cubeRender[3].setPosition(cubePositions[3]);
 
-    /* 创建一个第一无二的ID， 生成一个VBO对象 */
-    /* OpenGL的核心模式要求我们使用VAO，所以它知道该如何处理我们的定点输入 */
-    /** 一个顶点数组会存储：**/
-    /** glEnableVertexAttribArray和glDisableVertexAttribArray的调用 **/
-    /** 通过glVertexAttribPointer设置的顶点属性配置 **/
-    /** 通过glVertexAttribPointer调用与顶点属性关联的顶点缓冲对象 **/
-    unsigned int VAO;
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
+    cubeRender[4].setMaterial(glm::vec3(1.0f, 0.5f, 0.31f), glm::vec3(1.0f, 0.5f, 0.31f), glm::vec3(0.5f, 0.5f, 0.5f), 32.f);
+    cubeRender[4].addDirectionLight(directionLight);
+    cubeRender[4].addPointLight(pointLight);
+    cubeRender[4].setPosition(cubePositions[4]);
 
-    unsigned int EBO;
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    /* 将VBO绑定为顶点缓冲对象 */
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    /* 将顶点数据复制到顶点缓冲内存中*/
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    /* 设置顶点属性指针 */
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)nullptr);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)(3 * sizeof(float)));
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)(6 * sizeof(float)));
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
-    glEnableVertexAttribArray(2);
-
-    /* 解绑VAO和VBO */
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
+    cubeRender[5].setMaterial(glm::vec3(0.0f, 0.1f, 0.06f), glm::vec3(0.0f, 0.50980392f, 0.50980392f), glm::vec3(0.50196078f, 0.50196078f, 0.50196078f), 32.f);
+    cubeRender[5].addDirectionLight(directionLight);
+    cubeRender[5].addPointLight(pointLight);
+    cubeRender[5].setPosition(cubePositions[5]);
 
     // line
     int worldWidth = 500;   // x
@@ -357,7 +312,7 @@ int main() {
     lineRender.drawLine({0.0f,  0.0f, 0.0f}, {0.0f, 0.0f, static_cast<float>(worldDepth)}, {0.0f, 0.0f, 1.0f, 1.0f});
     lineRender.drawLine({0.0f, 0.0f, -1.0f * static_cast<float>(worldDepth)}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
 
-    // xz平面垂直于x轴的线
+//    // xz平面垂直于x轴的线
     for (int i = -1 * worldWidth; i <= worldWidth; i++) {
         if (i != 0.0f) {
             lineRender.drawLine({static_cast<float>(i), 0.0f, -1 * static_cast<float>(worldDepth)}, {static_cast<float>(i), 0.0f, static_cast<float>(worldDepth)}, {1.0f, 1.0f, 1.0f, 1.0f});
@@ -394,30 +349,6 @@ int main() {
 //        }
 //    }
 
-
-    // horizontal panel
-    float panelSize = 50.0f;
-    float panelVertices[] = {
-        -1.0f * panelSize, 0.0f,  1.0f * panelSize,  // top left
-         1.0f * panelSize, 0.0f,  1.0f * panelSize,  // top right
-        -1.0f * panelSize, 0.0f, -1.0f * panelSize,  // bottom left
-
-         1.0f * panelSize, 0.0f,  1.0f * panelSize,  // top right
-        -1.0f * panelSize, 0.0f, -1.0f * panelSize,  // bottom left
-         1.0f * panelSize, 0.0f, -1.0f * panelSize,  // bottom right
-    };
-    unsigned int VAOPanel, VBOPanel;
-    glGenBuffers(1, &VBOPanel);
-    glGenVertexArrays(1, &VAOPanel);
-    glBindVertexArray(VAOPanel);
-    glBindBuffer(GL_ARRAY_BUFFER, VBOPanel);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(panelVertices), panelVertices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*) nullptr);
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
-
     /**
      * 使用 线框模式(Wireframe Mode) 绘制
      * 配置OpenGl如何绘制图元
@@ -439,15 +370,14 @@ int main() {
      * MainLoop
      */
 
-    glm::mat4 trans;
     glm::mat4 model;                                        // 相对自身坐标系
     glm::mat4 view;                                         // 相对世界坐标系
     glm::mat4 projection;                                   // 相对于摄像机
     auto cameraPos     = camera.getPosition();              // 摄像机位置
     auto cameraFnt     = camera.getFront();                 // 摄像机的方向
-    auto lightPosition = glm::vec3(0.0f, 0.0f, 2.0f);
+    auto lightPosition = glm::vec3(0.0f);
     auto lightDir      = glm::vec3(0.0f, 0.0f, 0.0f) - lightPosition;
-    auto radius        = (float)glm::sqrt(pow(lightPosition.x, 2) + pow(lightPosition.z, 2));
+    auto radius        = (float)glm::sqrt(pow(pointLight.getPosition().x, 2) + pow(pointLight.getPosition().z, 2));
 
     /**
      * material
@@ -463,33 +393,33 @@ int main() {
      * Fatt = --------------------
      *         Kc + Kl*d + Kq*d^2
      */
-    auto lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
-    auto lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
-    auto lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
-    auto Kc            = 1.0f;
-    auto Kl            = 0.045f;
-    auto Kq            = 0.0075f;
-    auto cutOff        = glm::cos(glm::radians(1.5f));
-    auto outerCutOff   = glm::cos(glm::radians(7.5f));
+//    auto lAmbient      = glm::vec3(0.2f, 0.2f, 0.2f);
+//    auto lDiffuse      = glm::vec3(0.5f, 0.5f, 0.5f);
+//    auto lSpecular     = glm::vec3(1.0f, 1.0f, 1.0f);
+//    auto Kc            = 1.0f;
+//    auto Kl            = 0.045f;
+//    auto Kq            = 0.0075f;
+//    auto cutOff        = glm::cos(glm::radians(1.5f));
+//    auto outerCutOff   = glm::cos(glm::radians(7.5f));
 
-    shaderProgram.use();
-    shaderProgram.setVec3("viewPos", cameraPos);
-    shaderProgram.setInt("material.diffuse", 0);
-    shaderProgram.setInt("material.specular", 1);
-    shaderProgram.setFloat("material.shininess", mShininess);
-    shaderProgram.setVec3("light.ambient", lAmbient);
-    shaderProgram.setVec3("light.diffuse", lDiffuse);
-    shaderProgram.setVec3("light.specular", lSpecular);
-    shaderProgram.setFloat("light.constant", Kc);
-    shaderProgram.setFloat("light.linear", Kl);
-    shaderProgram.setFloat("light.quadratic", Kq);
-    shaderProgram.setFloat("light.cutOff", cutOff);
-    shaderProgram.setFloat("light.outerCutOff", outerCutOff);
+//    shaderProgram.use();
+//    shaderProgram.setVec3("viewPos", cameraPos);
+//    shaderProgram.setInt("material.diffuse", 0);
+//    shaderProgram.setInt("material.specular", 1);
+//    shaderProgram.setFloat("material.shininess", mShininess);
+//    shaderProgram.setVec3("light.ambient", lAmbient);
+//    shaderProgram.setVec3("light.diffuse", lDiffuse);
+//    shaderProgram.setVec3("light.specular", lSpecular);
+//    shaderProgram.setFloat("light.constant", Kc);
+//    shaderProgram.setFloat("light.linear", Kl);
+//    shaderProgram.setFloat("light.quadratic", Kq);
+//    shaderProgram.setFloat("light.cutOff", cutOff);
+//    shaderProgram.setFloat("light.outerCutOff", outerCutOff);
 
-    lightShaderProgram.use();
-    lightShaderProgram.setVec3("light.ambient", lAmbient);
-    lightShaderProgram.setVec3("light.diffuse", lDiffuse);
-    lightShaderProgram.setVec3("light.specular", lSpecular);
+//    lightShaderProgram.use();
+//    lightShaderProgram.setVec3("light.ambient", lAmbient);
+//    lightShaderProgram.setVec3("light.diffuse", lDiffuse);
+//    lightShaderProgram.setVec3("light.specular", lSpecular);
 
     /*
      * - glfwWindowShouldClose 函数在每帧开始时会检测GLFW是否要退出
@@ -497,10 +427,10 @@ int main() {
      * - glfwSwapBuffers 函数会交换颜色缓冲区
      */
     while(!glfwWindowShouldClose(window)) {
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
+//        glActiveTexture(GL_TEXTURE0);
+//        glBindTexture(GL_TEXTURE_2D, texture1);
+//        glActiveTexture(GL_TEXTURE1);
+//        glBindTexture(GL_TEXTURE_2D, texture2);
         /**
          * frame time
          */
@@ -513,18 +443,17 @@ int main() {
         lastFrame = currentTime;
 
         // TODO: ljm >>> add log
-#ifdef DEBUG
+#ifdef SHOW_FPS
         std::cout << "currentTime: " << currentTime << std::endl;
         std::cout << "deltaTime: " << deltaTime << std::endl;
         std::cout << "lastFrame: " << lastFrame << std::endl;
         std::cout << "FPS: " << (int)(1 / deltaTime) << std::endl;
 #endif
 
-        trans = glm::mat4();
         model = glm::mat4();
         view = camera.getViewMatrix();
         projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
-        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, lightPosition.y, glm::sin(glfwGetTime()) * radius);
+        lightPosition = glm::vec3(glm::cos(glfwGetTime()) * radius, pointLight.getPosition().y, glm::sin(glfwGetTime()) * radius);
         lightDir = glm::vec3(0.0f, 0.0f, 0.0f) - lightPosition;
 
         /*
@@ -535,73 +464,41 @@ int main() {
         /*
          * 渲染
          */
-//        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
+        pointLight.setPosition(lightPosition);
 
         // line
         lineRender.onDrawLine(model, view, projection);
 
+        cameraPos = camera.getPosition();
         /// object
-        glBindVertexArray(VAO);
-        shaderProgram.use();
         for (int i = 0; i < 10; i++) {
-            cameraPos = camera.getPosition();
             cameraFnt = camera.getFront();
             model = glm::mat4();
             model = glm::translate(model, cubePositions[i]);
             if (i%3 == 0 || i == 0) {
-//                model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
-//                model = glm::rotate(model, glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
+                // model = glm::rotate(model, (float) glfwGetTime() * glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
+                // model = glm::rotate(model, glm::radians(20.0f * (i + 1)), glm::vec3(1.0f, 1.0f, 1.0f));
             }
 
-            shaderProgram.setVec3("lightPos", lightPosition);
-            shaderProgram.setVec3("lightDir", lightDir);
-            shaderProgram.setMat4("transform", trans);
-            shaderProgram.setMat4("model", model);
-            shaderProgram.setMat4("view", view);
-            shaderProgram.setMat4("projection", projection);
-            shaderProgram.setVec3("viewPos", cameraPos);
-            shaderProgram.setVec3("light.ambient", lAmbient);
-            shaderProgram.setVec3("light.diffuse", lDiffuse);
+//            shaderProgram.setVec3("lightPos", lightPosition);
+//            shaderProgram.setVec3("lightDir", lightDir);
+//            shaderProgram.setMat4("model", model);
+//            shaderProgram.setMat4("view", view);
+//            shaderProgram.setMat4("projection", projection);
+//            shaderProgram.setVec3("viewPos", cameraPos);
+//            shaderProgram.setVec3("light.ambient", lAmbient);
+//            shaderProgram.setVec3("light.diffuse", lDiffuse);
+//            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
 
-            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
+            cubeRender[i].onDraw(cameraPos, view, projection);
         }
 
-
-        /// light
-        glBindVertexArray(VAO);
-        lightShaderProgram.use();
-        trans = glm::mat4();
-        model = glm::mat4();
-        model = glm::translate(model, lightPosition);
-        model = glm::scale(model, glm::vec3(0.2f));
-
-        lightShaderProgram.setMat4("transform", trans);
-        lightShaderProgram.setMat4("model", model);
-        lightShaderProgram.setMat4("view", view);
-        lightShaderProgram.setMat4("projection", projection);
-        lightShaderProgram.setVec3("light.ambient", lAmbient);
-        lightShaderProgram.setVec3("light.diffuse", lDiffuse);
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
-
-        /// top left container
-        glBindVertexArray(VAO);
-        shaderProgram.use();
-        trans = glm::mat4();
-        trans = glm::translate(trans, glm::vec3(-1.0f, 1.0f, 0.0f));
-        trans = glm::scale(trans, glm::vec3(0.3f, 0.3f, 0.1f));
-        model = glm::mat4();
-        view  = glm::mat4();
-        projection = glm::mat4();
-
-        shaderProgram.setMat4("transform", trans);
-        shaderProgram.setMat4("model", model);
-        shaderProgram.setMat4("view", view);
-        shaderProgram.setMat4("projection", projection);
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
-
-
+        // draw light
+        pointLight.onDraw(cameraPos, view, projection);
 
         /*
          * 交换缓冲区

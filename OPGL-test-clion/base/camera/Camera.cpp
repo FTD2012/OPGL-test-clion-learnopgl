@@ -11,7 +11,7 @@ const glm::vec3 Camera::UP = glm::vec3(0.0f, 1.0f, 0.0f);
 const float Camera::PITCH = 0.0f;
 const float Camera::YAW = -90.0f;
 const float Camera::ROLL = 0.0f;
-const float Camera::SPEED = 2.5f;
+const float Camera::SPEED = 20.0f;
 const float Camera::SENSITIVITY = 0.1f;
 const float Camera::FOV = 45.0f;
 

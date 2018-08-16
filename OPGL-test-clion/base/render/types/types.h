@@ -5,7 +5,10 @@
 #ifndef OPGL_TEST_CLION_TYPES_H
 #define OPGL_TEST_CLION_TYPES_H
 
-#endif //OPGL_TEST_CLION_TYPES_H
+struct Vec2F {
+    float u;
+    float v;
+};
 
 struct Vec3F {
     float x;
@@ -30,3 +33,12 @@ struct V3F_C4F_T2F {
     Color4F colors;
     Tex2F   texCoords;
 };
+
+struct V3F_N3F_T2F_C4F {
+    Vec3F   vertices;
+    Vec3F   normals;
+    Tex2F   texCoords;
+    Color4F colors;
+};
+
+#endif //OPGL_TEST_CLION_TYPES_H

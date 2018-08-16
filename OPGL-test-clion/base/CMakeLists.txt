@@ -22,6 +22,10 @@ SET(OPGL_test_clion_SRCS
         light/pointLight/PointLight.h
         light/pointLight/PointLight.cpp
 
+        light/spotLight
+        light/spotLight/SpotLight.h
+        light/spotLight/SpotLight.cpp
+
         loader
         loader/Loader.h
         loader/Loader.cpp

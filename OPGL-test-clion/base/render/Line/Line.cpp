@@ -78,7 +78,7 @@ void Line::ensureCapacity(size_t count) {
         _bufferGLLine = (V3F_C4F_T2F*)realloc(_bufferGLLine, _bufferCapacityGLLine * sizeof(V3F_C4F_T2F));
     }
 }
-void Line::onDrawLine(const glm::mat4 &model, const glm::mat4 &view, const glm::mat4 &projection) {
+void Line::onDrawLine(const glm::mat4 &view, const glm::mat4 &projection) {
 
     if (_dirty) {
         glBindBuffer(GL_ARRAY_BUFFER, _vbo);
@@ -88,7 +88,7 @@ void Line::onDrawLine(const glm::mat4 &model, const glm::mat4 &view, const glm::
 
     glBindVertexArray(_vao);
     _glProgram->use();
-    _glProgram->setMat4("model", model);
+    _glProgram->setMat4("model", glm::mat4(1.0f));
     _glProgram->setMat4("view", view);
     _glProgram->setMat4("projection", projection);
     glDrawArrays(GL_LINES, 0, _bufferCountGLLine);

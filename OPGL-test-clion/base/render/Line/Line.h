@@ -20,7 +20,7 @@ public:
 
     void init();
 
-    void onDrawLine(const glm::mat4 &model, const glm::mat4 &view, const glm::mat4 &projection);
+    void onDrawLine(const glm::mat4 &view, const glm::mat4 &projection);
 
 private:
 
@@ -53,7 +53,7 @@ private:
     unsigned int  _vbo;
 
 
-private:
+protected:
 
     static const unsigned int LINE_WIDTH;
 

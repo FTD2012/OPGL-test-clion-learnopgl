@@ -2,7 +2,8 @@
 // Created by lvjiaming on 2018/8/16.
 //
 
-#include "PointLight.h"
+#include <light/pointLight/PointLight.h>
+#include <render/cube/Cube.h>
 
 const glm::vec3 PointLight::POSITION = glm::vec3(10.0f, 10.0f, -10.0f);
 const glm::vec3 PointLight::AMBIENT = glm::vec3(0.05f, 0.05f, 0.05f);

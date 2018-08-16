@@ -5,7 +5,7 @@
 #include "DirectionLight.h"
 
 const glm::vec3 DirectionLight::DIRECTION = glm::vec3(-0.2f, -1.0f, -0.3f);
-const glm::vec3 DirectionLight::AMBIENT   = glm::vec3(0.45f,  0.45f, 0.45f);
+const glm::vec3 DirectionLight::AMBIENT   = glm::vec3(0.25f,  0.25f, 0.25f);
 const glm::vec3 DirectionLight::DIFFUSE   = glm::vec3(0.5f,   0.5f,  0.5f);
 const glm::vec3 DirectionLight::SPECULAR  = glm::vec3(0.5f,   0.5f,  0.5f);
 

@@ -8,7 +8,7 @@
 #include <external/glm/vec3.hpp>
 #include <external/glm/detail/type_mat.hpp>
 #include <external/glad.h>
-#include <render/cube/Cube.h>
+
 class Cube;
 class PointLight {
 
@@ -36,7 +36,7 @@ public:
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
 
 
-private:
+protected:
     /**
      * 点光源光照强度衰减(Attenuation)公式
      *               1.0
@@ -53,10 +53,10 @@ private:
     float     _linear;
     float     _quadratic;
 
-    // show
+    // draw
     Cube      *_cube;
 
-private:
+protected:
 
     static const glm::vec3 POSITION;
     static const glm::vec3 AMBIENT;
@@ -65,8 +65,6 @@ private:
     static const float     CONSTANT;
     static const float     LINEAR;
     static const float     QUADRATIC;
-
-
 
 };
 

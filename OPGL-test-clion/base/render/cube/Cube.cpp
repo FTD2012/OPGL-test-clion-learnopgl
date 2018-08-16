@@ -11,6 +11,7 @@ Cube::Cube(const glm::vec3 &position)
 , _specularTextureId(0)
 , _materialType(Cube::MaterialType::COLOR)
 , _capacityPointLight(0)
+, _spotLight(nullptr)
 {
     init();
     setPosition(position);
@@ -98,38 +99,16 @@ void Cube::addDirectionLight(const DirectionLight &directionLight) {
 void Cube::addPointLight(const PointLight &pointLight) {
     if (_capacityPointLight < POINT_LIGHT_NUMBER) {
         _pointLight[_capacityPointLight] = &pointLight;
-        char tmp[100];
-
-        _glProgram->use();
-        sprintf(tmp, "pointLights[%lu].position", _capacityPointLight);
-        _glProgram->setVec3(tmp, _pointLight[_capacityPointLight]->getPosition());
-
-        sprintf(tmp, "pointLights[%lu].ambient", _capacityPointLight);
-        _glProgram->setVec3(tmp, _pointLight[_capacityPointLight]->getAmbient());
-
-        sprintf(tmp, "pointLights[%lu].diffuse", _capacityPointLight);
-        _glProgram->setVec3(tmp, _pointLight[_capacityPointLight]->getDiffuse());
-
-        sprintf(tmp, "pointLights[%lu].specular", _capacityPointLight);
-        _glProgram->setVec3(tmp, _pointLight[_capacityPointLight]->getSpecular());
-
-        sprintf(tmp, "pointLights[%lu].constant", _capacityPointLight);
-        _glProgram->setFloat(tmp, _pointLight[_capacityPointLight]->getConstant());
-
-        sprintf(tmp, "pointLights[%lu].linear", _capacityPointLight);
-        _glProgram->setFloat(tmp, _pointLight[_capacityPointLight]->getLinear());
-
-        sprintf(tmp, "pointLights[%lu].quadratic", _capacityPointLight);
-        _glProgram->setFloat(tmp, _pointLight[_capacityPointLight]->getQuadratic());
-
         _capacityPointLight++;
-
-        _glProgram->setInt("pointLightNumber", (int)_capacityPointLight);
 
     } else {
         printf("No more point light.");
     }
 
+}
+
+void Cube::addSpotLight(const SpotLight &spotLight) {
+    _spotLight = &spotLight;
 }
 
 void Cube::setPosition(const glm::vec3 &position) {
@@ -157,6 +136,8 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     _glProgram->setMat4("projection", projection);
     _glProgram->setVec3("viewPos", viewPos);
 
+
+    // point light
     char tmp[100];
     for (size_t index = 0; index < _capacityPointLight; index++) {
 
@@ -181,6 +162,21 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
         sprintf(tmp, "pointLights[%lu].quadratic", index);
         _glProgram->setFloat(tmp, _pointLight[index]->getQuadratic());
 
+    }
+    _glProgram->setInt("pointLightNumber", (int)_capacityPointLight);
+
+    // spot light
+    if(_spotLight) {
+        _glProgram->setVec3("spotLight.position", _spotLight->getPosition());
+        _glProgram->setVec3("spotLight.direction", _spotLight->getDirection());
+        _glProgram->setFloat("spotLight.cutOff", _spotLight->getCutOff());
+        _glProgram->setFloat("spotLight.outerCutOff", _spotLight->getOuterCutOff());
+        _glProgram->setFloat("spotLight.constant", _spotLight->getConstant());
+        _glProgram->setFloat("spotLight.linear", _spotLight->getLinear());
+        _glProgram->setFloat("spotLight.quadratic", _spotLight->getQuadratic());
+        _glProgram->setVec3("spotLight.ambient", _spotLight->getAmbient());
+        _glProgram->setVec3("spotLight.diffuse", _spotLight->getDiffuse());
+        _glProgram->setVec3("spotLight.specular", _spotLight->getSpecular());
     }
 
     glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);

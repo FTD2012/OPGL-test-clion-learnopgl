@@ -13,7 +13,7 @@
 //#undef  DEBUG
 
 #define SHOW_FPS
-#undef SHOW_FPS
+//#undef SHOW_FPS
 
 #ifdef DEBUG
     #define ASSERT(cond, msg) do {                              \

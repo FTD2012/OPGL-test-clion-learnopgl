@@ -30,4 +30,29 @@ extern const char *light_caster_fragmentShaderSource;
 extern const char *cube_vertexShaderSource;
 extern const char *cube_fragmentShaderSource;
 
+
+/**
+ * @property {int} FPS 刷新帧数
+ */
+extern int FPS;
+
+/**
+ * @property {float} frameSecond 每帧间隔时间
+ */
+extern float frameSecond;
+
+/**
+ * @property {float} deltaTime 当前帧与上一帧的时间差
+ * @property {float} lastFrame 上一帧的时间
+ */
+extern float deltaTime;
+extern float lastFrame;
+
+/**
+ * @property {int} ScreenWidth  屏幕宽度(Pixel)
+ * @property {int} ScreenHeight 屏幕高度(Pixel)
+ */
+extern const int ScreenWidth;
+extern const int ScreenHeight;
+
 #endif //OPGL_TEST_CLION_CONFIG_H

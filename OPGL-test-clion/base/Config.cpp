@@ -52,3 +52,10 @@
 // 2.6 multiple lights
 #include <cube.vert>
 #include <cube.frag>
+
+int FPS = 60;
+float frameSecond = 1.0f/FPS;
+float deltaTime = 0.0f;
+float lastFrame = 0.0f;
+const int ScreenWidth = 800;
+const int ScreenHeight = 600;

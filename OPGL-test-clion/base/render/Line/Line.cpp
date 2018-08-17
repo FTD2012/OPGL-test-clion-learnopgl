@@ -78,7 +78,8 @@ void Line::ensureCapacity(size_t count) {
         _bufferGLLine = (V3F_C4F_T2F*)realloc(_bufferGLLine, _bufferCapacityGLLine * sizeof(V3F_C4F_T2F));
     }
 }
-void Line::onDrawLine(const glm::mat4 &view, const glm::mat4 &projection) {
+void Line::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
+    UNUSED_PARAM(viewPos);
 
     if (_dirty) {
         glBindBuffer(GL_ARRAY_BUFFER, _vbo);

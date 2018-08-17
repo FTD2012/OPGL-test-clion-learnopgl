@@ -9,18 +9,19 @@
 
 #include <render/types/types.h>
 #include <Shader.h>
+#include <render/object/Object.h>
 
-class Line {
+class Line: public Object {
 public:
 
     explicit Line(unsigned int lineWidth = LINE_WIDTH);
-    ~Line();
+    ~Line() override;
 
     void drawLine(const Vec3F &origin, const Vec3F &destination, const Color4F &color);
 
     void init();
 
-    void onDrawLine(const glm::mat4 &view, const glm::mat4 &projection);
+    void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
 private:
 

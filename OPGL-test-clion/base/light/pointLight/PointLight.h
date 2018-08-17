@@ -8,9 +8,10 @@
 #include <external/glm/vec3.hpp>
 #include <external/glm/detail/type_mat.hpp>
 #include <external/glad.h>
+#include <render/object/Object.h>
 
 class Cube;
-class PointLight {
+class PointLight: public Object {
 
 public:
 
@@ -33,7 +34,7 @@ public:
     float getLinear() const;
     float getQuadratic() const;
 
-    void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
+    void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
 
 protected:

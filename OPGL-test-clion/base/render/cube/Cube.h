@@ -14,17 +14,18 @@
 #include <light/directionLight/DirectionLight.h>
 #include <light/pointLight/PointLight.h>
 #include <light/spotLight/SpotLight.h>
+#include <render/object/Object.h>
 
 #define VERTICES_NUMBER (36)
 #define POINT_LIGHT_NUMBER (4)
 class PointLight;
 class SpotLight;
-class Cube {
+class Cube :public Object {
 
 public:
 
     explicit Cube(const glm::vec3 &position = glm::vec3(0.0f));
-    ~Cube();
+    ~Cube() override;
     void init();
     void setColor(const Color4F &color);
 
@@ -36,11 +37,11 @@ public:
      */
     void setMaterial(const std::string &diffusePath, const std::string &specularPath, float shininess = 32.0f);
     void setMaterial(const glm::vec3 &ambientColor, const glm::vec3 &diffuseColor, const glm::vec3 &specularColor, float shininess);
-    void addDirectionLight(const DirectionLight &directionLight);
-    void addPointLight(const PointLight &pointLight);
-    void addSpotLight(const SpotLight &spotLight);
+    void addDirectionLight(const DirectionLight *directionLight);
+    void addPointLight(const PointLight *pointLight);
+    void addSpotLight(const SpotLight *spotLight);
     void setPosition(const glm::vec3 &position);
-    void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
+    void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
 private:
     /**
@@ -74,12 +75,14 @@ private:
     unsigned int             _vbo;
     Shader                   *_glProgram;
 
-    DirectionLight           _directionLight;
+    const DirectionLight     *_directionLight;
 
     size_t                   _capacityPointLight;
     std::vector<const PointLight*>  _pointLight;
+    bool                     _pointLightDirty;
 
     const SpotLight          *_spotLight;
+    bool                     _spotLightDirty;
 
     V3F_N3F_T2F_C4F _bufferGLCube[VERTICES_NUMBER] = {
             // 顶点位置             // 法线向量           // 纹理坐标          // 颜色

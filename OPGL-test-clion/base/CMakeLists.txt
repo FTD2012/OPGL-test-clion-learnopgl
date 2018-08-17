@@ -35,9 +35,17 @@ SET(OPGL_test_clion_SRCS
         render/cube/Cube.h
         render/cube/Cube.cpp
 
+        render/scene
+        render/scene/Scene.h
+        render/scene/Scene.cpp
+
         render/line
         render/line/Line.h
         render/line/Line.cpp
+
+        render/object
+        render/object/Object.h
+        render/object/Object.cpp
 
         render/types
         render/types/types.h

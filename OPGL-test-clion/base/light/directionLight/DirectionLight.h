@@ -7,8 +7,9 @@
 
 
 #include <external/glm/vec3.hpp>
+#include <render/object/Object.h>
 
-class DirectionLight {
+class DirectionLight : public Object {
 public:
 
     explicit DirectionLight(const glm::vec3 &direction = DirectionLight::DIRECTION,
@@ -21,10 +22,10 @@ public:
     void setDiffuse(const glm::vec3 &diffuse);
     void setSpecular(const glm::vec3 &specular);
 
-    const glm::vec3 &getDirection();
-    const glm::vec3 &getAmbient();
-    const glm::vec3 &getDiffuse();
-    const glm::vec3 &getSpecular();
+    const glm::vec3 &getDirection() const;
+    const glm::vec3 &getAmbient() const;
+    const glm::vec3 &getDiffuse() const;
+    const glm::vec3 &getSpecular() const;
 
 private:
 

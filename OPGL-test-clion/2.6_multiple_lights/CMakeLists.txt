@@ -4,6 +4,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
         multiple_lights.cpp
+        MainScene.h
+        MainScene.cpp
         )
 add_executable(2.6_multiple_lights ${SOURCE_FILES})
 

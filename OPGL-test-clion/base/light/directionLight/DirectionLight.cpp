@@ -39,18 +39,18 @@ void DirectionLight::setSpecular(const glm::vec3 &specular) {
     _specular = specular;
 }
 
-const glm::vec3 &DirectionLight::getDirection() {
+const glm::vec3 &DirectionLight::getDirection() const{
     return _direction;
 }
 
-const glm::vec3 &DirectionLight::getAmbient() {
+const glm::vec3 &DirectionLight::getAmbient() const{
     return _ambient;
 }
 
-const glm::vec3 &DirectionLight::getDiffuse() {
+const glm::vec3 &DirectionLight::getDiffuse() const{
     return _diffuse;
 }
 
-const glm::vec3 &DirectionLight::getSpecular() {
+const glm::vec3 &DirectionLight::getSpecular() const{
     return _specular;
 }

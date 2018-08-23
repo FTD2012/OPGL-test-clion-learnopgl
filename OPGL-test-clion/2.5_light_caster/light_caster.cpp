@@ -225,8 +225,8 @@ int main() {
     Shader lineShaderProgram(line_vertexShaderSource, line_fragmentShaderSource);
 
     // Image
-    auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
-    auto texture2 = Loader::getInstance()->loadTexture("../../texture/container2_specular.png");
+    auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png").textureId;
+    auto texture2 = Loader::getInstance()->loadTexture("../../texture/container2_specular.png").textureId;
 
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {

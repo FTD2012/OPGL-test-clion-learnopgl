@@ -16,8 +16,7 @@ public:
     Object();
     virtual ~Object();
 
-    void addChild(Object *object);
-//    void onDraw(const Camera &camera);
+    virtual void addChild(Object *object);
     virtual void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
 
 protected:

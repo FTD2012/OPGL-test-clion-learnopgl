@@ -11,8 +11,18 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <loader/Model.h>
+#include <unordered_map>
 
 int main (int argc, char **argv) {
+
+    std::unordered_map<std::string, int> _textures;
+
+    _textures.insert(std::make_pair("1", 3));
+
+    auto index =  _textures.find("");
+
+    std::cout << "111 = " << index->second << std::endl;
 
     std::ifstream fin;
     fin.open("/Users/lvjiaming/WorkSpace/OPGL/OPGL-test-clion-learnopgl/OPGL-test-clion/shader/CMakeLists.txt");

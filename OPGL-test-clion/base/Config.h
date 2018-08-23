@@ -29,6 +29,8 @@ extern const char *light_caster_vertexShaderSource;
 extern const char *light_caster_fragmentShaderSource;
 extern const char *cube_vertexShaderSource;
 extern const char *cube_fragmentShaderSource;
+extern const char *mesh_vertexShaderSource;
+extern const char *mesh_fragmentShaderSource;
 
 
 /**

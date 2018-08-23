@@ -39,6 +39,9 @@ Shader::Shader(const char *vShaderCode, const char *fShaderCode) {
     const char *fShaderCode = fragmentCode.c_str();
      */
 
+    _vertexShader = vShaderCode;
+    _fragmentShader = fShaderCode;
+
     // 2. compile the source code
     do {
         unsigned int vertexShader = compileShader(vShaderCode, ShaderType::VertexShader);
@@ -134,6 +137,22 @@ bool Shader::checkCompileErrors(unsigned int shader, Shader::ShaderType type) {
         default:
             return GL_FALSE;
     }
+}
+
+const char *Shader::getVertexShader() const {
+    return _vertexShader.c_str();
+}
+
+void Shader::setVertexShader(const std::string &_vertexShader) {
+    Shader::_vertexShader = _vertexShader;
+}
+
+const char *Shader::getFragmentShader() const {
+    return _fragmentShader.c_str();
+}
+
+void Shader::setFragmentShader(const std::string &_fragmentShader) {
+    Shader::_fragmentShader = _fragmentShader;
 }
 
 

@@ -223,9 +223,9 @@ int main() {
     Shader lightShaderProgram(color_vertexShaderSource, material_light_fragmentShaderSource);
 
     // Image
-    auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png");
-    auto texture2 = Loader::getInstance()->loadTexture("../../texture/lighting_maps_specular_color.png");
-    auto texture3 = Loader::getInstance()->loadTexture("../../texture/matrix.jpg");
+    auto texture1 = Loader::getInstance()->loadTexture("../../texture/container2.png").textureId;
+    auto texture2 = Loader::getInstance()->loadTexture("../../texture/lighting_maps_specular_color.png").textureId;
+    auto texture3 = Loader::getInstance()->loadTexture("../../texture/matrix.jpg").textureId;
 
     // 10个立方体的位置
     glm::vec3 cubePositions[] = {

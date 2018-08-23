@@ -8,17 +8,19 @@
 #include <string>
 #include <unordered_map>
 
+#include <render/types/types.h>
+
 class Loader {
 
 public:
     static Loader *getInstance();
 
-    unsigned int loadTexture(const std::string &path);
+    Texture loadTexture(const std::string &path, TextureType textureType = TextureType::NONE);
 
 private:
 
-    unsigned int _loadTexture(const std::string &path);
-    std::unordered_map<std::string, unsigned int> _textures;
+    Texture _loadTexture(const std::string &path, TextureType textureType);
+    std::unordered_map<std::string, Texture> _textures;
 
 };
 

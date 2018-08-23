@@ -29,7 +29,7 @@ public:
     void init();
     void setColor(const Color4F &color);
 
-    /**z
+    /**
      * 使用纹理作为材质
      * @param diffusePath
      * @param specularPath

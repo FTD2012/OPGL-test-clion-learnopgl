@@ -61,8 +61,8 @@ void Cube::setColor(const Color4F &color) {
 }
 
 void Cube::setMaterial(const std::string &diffusePath, const std::string &specularPath, float shininess) {
-    _diffuseTextureId = Loader::getInstance()->loadTexture(diffusePath);
-    _specularTextureId = Loader::getInstance()->loadTexture(specularPath);
+    _diffuseTextureId = Loader::getInstance()->loadTexture(diffusePath).textureId;
+    _specularTextureId = Loader::getInstance()->loadTexture(specularPath).textureId;
     _shininess = shininess;
     _materialType = MaterialType::TEXTURE;
 
@@ -137,7 +137,6 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
         glBindTexture(GL_TEXTURE_2D, _specularTextureId);
     }
 
-    glBindVertexArray(_vao);
     _glProgram->use();
     _glProgram->setMat4("model", _position);
     _glProgram->setMat4("view", view);
@@ -145,13 +144,14 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     _glProgram->setVec3("viewPos", viewPos);
 
 
+
     // point light
     if (_pointLightDirty) {
         char tmp[100];
         for (size_t index = 0; index < _capacityPointLight; index++) {
 
-            sprintf(tmp, "pointLights[%lu].position", index);
-            _glProgram->setVec3(tmp, _pointLight[index]->getPosition());
+            // sprintf(tmp, "pointLights[%lu].position", index);
+            _glProgram->setVec3("pointLights[" + std::to_string(index) + "].position", _pointLight[index]->getPosition());
 
             sprintf(tmp, "pointLights[%lu].ambient", index);
             _glProgram->setVec3(tmp, _pointLight[index]->getAmbient());
@@ -168,7 +168,7 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
             sprintf(tmp, "pointLights[%lu].linear", index);
             _glProgram->setFloat(tmp, _pointLight[index]->getLinear());
 
-            sprintf(tmp, "pointLights[%lu].quadratic", index);
+             sprintf(tmp, "pointLights[%lu].quadratic", index);
             _glProgram->setFloat(tmp, _pointLight[index]->getQuadratic());
 
         }
@@ -191,5 +191,7 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
         _spotLightDirty = false;
     }
 
+    glBindVertexArray(_vao);
     glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
+    glBindVertexArray(0);
 }

@@ -5,11 +5,13 @@
 #include <render/object/Object.h>
 
 Object::Object() {
-//    _children.resize(20);
+
 }
 
 Object::~Object() {
-//    _children.resize(0);
+    for (auto &it : _children) {
+        delete it;
+    }
 }
 
 

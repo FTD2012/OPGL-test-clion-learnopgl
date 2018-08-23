@@ -53,6 +53,10 @@
 #include <cube.vert>
 #include <cube.frag>
 
+// 3.1 model
+#include <mesh.vert>
+#include <mesh.frag>
+
 int FPS = 60;
 float frameSecond = 1.0f/FPS;
 float deltaTime = 0.0f;

@@ -32,6 +32,11 @@ public:
     void setVec3(const std::string &name, const glm::vec3 &vec) const;
     void setVec3(const std::string &name, float x, float y, float z) const;
 
+    const char *getVertexShader() const;
+    const char *getFragmentShader() const;
+    void setVertexShader(const std::string &_vertexShader);
+    void setFragmentShader(const std::string &_fragmentShader);
+
     enum ShaderType {
         ShaderProgram,
         VertexShader,
@@ -44,6 +49,8 @@ protected:
 
 private:
     unsigned int shaderProgram;
+    std::string  _vertexShader;
+    std::string  _fragmentShader;
 
 };
 

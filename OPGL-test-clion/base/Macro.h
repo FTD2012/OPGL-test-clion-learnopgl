@@ -19,6 +19,7 @@
     #define ASSERT(cond, msg) do {                              \
                 if (!(cond)) {                                  \
                     printf("Assert failed: %s", msg);           \
+                    assert(false);                              \
                 }                                               \
             } while (0)
 #else

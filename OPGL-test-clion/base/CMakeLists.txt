@@ -29,6 +29,10 @@ SET(OPGL_test_clion_SRCS
         loader
         loader/Loader.h
         loader/Loader.cpp
+        loader/Mesh.h
+        loader/Mesh.cpp
+        loader/Model.h
+        loader/Model.cpp
 
         render
         render/cube
@@ -44,11 +48,15 @@ SET(OPGL_test_clion_SRCS
         render/line/Line.cpp
 
         render/object
+        render/object/LightObject.h
+        render/object/LightObject.cpp
         render/object/Object.h
         render/object/Object.cpp
 
         render/types
         render/types/types.h
+        render/types/Enums.h
+        render/types/Enums.cpp
 
         Config.h
         Config.cpp

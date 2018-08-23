@@ -22,10 +22,10 @@ MainScene::~MainScene() {
 
 void MainScene::init() {
     // line
-    int worldWidth = 500;   // x
-    int worldHeight = 500;  // y
-    int worldDepth = 500;   // z
-    Line *lineRender = new Line();
+    auto worldWidth = 500;   // x
+    auto worldHeight = 500;  // y
+    auto worldDepth = 500;   // z
+    auto *lineRender = new Line();
     lineRender->drawLine({0.0f,  0.0f, 0.0f}, {static_cast<float>(worldWidth), 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f});
     lineRender->drawLine({-1.0f * static_cast<float>(worldWidth),  0.0f, 0.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
 
@@ -47,30 +47,30 @@ void MainScene::init() {
             lineRender->drawLine({-1 * static_cast<float>(worldWidth), 0.0f, static_cast<float>(i)}, {static_cast<float>(worldWidth), 0.0f, static_cast<float>(i)}, {1.0f, 1.0f, 1.0f, 1.0f});
         }
     }
-    // xy平面垂直于x轴的线
-    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
-        if (i != 0.0f) {
-            lineRender->drawLine({static_cast<float>(i), -1 * static_cast<float>(worldHeight), 0.0f}, {static_cast<float>(i), static_cast<float>(worldHeight), 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
-        }
-    }
-    // xy平面垂直于y轴的线
-    for (int i = -1 * worldHeight; i <= worldHeight; i++) {
-        if (i != 0.0f) {
-            lineRender->drawLine({-1 * static_cast<float>(worldWidth), static_cast<float>(i), 0.0f}, {static_cast<float>(worldWidth), static_cast<float>(i), 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
-        }
-    }
-    // yz平面垂直于y轴的线
-    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
-        if (i != 0.0f) {
-            lineRender->drawLine({0.0f, static_cast<float>(i), -1 * static_cast<float>(worldDepth)}, {0.0f, static_cast<float>(i), static_cast<float>(worldDepth)}, {1.0f, 1.0f, 1.0f, 1.0f});
-        }
-    }
-    // yz平面垂直于z轴的线
-    for (int i = -1 * worldDepth; i <= worldDepth; i++) {
-        if (i != 0.0f) {
-            lineRender->drawLine({0.0f, -1 * static_cast<float>(worldWidth), static_cast<float>(i)}, {0.0f, static_cast<float>(worldWidth), static_cast<float>(i)}, {1.0f, 1.0f, 1.0f, 1.0f});
-        }
-    }
+//    // xy平面垂直于x轴的线
+//    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
+//        if (i != 0.0f) {
+//            lineRender->drawLine({static_cast<float>(i), -1 * static_cast<float>(worldHeight), 0.0f}, {static_cast<float>(i), static_cast<float>(worldHeight), 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+//    // xy平面垂直于y轴的线
+//    for (int i = -1 * worldHeight; i <= worldHeight; i++) {
+//        if (i != 0.0f) {
+//            lineRender->drawLine({-1 * static_cast<float>(worldWidth), static_cast<float>(i), 0.0f}, {static_cast<float>(worldWidth), static_cast<float>(i), 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+//    // yz平面垂直于y轴的线
+//    for (int i = -1 * worldWidth; i <= worldWidth; i++) {
+//        if (i != 0.0f) {
+//            lineRender->drawLine({0.0f, static_cast<float>(i), -1 * static_cast<float>(worldDepth)}, {0.0f, static_cast<float>(i), static_cast<float>(worldDepth)}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
+//    // yz平面垂直于z轴的线
+//    for (int i = -1 * worldDepth; i <= worldDepth; i++) {
+//        if (i != 0.0f) {
+//            lineRender->drawLine({0.0f, -1 * static_cast<float>(worldWidth), static_cast<float>(i)}, {0.0f, static_cast<float>(worldWidth), static_cast<float>(i)}, {1.0f, 1.0f, 1.0f, 1.0f});
+//        }
+//    }
 
     addChild(lineRender);
 
@@ -89,17 +89,17 @@ void MainScene::init() {
     };
 
     // direction light
-    DirectionLight *directionLight = new DirectionLight();
+    auto *directionLight = new DirectionLight();
 
     // point light
-    PointLight *pointLight = new PointLight({1.2f, 5.0f, 2.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
-    PointLight *pointLight1 = new PointLight({2.3f, 2.3f, -4.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
+    auto *pointLight = new PointLight({1.2f, 5.0f, 2.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
+    auto *pointLight1 = new PointLight({2.3f, 2.3f, -4.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
 
     // spot light
-    SpotLight *spotLight = new SpotLight({0.0f,  0.0f,  -4.0f} , glm::cos(glm::radians(12.5f)), glm::cos(glm::radians(15.0f)), {0.0f, 5.0f, 4.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
+    auto *spotLight = new SpotLight({0.0f,  0.0f,  -4.0f} , glm::cos(glm::radians(12.5f)), glm::cos(glm::radians(15.0f)), {0.0f, 5.0f, 4.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
 
     // cube
-    Cube *lightCube = new Cube(), *cubeRender = new Cube[10]();
+    auto *lightCube = new Cube(), *cubeRender = new Cube[10]();
 
     addChild(directionLight);
     addChild(&cubeRender[0]);

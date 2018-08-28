@@ -30,7 +30,7 @@ float lastCursorX;
 float lastCursorY;
 bool firstMouse = true;
 
-Camera camera(glm::vec3(0.0f, 7.0f, 13.0f));
+Camera camera(glm::vec3(0.0f, 2.0f, 6.0f));
 
 /**
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -204,13 +204,14 @@ int main() {
      * @param1: 将配置应用到三角形的正面和背面
      * @param2: 使用线来绘制
      */
-     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     /* 使用 填充模式 绘制 */
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     /* 启用深度测试 */
     glEnable(GL_DEPTH_TEST);
+//    glDepthFunc(GL_ALWAYS);
 
     /* 开启抗锯齿 */
     glEnable(GL_MULTISAMPLE);

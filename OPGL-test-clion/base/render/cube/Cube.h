@@ -35,7 +35,7 @@ public:
      * @param specularPath
      * @param shininess
      */
-    void setMaterial(const std::string &diffusePath, const std::string &specularPath, float shininess = 32.0f);
+    void setMaterial(const std::string &diffusePath = "", const std::string &specularPath = "", float shininess = 32.0f);
     void setMaterial(const glm::vec3 &ambientColor, const glm::vec3 &diffuseColor, const glm::vec3 &specularColor, float shininess);
     void addDirectionLight(const DirectionLight *directionLight);
     void addPointLight(const PointLight *pointLight);
@@ -76,6 +76,7 @@ private:
     Shader                   *_glProgram;
 
     const DirectionLight     *_directionLight;
+    bool                     _directionLightDirty;
 
     size_t                   _capacityPointLight;
     std::vector<const PointLight*>  _pointLight;

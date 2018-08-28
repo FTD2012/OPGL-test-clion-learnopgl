@@ -14,6 +14,7 @@ Cube::Cube(const glm::vec3 &position)
 , _spotLight(nullptr)
 , _pointLightDirty(false)
 , _spotLightDirty(false)
+, _directionLightDirty(false)
 {
     init();
     setPosition(position);
@@ -25,6 +26,9 @@ Cube::~Cube() {
     _specularTextureId = 0;
     _capacityPointLight = 0;
     _pointLight.resize(0);
+    _pointLightDirty = false;
+    _spotLightDirty = false;
+    _directionLightDirty = false;
 }
 
 void Cube::init() {
@@ -61,14 +65,20 @@ void Cube::setColor(const Color4F &color) {
 }
 
 void Cube::setMaterial(const std::string &diffusePath, const std::string &specularPath, float shininess) {
-    _diffuseTextureId = Loader::getInstance()->loadTexture(diffusePath).textureId;
-    _specularTextureId = Loader::getInstance()->loadTexture(specularPath).textureId;
+    _glProgram->use();
+
+    if (!diffusePath.empty()) {
+        _diffuseTextureId = Loader::getInstance()->loadTexture(diffusePath).textureId;
+        _glProgram->setInt("textureMaterial.diffuse", 0);
+    }
+
+    if (!specularPath.empty()) {
+        _specularTextureId = Loader::getInstance()->loadTexture(specularPath).textureId;
+        _glProgram->setInt("textureMaterial.specular", 1);
+    }
     _shininess = shininess;
     _materialType = MaterialType::TEXTURE;
 
-    _glProgram->use();
-    _glProgram->setInt("textureMaterial.diffuse", 0);
-    _glProgram->setInt("textureMaterial.specular", 1);
     _glProgram->setFloat("textureMaterial.shininess", _shininess);
     _glProgram->setInt("materialType", _materialType);
 }
@@ -143,7 +153,11 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     _glProgram->setMat4("projection", projection);
     _glProgram->setVec3("viewPos", viewPos);
 
-
+    // direction light
+    if (_directionLightDirty) {
+        _glProgram->setBool("enableDirectionLight", (bool) _directionLight);
+        _directionLightDirty = false;
+    }
 
     // point light
     if (_pointLightDirty) {
@@ -177,21 +191,25 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     }
 
     // spot light
-    if(_spotLight && _spotLightDirty) {
-        _glProgram->setVec3("spotLight.position", _spotLight->getPosition());
-        _glProgram->setVec3("spotLight.direction", _spotLight->getDirection());
-        _glProgram->setFloat("spotLight.cutOff", _spotLight->getCutOff());
-        _glProgram->setFloat("spotLight.outerCutOff", _spotLight->getOuterCutOff());
-        _glProgram->setFloat("spotLight.constant", _spotLight->getConstant());
-        _glProgram->setFloat("spotLight.linear", _spotLight->getLinear());
-        _glProgram->setFloat("spotLight.quadratic", _spotLight->getQuadratic());
-        _glProgram->setVec3("spotLight.ambient", _spotLight->getAmbient());
-        _glProgram->setVec3("spotLight.diffuse", _spotLight->getDiffuse());
-        _glProgram->setVec3("spotLight.specular", _spotLight->getSpecular());
+    if (_spotLightDirty) {
+        if (_spotLight) {
+            _glProgram->setVec3("spotLight.position", _spotLight->getPosition());
+            _glProgram->setVec3("spotLight.direction", _spotLight->getDirection());
+            _glProgram->setFloat("spotLight.cutOff", _spotLight->getCutOff());
+            _glProgram->setFloat("spotLight.outerCutOff", _spotLight->getOuterCutOff());
+            _glProgram->setFloat("spotLight.constant", _spotLight->getConstant());
+            _glProgram->setFloat("spotLight.linear", _spotLight->getLinear());
+            _glProgram->setFloat("spotLight.quadratic", _spotLight->getQuadratic());
+            _glProgram->setVec3("spotLight.ambient", _spotLight->getAmbient());
+            _glProgram->setVec3("spotLight.diffuse", _spotLight->getDiffuse());
+            _glProgram->setVec3("spotLight.specular", _spotLight->getSpecular());
+        }
+        _glProgram->setBool("enableSpotLight", (bool) _spotLight);
         _spotLightDirty = false;
     }
 
     glBindVertexArray(_vao);
     glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
     glBindVertexArray(0);
+
 }

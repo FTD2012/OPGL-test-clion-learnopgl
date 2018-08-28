@@ -23,9 +23,9 @@ MainScene::~MainScene() {
 
 void MainScene::init() {
     // line
-    int worldWidth = 20;   // x
-    int worldHeight = 20;  // y
-    int worldDepth = 20;   // z
+    int worldWidth = 200;   // x
+    int worldHeight = 200;  // y
+    int worldDepth = 200;   // z
     auto *lineRender = new Line();
     lineRender->drawLine({0.0f,  0.0f, 0.0f}, {static_cast<float>(worldWidth), 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f});
     lineRender->drawLine({-1.0f * static_cast<float>(worldWidth),  0.0f, 0.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f});
@@ -73,16 +73,20 @@ void MainScene::init() {
 //        }
 //    }
 
-    addChild(lineRender);
 
-    // direction light
-    auto *directionLight = new DirectionLight();
-    auto *pointLight = new PointLight({1.2f, 5.0f, 2.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
-    auto *nanoSuitModel = new Model("../../texture/rock/rock.obj");
-    nanoSuitModel->addDirectionLight(directionLight);
-    nanoSuitModel->addPointLight(pointLight);
-    addChild(nanoSuitModel);
-    addChild(pointLight);
+    auto *directionLight = new DirectionLight(glm::vec3(-0.2f, -1.0f, -0.3f), glm::vec3(1.0f), glm::vec3(1.0f), glm::vec3(1.0f));
+    addChild(directionLight);
+
+    auto *cube1 = new Cube(glm::vec3(-1.0f, 0.5f, -50.0f));
+    cube1->setMaterial("../../texture/marble.jpg", "../../texture/marble.jpg");
+    cube1->addDirectionLight(directionLight);
+    auto *cube2 = new Cube(glm::vec3(2.0f, 0.5f, 0.0f));
+    cube2->setMaterial("../../texture/marble.jpg", "../../texture/marble.jpg");
+    cube2->addDirectionLight(directionLight);
+
+    addChild(cube1);
+    addChild(cube2);
+    addChild(lineRender);
 
 }
 

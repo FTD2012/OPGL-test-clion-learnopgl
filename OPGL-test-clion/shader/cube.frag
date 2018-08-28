@@ -68,6 +68,8 @@ uniform vec3 viewPos;
 
 uniform PointLight pointLights[NR_POINT_LIGHTS];
 uniform int pointLightNumber;
+uniform bool enableSpotLight;
+uniform bool enableDirectionLight;
 
 uniform SpotLight spotLight;
 
@@ -83,14 +85,9 @@ void main()
         float shininess;
         vec3 norm = normalize(Normal), viewDir = normalize(viewPos - FragPos), color, ambientColor, diffuseColor, specularColor, result;
 
-        if (materialType == 1) {
-            color = Color * vec3(texture(textureMaterial.diffuse, TexCoords));
-        } else if (materialType == 2) {
-            color = Color * colorMaterial.diffuse;
-        }
-
         // use texture as material
         if (materialType == 1) {
+            color = Color * vec3(texture(textureMaterial.diffuse, TexCoords));
             ambientColor = vec3(texture(textureMaterial.diffuse, TexCoords));
             diffuseColor = ambientColor;
             specularColor = vec3(texture(textureMaterial.specular, TexCoords));
@@ -98,11 +95,13 @@ void main()
         }
         // use color as material
         else if (materialType == 2) {
+            color = Color * colorMaterial.diffuse;
             ambientColor = colorMaterial.ambient;
             diffuseColor = colorMaterial.diffuse;
             specularColor = colorMaterial.specular;
             shininess = colorMaterial.shininess;
         }
+
         // == =====================================================
         // Our lighting is set up in 3 phases: directional, point lights and an optional flashlight
         // For each phase, a calculate function is defined that calculates the corresponding color
@@ -119,10 +118,11 @@ void main()
         }
 
         // phase 3: spot light
-        result += CalcSpotLight(spotLight, norm, FragPos, viewDir, ambientColor, diffuseColor, specularColor, shininess);
+        if (enableSpotLight) {
+            result += CalcSpotLight(spotLight, norm, FragPos, viewDir, ambientColor, diffuseColor, specularColor, shininess);
+        }
 
         FragColor = vec4(result * color, 1.0f);
-
     } else {
 
         FragColor = vec4(Color, 1.0f);

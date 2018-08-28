@@ -81,6 +81,10 @@ if (3.1_model)
     add_subdirectory(3.1_model)
 endif(3.1_model)
 
+if (4.1_depth_testing)
+    add_subdirectory(4.1_depth_testing)
+endif(4.1_depth_testing)
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -97,6 +101,7 @@ ADD_SUBDIRECTORY(2.4_material_map)
 ADD_SUBDIRECTORY(2.5_light_caster)
 ADD_SUBDIRECTORY(2.6_multiple_lights)
 ADD_SUBDIRECTORY(3.1_model)
+ADD_SUBDIRECTORY(4.1_depth_testing)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

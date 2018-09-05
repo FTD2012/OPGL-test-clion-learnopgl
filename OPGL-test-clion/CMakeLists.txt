@@ -85,6 +85,10 @@ if (4.1_depth_testing)
     add_subdirectory(4.1_depth_testing)
 endif(4.1_depth_testing)
 
+if (4.2_stencil_testing)
+    add_subdirectory(4.2_stencil_testing)
+endif(4.2_stencil_testing)
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -102,6 +106,7 @@ ADD_SUBDIRECTORY(2.5_light_caster)
 ADD_SUBDIRECTORY(2.6_multiple_lights)
 ADD_SUBDIRECTORY(3.1_model)
 ADD_SUBDIRECTORY(4.1_depth_testing)
+ADD_SUBDIRECTORY(4.2_stencil_testing)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

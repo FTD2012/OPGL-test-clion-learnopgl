@@ -130,6 +130,12 @@ void Cube::setPosition(const glm::vec3 &position) {
     _position = glm::translate(_position, position);
 }
 
+void Cube::setBoarder(const glm::vec3 &color) {
+    _enableBorder = true;
+    _borderColor = color;
+    _borderGlProgram = new Shader(single_color_vertexShaderSource, single_color_fragmentShaderSource);
+}
+
 void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
 
     if (_dirty) {
@@ -208,8 +214,44 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
         _spotLightDirty = false;
     }
 
-    glBindVertexArray(_vao);
-    glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
-    glBindVertexArray(0);
+    if (_enableBorder) {
+        glEnable(GL_STENCIL_TEST);
+        glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+
+        // 绘制第一个立方体，并填充 模板值
+        glStencilFunc(GL_ALWAYS, 1, 0xFF);
+        glStencilMask(0xFF);
+
+        glBindVertexArray(_vao);
+        glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
+
+        // 绘制第二个立方体，使用之前的 模板值，未通过测试的会被丢弃，通过的会被设置为指定颜色
+        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        glStencilMask(0x00);
+        glDisable(GL_DEPTH_TEST);
+
+        float scale = 1.1f;
+        glm::mat4 model = glm::mat4(_position);
+        model = glm::scale(model, glm::vec3(scale));
+        _borderGlProgram->use();
+        _borderGlProgram->setMat4("model", model);
+        _borderGlProgram->setMat4("view", view);
+        _borderGlProgram->setMat4("projection", projection);
+        _borderGlProgram->setVec3("viewPos", viewPos);
+        _borderGlProgram->setVec3("color", _borderColor);
+
+        glBindVertexArray(_vao);
+        glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
+
+        glBindVertexArray(0);
+        glStencilMask(0xFF);
+        glEnable(GL_DEPTH_TEST);
+        glDisable(GL_STENCIL_TEST);
+
+    } else {
+        glBindVertexArray(_vao);
+        glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
+        glBindVertexArray(0);
+    }
 
 }

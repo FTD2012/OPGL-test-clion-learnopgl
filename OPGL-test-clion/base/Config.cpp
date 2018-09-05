@@ -9,6 +9,10 @@
 #include <line.vert>
 #include <line.frag>
 
+// single color
+#include <single_color.vert>
+#include <single_color.frag>
+
 // 1.3 shader
 #include <hello_shader.frag>
 #include <hello_shader.vert>

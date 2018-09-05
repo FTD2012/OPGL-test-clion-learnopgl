@@ -31,6 +31,8 @@ extern const char *cube_vertexShaderSource;
 extern const char *cube_fragmentShaderSource;
 extern const char *mesh_vertexShaderSource;
 extern const char *mesh_fragmentShaderSource;
+extern const char *single_color_vertexShaderSource;
+extern const char *single_color_fragmentShaderSource;
 
 
 /**

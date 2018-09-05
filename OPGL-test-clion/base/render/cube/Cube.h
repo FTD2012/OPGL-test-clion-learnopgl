@@ -41,6 +41,7 @@ public:
     void addPointLight(const PointLight *pointLight);
     void addSpotLight(const SpotLight *spotLight);
     void setPosition(const glm::vec3 &position);
+    void setBoarder(const glm::vec3 &color) override;
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
 private:
@@ -68,6 +69,13 @@ private:
     glm::vec3                _ambientColor;
     glm::vec3                _diffuseColor;
     glm::vec3                _specularColor;
+
+    /*
+     * 描边
+     */
+    bool                     _enableBorder;
+    glm::vec3                _borderColor;
+    Shader                   *_borderGlProgram;
 
     glm::mat4                _position;
     bool                     _dirty;

@@ -17,6 +17,7 @@ public:
     virtual ~Object();
 
     virtual void addChild(Object *object);
+    virtual void setBoarder(const glm::vec3 &color);
     virtual void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
 
 protected:

@@ -14,6 +14,7 @@ public:
     Scene();
     ~Scene();
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
+    void drawWorld();
 
 private:
 

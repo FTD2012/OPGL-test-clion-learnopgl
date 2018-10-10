@@ -15,6 +15,7 @@ Cube::Cube(const glm::vec3 &position)
 , _pointLightDirty(false)
 , _spotLightDirty(false)
 , _directionLightDirty(false)
+, _enableBorder(false)
 {
     init();
     setPosition(position);
@@ -123,11 +124,6 @@ void Cube::addPointLight(const PointLight *pointLight) {
 void Cube::addSpotLight(const SpotLight *spotLight) {
     _spotLight = spotLight;
     _spotLightDirty = true;
-}
-
-void Cube::setPosition(const glm::vec3 &position) {
-    _position = glm::mat4();
-    _position = glm::translate(_position, position);
 }
 
 void Cube::setBoarder(const glm::vec3 &color) {

@@ -87,8 +87,10 @@ void main()
 
         // use texture as material
         if (materialType == 1) {
-            color = Color * vec3(texture(textureMaterial.diffuse, TexCoords));
-            ambientColor = vec3(texture(textureMaterial.diffuse, TexCoords));
+            vec4 textureColor = texture(textureMaterial.diffuse, TexCoords);
+            float alpha = textureColor.a;
+            color = Color*(1-alpha) + vec3(textureColor) * (alpha);
+            ambientColor = color;
             diffuseColor = ambientColor;
             specularColor = vec3(texture(textureMaterial.specular, TexCoords));
             shininess = textureMaterial.shininess;
@@ -123,6 +125,7 @@ void main()
         }
 
         FragColor = vec4(result * color, 1.0f);
+//        FragColor = vec4(color, 1.0f);
     } else {
 
         FragColor = vec4(Color, 1.0f);

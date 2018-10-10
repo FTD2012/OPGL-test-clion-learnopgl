@@ -40,7 +40,6 @@ public:
     void addDirectionLight(const DirectionLight *directionLight);
     void addPointLight(const PointLight *pointLight);
     void addSpotLight(const SpotLight *spotLight);
-    void setPosition(const glm::vec3 &position);
     void setBoarder(const glm::vec3 &color) override;
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
@@ -77,7 +76,6 @@ private:
     glm::vec3                _borderColor;
     Shader                   *_borderGlProgram;
 
-    glm::mat4                _position;
     bool                     _dirty;
     unsigned int             _vao;
     unsigned int             _vbo;

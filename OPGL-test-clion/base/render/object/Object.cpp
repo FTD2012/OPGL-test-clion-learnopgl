@@ -18,6 +18,11 @@ void Object::addChild(Object *object) {
     _children.push_back(object);
 }
 
+void Object::setPosition(const glm::vec3 &position) {
+    _position = glm::mat4();
+    _position = glm::translate(_position, position);
+}
+
 void Object::setBoarder(const glm::vec3 &color) {
 
 }

@@ -23,7 +23,6 @@ public:
                          float            linear    = PointLight::LINEAR,
                          float            quadratic = PointLight::QUADRATIC);
 
-    void setPosition(const glm::vec3 &position);
     void setAttenuation(float constant, float linear, float quadratic);
 
     const glm::vec3 &getPosition() const;

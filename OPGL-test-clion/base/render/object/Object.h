@@ -7,9 +7,11 @@
 
 #include <vector>
 
-#include <external/glm/detail/type_mat.hpp>
 #include <external/glm/vec3.hpp>
 
+#include <external/glm/glm.hpp>
+#include <external/glm/gtc/matrix_transform.hpp>
+#include <external/glm/gtc/type_ptr.hpp>
 
 class Object {
 public:
@@ -17,12 +19,14 @@ public:
     virtual ~Object();
 
     virtual void addChild(Object *object);
+    virtual void setPosition(const glm::vec3 &position);
     virtual void setBoarder(const glm::vec3 &color);
     virtual void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
 
 protected:
 
     std::vector<Object*> _children;
+    glm::mat4            _position;
 
 };
 

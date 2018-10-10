@@ -27,11 +27,6 @@ PointLight::PointLight(const glm::vec3 &position, const glm::vec3 &ambient, cons
     _cube->setColor({1.0f, 1.0f, 1.0f, 1.0f});
 }
 
-void PointLight::setPosition(const glm::vec3 &position) {
-    _position = position;
-    _cube->setPosition(_position);
-}
-
 void PointLight::setAttenuation(float constant, float linear, float quadratic) {
     _constant = constant;
     _linear = linear;

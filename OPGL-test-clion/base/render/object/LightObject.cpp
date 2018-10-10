@@ -106,11 +106,6 @@ void LightObject::addSpotLight(const SpotLight *spotLight) {
     _spotLightDirty = true;
 }
 
-void LightObject::setPosition(const glm::vec3 &position) {
-    _position = glm::mat4();
-    _position = glm::translate(_position, position);
-}
-
 void LightObject::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
 
     _glProgram->use();

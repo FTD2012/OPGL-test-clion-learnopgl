@@ -43,6 +43,10 @@ SET(OPGL_test_clion_SRCS
         render/scene/Scene.h
         render/scene/Scene.cpp
 
+        render/sprite
+        render/sprite/Sprite.h
+        render/sprite/Sprite.cpp
+
         render/line
         render/line/Line.h
         render/line/Line.cpp

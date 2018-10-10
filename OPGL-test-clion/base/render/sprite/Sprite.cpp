@@ -53,6 +53,9 @@ void Sprite::setTexture(const std::string &path) {
 void Sprite::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
 
     if (_texture.textureId) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, _texture.textureId);
 
@@ -64,6 +67,8 @@ void Sprite::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::
 
         glBindVertexArray(_vao);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        glDisable(GL_BLEND);
     }
     glBindVertexArray(0);
 

@@ -10,11 +10,17 @@
 #include <light/directionLight/DirectionLight.h>
 #include <light/pointLight/PointLight.h>
 #include <light/spotLight/SpotLight.h>
+#include <render/sprite/Sprite.h>
 #include <GLFW/glfw3.h>
 #include <loader/Model.h>
 
 #include <algorithm>
-#include <render/sprite/Sprite.h>
+
+extern Camera camera;
+
+bool sortByDistance(const glm::vec3 &pos1, const glm::vec3 &pos2) {
+    return (camera.getPosition().z - pos1.z) < (camera.getPosition().z - pos2.z);
+}
 
 MainScene::MainScene() {
     init();
@@ -41,19 +47,18 @@ void MainScene::init() {
     cube2->addDirectionLight(directionLight);
     addChild(cube2);
 
+    std::sort(vegetation.begin(), vegetation.end(), sortByDistance);
     std::for_each(vegetation.begin(), vegetation.end(), [=](glm::vec3 &pos) {
-        auto *grass = new Sprite("../../texture/grass.png");
+        auto *grass = new Sprite("../../texture/window.png");
         grass->setPosition(pos);
         addChild(grass);
     });
 }
 
 void MainScene::onDraw(const Camera &camera) {
-
     glm::vec3 cameraPos = camera.getPosition();
     glm::mat4 view = camera.getViewMatrix();
     glm::mat4 projection = glm::perspective(glm::radians(camera.getFov()), (float)ScreenWidth / ScreenHeight, 0.1f, 100.0f);
-
     Scene::onDraw(cameraPos, view, projection);
-
 }
+

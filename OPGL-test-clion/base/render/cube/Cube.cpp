@@ -133,6 +133,9 @@ void Cube::setBoarder(const glm::vec3 &color) {
 }
 
 void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
+    glEnable(GL_CULL_FACE); // 启用面剔除
+    glCullFace(GL_FRONT);   // 只剔除正向面
+    glFrontFace(GL_CCW);    // 将逆时针定义为正面
 
     if (_dirty) {
         glBindBuffer(GL_ARRAY_BUFFER, _vbo);
@@ -249,5 +252,6 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
         glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
         glBindVertexArray(0);
     }
+    glDisable(GL_CULL_FACE);
 
 }

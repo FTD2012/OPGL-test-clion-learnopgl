@@ -93,6 +93,10 @@ if (4.3_blending)
     add_subdirectory(4.3_blending)
 endif(4.3_blending)
 
+if (4.4_face_culling)
+    add_subdirectory(4.4_face_culling)
+endif(4.4_face_culling)
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -112,6 +116,7 @@ ADD_SUBDIRECTORY(3.1_model)
 ADD_SUBDIRECTORY(4.1_depth_testing)
 ADD_SUBDIRECTORY(4.2_stencil_testing)
 ADD_SUBDIRECTORY(4.3_blending)
+ADD_SUBDIRECTORY(4.4_face_culling)
 
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

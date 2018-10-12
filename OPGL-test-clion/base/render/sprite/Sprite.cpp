@@ -19,7 +19,6 @@ Sprite::~Sprite() {
 }
 
 void Sprite::init() {
-    glGenBuffers(1, &_vbo);
     glGenVertexArrays(1, &_vao);
     glBindVertexArray(_vao);
 
@@ -27,6 +26,7 @@ void Sprite::init() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _ebo);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+    glGenBuffers(1, &_vbo);
     glBindBuffer(GL_ARRAY_BUFFER, _vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(V3F_C4F_T2F)*4, _bufferGlSprite, GL_STATIC_DRAW);
 
@@ -46,6 +46,12 @@ void Sprite::init() {
 
 void Sprite::setTexture(const std::string &path) {
     _texture = Loader::getInstance()->loadTexture(path);
+    _glProgram->use();
+    _glProgram->setInt("texture1", 0);
+}
+
+void Sprite::setTexture(int textureId) {
+    _texture.textureId = textureId;
     _glProgram->use();
     _glProgram->setInt("texture1", 0);
 }

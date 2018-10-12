@@ -19,7 +19,8 @@ public:
     ~Sprite() override;
     void init();
     void setTexture(const std::string &path);
-    void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
+    void setTexture(int textureId);
+    void onDraw(const glm::vec3 &viewPos = glm::vec3(), const glm::mat4 &view = glm::mat4(), const glm::mat4 &projection = glm::mat4()) override;
 
 private:
     Texture         _texture;
@@ -32,10 +33,10 @@ private:
 
     V3F_C4F_T2F     _bufferGlSprite[4] = {
         // 位置                  // 颜色                    // 纹理坐标
-         0.5f,  0.5f, 0.0f,     1.0f, 0.0f, 0.0f, 1.0f,   1.0f, 1.0f,     // 右上
-         0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f, 1.0f,   1.0f, 0.0f,     // 右下
-        -0.5f, -0.5f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f,   0.0f, 0.0f,     // 左下
-        -0.5f,  0.5f, 0.0f,     1.0f, 1.0f, 0.0f, 1.0f,   0.0f, 1.0f      // 左上
+         1.0f,  1.0f, 0.0f,     1.0f, 0.0f, 0.0f, 1.0f,   1.0f, 1.0f,     // 右上
+         1.0f, -1.0f, 0.0f,     0.0f, 1.0f, 0.0f, 1.0f,   1.0f, 0.0f,     // 右下
+        -1.0f, -1.0f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f,   0.0f, 0.0f,     // 左下
+        -1.0f,  1.0f, 0.0f,     1.0f, 1.0f, 0.0f, 1.0f,   0.0f, 1.0f      // 左上
     };
 
     unsigned int indices[6] = {

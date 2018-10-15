@@ -67,6 +67,8 @@ SET(OPGL_test_clion_SRCS
         Shader.h
         Shader.cpp
         Macro.h
+        Constant.h
+        Constant.cpp
         )
 
 # shared library

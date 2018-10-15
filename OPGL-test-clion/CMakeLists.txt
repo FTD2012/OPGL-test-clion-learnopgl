@@ -26,7 +26,7 @@ list( APPEND TARGET_LIB ${OPENGL_gl_LIBRARY} )
 link_libraries(${TARGET_LIB})
 
 if(1.1_hello_window)
-    add_subdirectory(1.1_hellow_window)
+    add_subdirectory(1.1_hello_window)
 endif(1.1_hello_window)
 
 if(C++_base_test)

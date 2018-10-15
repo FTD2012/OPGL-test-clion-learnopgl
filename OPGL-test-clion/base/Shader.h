@@ -23,6 +23,8 @@
 class Shader {
 public:
     Shader(const char *vShaderCode, const char *fShaderCode);
+    ~Shader();
+    void link();
     void use();
 
     void setBool(const std::string &name, bool value) const;
@@ -34,8 +36,8 @@ public:
 
     const char *getVertexShader() const;
     const char *getFragmentShader() const;
-    void setVertexShader(const std::string &_vertexShader);
-    void setFragmentShader(const std::string &_fragmentShader);
+    void setVertexShader(const std::string &vertexShader);
+    void setFragmentShader(const std::string &fragmentShader);
 
     enum ShaderType {
         ShaderProgram,

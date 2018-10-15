@@ -13,6 +13,13 @@
 #include <single_color.vert>
 #include <single_color.frag>
 
+// filter
+#include <texture_inversion.frag>
+#include <texture_gray_scale.frag>
+#include <texture_kernel.frag>
+#include <texture_kernel_blur.frag>
+#include <texture_kernel_edge_detection.frag>
+
 // 1.3 shader
 #include <hello_shader.frag>
 #include <hello_shader.vert>

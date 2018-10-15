@@ -4,6 +4,7 @@
 
 #include <render/scene/Scene.h>
 #include <render/line/Line.h>
+#include <config.h>
 
 Scene::Scene() {
     init();
@@ -15,6 +16,7 @@ Scene::~Scene() {
 
 void Scene::init() {
 
+#ifdef ENABLE_FBO
     // 生成纹理附件
     glGenTextures(1, &_texture);
     glBindTexture(GL_TEXTURE_2D, _texture);
@@ -41,31 +43,34 @@ void Scene::init() {
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
     _sprite = new Sprite();
+#endif
 
 }
 
 
 void Scene::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
 
+#ifdef ENABLE_FBO
     // first pass
     glBindFramebuffer(GL_FRAMEBUFFER, _fbo);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
+#endif
 
     for (auto &it : _children) {
         it->onDraw(viewPos, view, projection);
     }
 
+#ifdef ENABLE_FBO
     _sprite->setTexture(_texture);
 
     // second pass
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-
     _sprite->onDraw();
-
+#endif
 
 }
 
@@ -97,4 +102,10 @@ void Scene::drawWorld() {
         }
     }
     addChild(lineRender);
+}
+
+void Scene::setFilter(const Filter &filter) {
+#ifdef ENABLE_FBO
+    _sprite->setFilter(filter);
+#endif
 }

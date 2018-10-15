@@ -79,3 +79,29 @@ void Sprite::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::
     glBindVertexArray(0);
 
 }
+
+void Sprite::setFilter(const Filter &filter) {
+#ifdef ENABLE_FBO
+    switch(filter) {
+        case Filter::INVERSION:
+            _glProgram->setFragmentShader(texture__inversion_fragmentShaderSource);
+            break;
+
+        case Filter::GRAY_SCALE:
+            _glProgram->setFragmentShader(texture__gray_scale_fragmentShaderSource);
+            break;
+
+        case Filter::KERNEL:
+            _glProgram->setFragmentShader(texture__kernel_fragmentShaderSource);
+            break;
+
+        case Filter::KERNEL_BLUR:
+            _glProgram->setFragmentShader(texture__kernel__blur_fragmentShaderSource);
+            break;
+
+        case Filter::KERNEL_EDGE_DETECTION:
+            _glProgram->setFragmentShader(texture__kernel__edge_detection_fragmentShaderSource);
+            break;
+    }
+#endif
+}

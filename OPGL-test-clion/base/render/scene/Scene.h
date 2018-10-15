@@ -9,6 +9,7 @@
 #include <render/object/Object.h>
 #include <camera/Camera.h>
 #include <render/sprite/Sprite.h>
+#include <Constant.h>
 
 class Scene: public Object {
 
@@ -17,6 +18,7 @@ public:
     ~Scene();
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
     void drawWorld();
+    void setFilter(const Filter &filter);
 
 protected:
     void init();

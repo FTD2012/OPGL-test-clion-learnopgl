@@ -11,6 +11,11 @@ extern const char *hello_triangle_fragmentShaderSource;
 extern const char *hello_triangle_vertexShaderSource;
 extern const char *texture_vertexShaderSource;
 extern const char *texture_fragmentShaderSource;
+extern const char *texture__inversion_fragmentShaderSource;
+extern const char *texture__gray_scale_fragmentShaderSource;
+extern const char *texture__kernel_fragmentShaderSource;
+extern const char *texture__kernel__blur_fragmentShaderSource;
+extern const char *texture__kernel__edge_detection_fragmentShaderSource;
 extern const char *glm_fragmentShaderSource;
 extern const char *glm_vertexShaderSource;
 extern const char *coordinate_system_fragmentShaderSource;
@@ -58,5 +63,10 @@ extern float lastFrame;
  */
 extern const int ScreenWidth;
 extern const int ScreenHeight;
+
+/**
+ * 启用以启用图片渲染效果(Filter)
+ */
+#define ENABLE_FBO
 
 #endif //OPGL_TEST_CLION_CONFIG_H

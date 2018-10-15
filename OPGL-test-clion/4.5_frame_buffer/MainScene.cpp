@@ -13,6 +13,7 @@
 #include <render/sprite/Sprite.h>
 #include <GLFW/glfw3.h>
 #include <loader/Model.h>
+#include <Constant.h>
 
 #include <algorithm>
 
@@ -53,6 +54,8 @@ void MainScene::init() {
         grass->setPosition(pos);
         addChild(grass);
     });
+
+    setFilter(Filter::KERNEL_EDGE_DETECTION);
 }
 
 void MainScene::onDraw(const Camera &camera) {

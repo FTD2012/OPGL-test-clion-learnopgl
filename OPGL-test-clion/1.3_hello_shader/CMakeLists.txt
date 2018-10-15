@@ -3,7 +3,7 @@ set(APP_NAME 1.3_hello_shader)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES hello_shader.cpp)
-add_executable(1.3_hello_shader hello_shader.cpp)
+add_executable(1.3_hello_shader ${SOURCE_FILES})
 
 TARGET_LINK_LIBRARIES(1.3_hello_shader OPGL_test_clion)
 

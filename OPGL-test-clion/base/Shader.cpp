@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include "Shader.h"
+#include "Macro.h"
 
 Shader::Shader(const char *vShaderCode, const char *fShaderCode) {
 
@@ -43,13 +44,23 @@ Shader::Shader(const char *vShaderCode, const char *fShaderCode) {
     _fragmentShader = fShaderCode;
 
     // 2. compile the source code
+    link();
+
+}
+
+Shader::~Shader() {
+    glDeleteProgram(shaderProgram);
+}
+
+void Shader::link() {
     do {
-        unsigned int vertexShader = compileShader(vShaderCode, ShaderType::VertexShader);
-        if (!vertexShader) break;
+        unsigned int vertexShader = compileShader(_vertexShader.c_str(), ShaderType::VertexShader);
+        ASSERT(vertexShader, "Invalid vertex shader");
 
-        unsigned int fragmentShader = compileShader(fShaderCode, ShaderType::FragmentShader);
-        if (!fragmentShader) break;
+        unsigned int fragmentShader = compileShader(_fragmentShader.c_str(), ShaderType::FragmentShader);
+        ASSERT(fragmentShader, "Invalid fragment shader");
 
+        glDeleteProgram(shaderProgram);
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);
@@ -59,7 +70,7 @@ Shader::Shader(const char *vShaderCode, const char *fShaderCode) {
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
 
-    } while(false);
+    } while(0);
 }
 
 void Shader::use() {
@@ -143,16 +154,18 @@ const char *Shader::getVertexShader() const {
     return _vertexShader.c_str();
 }
 
-void Shader::setVertexShader(const std::string &_vertexShader) {
-    Shader::_vertexShader = _vertexShader;
+void Shader::setVertexShader(const std::string &vertexShader) {
+    _vertexShader = _vertexShader;
+    link();
 }
 
 const char *Shader::getFragmentShader() const {
     return _fragmentShader.c_str();
 }
 
-void Shader::setFragmentShader(const std::string &_fragmentShader) {
-    Shader::_fragmentShader = _fragmentShader;
+void Shader::setFragmentShader(const std::string &fragmentShader) {
+    _fragmentShader = fragmentShader;
+    link();
 }
 
 

@@ -10,6 +10,7 @@
 #include <string>
 #include <Shader.h>
 #include <render/types/types.h>
+#include <Constant.h>
 
 class Sprite: public Object {
 
@@ -21,6 +22,7 @@ public:
     void setTexture(const std::string &path);
     void setTexture(int textureId);
     void onDraw(const glm::vec3 &viewPos = glm::vec3(), const glm::mat4 &view = glm::mat4(), const glm::mat4 &projection = glm::mat4()) override;
+    void setFilter(const Filter &filter);
 
 private:
     Texture         _texture;

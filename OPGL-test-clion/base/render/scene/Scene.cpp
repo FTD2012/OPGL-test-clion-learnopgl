@@ -4,7 +4,9 @@
 
 #include <render/scene/Scene.h>
 #include <render/line/Line.h>
-#include <config.h>
+#include <Config.h>
+#include <Macro.h>
+#include <loader/Loader.h>
 
 Scene::Scene() {
     init();
@@ -12,6 +14,41 @@ Scene::Scene() {
 
 Scene::~Scene() {
 
+#ifdef ENABLE_FBO
+    delete _sprite;
+    _sprite = nullptr;
+#endif
+
+}
+
+void Scene::enableCubeMap(bool isEnable) {
+    if (_isEnableCubeMap != isEnable) {
+        if (isEnable) {
+            // load 6 cube maps
+            _cubeMapTexture = Loader::getInstance()->loadCubeMapTexture(_textureFaces);
+
+            glGenVertexArrays(1, &_cubeMapVao);
+            glBindVertexArray(_cubeMapVao);
+
+            glGenBuffers(1, &_cubeMapVbo);
+            glBindBuffer(GL_ARRAY_BUFFER, _cubeMapVbo);
+            glBufferData(GL_ARRAY_BUFFER, sizeof(Vec3F) * VERTICES_NUMBER, _bufferCubeMap, GL_STATIC_DRAW);
+
+            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vec3F), (void *)nullptr);
+            glEnableVertexAttribArray(0);
+
+            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            glBindVertexArray(0);
+
+            _cubeMapGlProgram = new Shader(cube_map_vertexShaderSource, cube_map_fragmentShaderSource);
+
+        } else {
+            /// TODO: ljm >>> clear vertex、texture and shader
+
+        }
+
+        _isEnableCubeMap = isEnable;
+    }
 }
 
 void Scene::init() {
@@ -50,6 +87,7 @@ void Scene::init() {
 
 void Scene::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
 
+    // frame buffer
 #ifdef ENABLE_FBO
     // first pass
     glBindFramebuffer(GL_FRAMEBUFFER, _fbo);
@@ -71,6 +109,22 @@ void Scene::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::m
     glClear(GL_COLOR_BUFFER_BIT);
     _sprite->onDraw();
 #endif
+
+
+    // sky box
+    if (_isEnableCubeMap) {
+        glDepthFunc(GL_LEQUAL);
+        _cubeMapGlProgram->use();
+        _cubeMapGlProgram->setMat4("view", glm::mat4(glm::mat3(view)));
+        // _cubeMapGlProgram->setMat4("view", view);
+        _cubeMapGlProgram->setMat4("projection", projection);
+        glBindVertexArray(_cubeMapVao);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, _cubeMapTexture);
+        glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
+        glBindVertexArray(0);
+        glDepthFunc(GL_LESS);
+    }
 
 }
 

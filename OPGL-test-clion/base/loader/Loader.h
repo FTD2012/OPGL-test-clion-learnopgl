@@ -6,6 +6,7 @@
 #define OPGL_TEST_CLION_LOADER_H
 
 #include <string>
+#include <vector>
 #include <unordered_map>
 
 #include <render/types/types.h>
@@ -16,6 +17,7 @@ public:
     static Loader *getInstance();
 
     Texture loadTexture(const std::string &path, TextureType textureType = TextureType::NONE);
+    unsigned int loadCubeMapTexture(const std::vector<std::string> &path, TextureType textureType = TextureType::NONE);
 
 private:
 

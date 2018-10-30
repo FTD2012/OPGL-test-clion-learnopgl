@@ -5,6 +5,7 @@
 #ifndef OPGL_TEST_CLION_CONFIG_H
 #define OPGL_TEST_CLION_CONFIG_H
 
+
 extern const char *line_vertexShaderSource;
 extern const char *line_fragmentShaderSource;
 extern const char *hello_triangle_fragmentShaderSource;
@@ -16,6 +17,8 @@ extern const char *texture__gray_scale_fragmentShaderSource;
 extern const char *texture__kernel_fragmentShaderSource;
 extern const char *texture__kernel__blur_fragmentShaderSource;
 extern const char *texture__kernel__edge_detection_fragmentShaderSource;
+extern const char *cube_map_vertexShaderSource;
+extern const char *cube_map_fragmentShaderSource;
 extern const char *glm_fragmentShaderSource;
 extern const char *glm_vertexShaderSource;
 extern const char *coordinate_system_fragmentShaderSource;
@@ -68,5 +71,6 @@ extern const int ScreenHeight;
  * 启用以启用图片渲染效果(Filter)
  */
 #define ENABLE_FBO
+#undef ENABLE_FBO
 
 #endif //OPGL_TEST_CLION_CONFIG_H

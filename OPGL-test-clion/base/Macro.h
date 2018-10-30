@@ -22,8 +22,22 @@
                     assert(false);                              \
                 }                                               \
             } while (0)
+
+    #define BREAK_IF(condition)                                 \
+                if (!!(condition)) {                            \
+                    break;                                      \
+                }
+
+    #define BREAK_IF_ERR_LOG(condition, msg)                    \
+                if (!!(condition)) {                            \
+                    printf("Break failed: %s", msg);            \
+                }
+
 #else
     #define ASSERT(cond, msg)
+    #define BREAK_IF(condition)
+    #define BREAK_IF_ERR_LOG(condition, msg)
 #endif
+
 
 #endif //OPGL_TEST_CLION_MACRO_H

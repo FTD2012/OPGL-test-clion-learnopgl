@@ -101,6 +101,10 @@ if (4.5_frame_buffer)
     add_subdirectory(4.5_frame_buffer)
 endif()
 
+if (4.6_cube_map)
+    add_subdirectory(4.6_cube_map)
+endif()
+
 ADD_SUBDIRECTORY(base)
 #ADD_SUBDIRECTORY(GLAD)
 ADD_SUBDIRECTORY(1.1_hello_window)
@@ -122,6 +126,7 @@ ADD_SUBDIRECTORY(4.2_stencil_testing)
 ADD_SUBDIRECTORY(4.3_blending)
 ADD_SUBDIRECTORY(4.4_face_culling)
 ADD_SUBDIRECTORY(4.5_frame_buffer)
+ADD_SUBDIRECTORY(4.6_cube_map)
 
 #SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

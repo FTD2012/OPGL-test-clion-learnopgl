@@ -20,6 +20,10 @@
 #include <texture_kernel_blur.frag>
 #include <texture_kernel_edge_detection.frag>
 
+// cube map
+#include <cube_map.vert>
+#include <cube_map.frag>
+
 // 1.3 shader
 #include <hello_shader.frag>
 #include <hello_shader.vert>

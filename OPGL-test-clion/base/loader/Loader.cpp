@@ -1,9 +1,11 @@
 //
 // Created by lvjiaming on 2018/8/8.
 //
+#define STB_IMAGE_IMPLEMENTATION
 #include <external/stb_image.h>
 #include <external/glad.h>
 
+#include <Config.h>
 #include "Loader.h"
 #include "Macro.h"
 
@@ -79,4 +81,30 @@ Texture Loader::_loadTexture(const std::string &path, TextureType textureType) {
     stbi_image_free(data);
     return Texture{ texture, path, textureType };
 
+}
+
+unsigned int Loader::loadCubeMapTexture(const std::vector<std::string> &path, TextureType textureType) {
+    unsigned int texture;
+    int width, height, nrChannels;
+    unsigned char *data;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
+    stbi_set_flip_vertically_on_load(false);
+
+    for (unsigned int i = 0; i < path.size(); i++) {
+        data = stbi_load(path[i].c_str(), &width, &height, &nrChannels, 0);
+        ASSERT(data, (std::string("Invalid texture [") + path[i] + std::string("] in cube map!")).c_str());
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        stbi_image_free(data);
+    }
+
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
+
+    return texture;
 }

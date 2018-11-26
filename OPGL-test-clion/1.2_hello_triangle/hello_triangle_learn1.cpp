@@ -11,7 +11,8 @@
  * 当用户改变窗口大小时，视口也被对应调整
  */
 void frameBuffer_size_callback(GLFWwindow *window, int width, int height) {
-    glViewport(0, 0, width, height);
+//    glViewport(100, 75, width, height);
+    glViewport(0, 0, width/2, height/2);
 }
 
 void processInput(GLFWwindow *window) {
@@ -77,7 +78,7 @@ int main() {
     /*
      * 创建一个和OPENGL/OPENGL ES上下文绑定的窗口
      */
-    GLFWwindow *window = glfwCreateWindow(200, 150, "好好学习OPENGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(400, 300, "好好学习OPENGL", NULL, NULL);
     if (!window) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -110,6 +111,7 @@ int main() {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
+    glViewport(0, 0, 400/2, 300/2);
 
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     unsigned int fragmentShader1 = glCreateShader(GL_FRAGMENT_SHADER);

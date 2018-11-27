@@ -73,6 +73,8 @@ uniform bool enableDirectionLight;
 
 uniform SpotLight spotLight;
 
+uniform samplerCube skybox;
+
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float shininess);
 vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float shininess);
 vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float shininess);
@@ -125,11 +127,19 @@ void main()
         }
 
         FragColor = vec4(result * color, 1.0f);
-//        FragColor = vec4(color, 1.0f);
-    } else {
+    }
 
+    else if (materialType == 3) {
+        vec3 I = normalize(FragPos - viewPos);
+        vec3 R = reflect(I, normalize(Normal));
+        FragColor = vec4(texture(skybox, R).rgb, 1.0f);
+//        FragColor = vec4(0.5f);
+    }
+
+    // TODO: ljm >>> add refraction computation
+
+    else {
         FragColor = vec4(Color, 1.0f);
-
     }
 
 }
@@ -172,8 +182,7 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir, v
 }
 
 // calculates the color when using a spot light.
-vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float shininess)
-{
+vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float shininess) {
     vec3 lightDir = normalize(light.position - fragPos);
     // diffuse shading
     float diff = max(dot(normal, lightDir), 0.0);

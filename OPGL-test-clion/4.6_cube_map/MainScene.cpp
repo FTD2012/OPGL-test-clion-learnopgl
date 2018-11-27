@@ -14,6 +14,7 @@
 #include <GLFW/glfw3.h>
 #include <loader/Model.h>
 #include <Constant.h>
+#include <Macro.h>
 
 #include <algorithm>
 
@@ -32,21 +33,31 @@ MainScene::~MainScene() {
 }
 
 void MainScene::init() {
-//    this->drawWorld();
+    this->drawWorld();
 
-    auto *directionLight = new DirectionLight(glm::vec3(-0.2f, -1.0f, -0.3f), glm::vec3(1.0f), glm::vec3(1.0f), glm::vec3(1.0f));
-    addChild(directionLight);
+//    auto *directionLight = new DirectionLight(glm::vec3(-0.2f, -1.0f, -0.3f), glm::vec3(1.0f), glm::vec3(1.0f), glm::vec3(1.0f));
+//    addChild(directionLight);
+//
+//    auto *cube1 = new Cube(glm::vec3(0.0f, 0.5f, -2.0f));
+//    cube1->setColor({0.0f, 1.0f, 0.0f, 1.0f});
+//    cube1->setMaterial("../../texture/marble.jpg", "../../texture/marble.jpg");
+//    cube1->addDirectionLight(directionLight);
+//    addChild(cube1);
+//
+//    auto *cube2 = new Cube(glm::vec3(2.0f, 0.5f, 0.0f));
+//    cube2->setColor({0.0f, 1.0f, 0.0f, 1.0f});
+//    cube2->setMaterial("../../texture/marble.jpg", "../../texture/marble.jpg");
+//    cube2->addDirectionLight(directionLight);
+//    addChild(cube2);
 
-    auto *cube1 = new Cube(glm::vec3(0.0f, 0.5f, -2.0f));
-    cube1->setColor({0.0f, 1.0f, 0.0f, 1.0f});
-    cube1->setMaterial("../../texture/marble.jpg", "../../texture/marble.jpg");
-    cube1->addDirectionLight(directionLight);
-    addChild(cube1);
-
-    auto *cube2 = new Cube(glm::vec3(2.0f, 0.5f, 0.0f));
-    cube2->setMaterial("../../texture/marble.jpg", "../../texture/marble.jpg");
-    cube2->addDirectionLight(directionLight);
-    addChild(cube2);
+    // direction light
+    auto *directionLight = new DirectionLight();
+    auto *pointLight = new PointLight({1.2f, 5.0f, 2.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
+    auto *nanoSuitModel = new Model("../../texture/nanosuit/nanosuit.obj");
+    nanoSuitModel->addDirectionLight(directionLight);
+    nanoSuitModel->addPointLight(pointLight);
+    addChild(nanoSuitModel);
+    addChild(pointLight);
 
     enableCubeMap(true);
 }

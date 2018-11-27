@@ -258,6 +258,9 @@ int main() {
         }
 #endif
 
+        std::cout << "currentFrame: " << frame++ << std::endl;
+
+
 
         /*
          * 处理用户输入
@@ -283,6 +286,8 @@ int main() {
          * 检查触发时间
          */
         glfwPollEvents();
+
+        CHECK_GL_ERROR_DEBUG();
     }
 
     delete mainScene;

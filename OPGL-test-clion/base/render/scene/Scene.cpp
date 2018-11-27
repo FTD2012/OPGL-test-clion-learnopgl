@@ -7,6 +7,7 @@
 #include <Config.h>
 #include <Macro.h>
 #include <loader/Loader.h>
+#include <Global.h>
 
 Scene::Scene() {
     init();
@@ -26,6 +27,7 @@ void Scene::enableCubeMap(bool isEnable) {
         if (isEnable) {
             // load 6 cube maps
             _cubeMapTexture = Loader::getInstance()->loadCubeMapTexture(_textureFaces);
+            skyboxTexture = _cubeMapTexture;
 
             glGenVertexArrays(1, &_cubeMapVao);
             glBindVertexArray(_cubeMapVao);
@@ -44,7 +46,7 @@ void Scene::enableCubeMap(bool isEnable) {
 
         } else {
             /// TODO: ljm >>> clear vertex、texture and shader
-
+            skyboxTexture = 0;
         }
 
         _isEnableCubeMap = isEnable;

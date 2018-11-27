@@ -41,6 +41,7 @@ public:
     void addPointLight(const PointLight *pointLight);
     void addSpotLight(const SpotLight *spotLight);
     void setBoarder(const glm::vec3 &color) override;
+    void enableReflect(bool isEnable);
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
 private:
@@ -51,7 +52,8 @@ private:
      */
     enum MaterialType {
         TEXTURE = 1,
-        COLOR   = 2
+        COLOR   = 2,
+        REFLECT = 3,
     };
     MaterialType             _materialType;
 

@@ -78,3 +78,4 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 const int ScreenWidth = 800;
 const int ScreenHeight = 600;
+int frame = 0;

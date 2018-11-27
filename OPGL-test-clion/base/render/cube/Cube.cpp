@@ -4,6 +4,8 @@
 #include <render/cube/Cube.h>
 #include <Config.h>
 #include <loader/Loader.h>
+#include <Macro.h>
+#include <Global.h>
 
 Cube::Cube(const glm::vec3 &position)
 :  _glProgram(nullptr)
@@ -132,9 +134,16 @@ void Cube::setBoarder(const glm::vec3 &color) {
     _borderGlProgram = new Shader(single_color_vertexShaderSource, single_color_fragmentShaderSource);
 }
 
+void Cube::enableReflect(bool isEnable) {
+    _materialType = MaterialType::REFLECT;
+    _glProgram->use();
+    _glProgram->setInt("skybox", 2);        // DOUBT: 为什么不能设置成为 '0'
+    _glProgram->setInt("materialType", _materialType);
+}
+
 void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
     glEnable(GL_CULL_FACE); // 启用面剔除
-    glCullFace(GL_FRONT);   // 只剔除正向面
+    glCullFace(GL_BACK);   // 只剔除正向面
     glFrontFace(GL_CCW);    // 将逆时针定义为正面
 
     if (_dirty) {
@@ -143,74 +152,86 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
         _dirty = false;
     }
 
-    if (_diffuseTextureId) {
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, _diffuseTextureId);
-    }
-    if (_specularTextureId) {
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, _specularTextureId);
-    }
-
     _glProgram->use();
     _glProgram->setMat4("model", _position);
     _glProgram->setMat4("view", view);
     _glProgram->setMat4("projection", projection);
     _glProgram->setVec3("viewPos", viewPos);
 
-    // direction light
-    if (_directionLightDirty) {
-        _glProgram->setBool("enableDirectionLight", (bool) _directionLight);
-        _directionLightDirty = false;
+    if (_materialType == MaterialType::TEXTURE || _materialType == MaterialType::COLOR) {
+        if (_diffuseTextureId) {
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, _diffuseTextureId);
+        }
+        if (_specularTextureId) {
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture(GL_TEXTURE_2D, _specularTextureId);
+        }
+
+        // direction light
+        if (_directionLightDirty) {
+            _glProgram->setBool("enableDirectionLight", (bool) _directionLight);
+            _directionLightDirty = false;
+        }
+
+        // point light
+        if (_pointLightDirty) {
+            char tmp[100];
+            for (size_t index = 0; index < _capacityPointLight; index++) {
+
+                // sprintf(tmp, "pointLights[%lu].position", index);
+                _glProgram->setVec3("pointLights[" + std::to_string(index) + "].position",
+                                    _pointLight[index]->getPosition());
+
+                sprintf(tmp, "pointLights[%lu].ambient", index);
+                _glProgram->setVec3(tmp, _pointLight[index]->getAmbient());
+
+                sprintf(tmp, "pointLights[%lu].diffuse", index);
+                _glProgram->setVec3(tmp, _pointLight[index]->getDiffuse());
+
+                sprintf(tmp, "pointLights[%lu].specular", index);
+                _glProgram->setVec3(tmp, _pointLight[index]->getSpecular());
+
+                sprintf(tmp, "pointLights[%lu].constant", index);
+                _glProgram->setFloat(tmp, _pointLight[index]->getConstant());
+
+                sprintf(tmp, "pointLights[%lu].linear", index);
+                _glProgram->setFloat(tmp, _pointLight[index]->getLinear());
+
+                sprintf(tmp, "pointLights[%lu].quadratic", index);
+                _glProgram->setFloat(tmp, _pointLight[index]->getQuadratic());
+
+            }
+            _glProgram->setInt("pointLightNumber", (int) _capacityPointLight);
+            _pointLightDirty = false;
+        }
+
+        // spot light
+        if (_spotLightDirty) {
+            if (_spotLight) {
+                _glProgram->setVec3("spotLight.position", _spotLight->getPosition());
+                _glProgram->setVec3("spotLight.direction", _spotLight->getDirection());
+                _glProgram->setFloat("spotLight.cutOff", _spotLight->getCutOff());
+                _glProgram->setFloat("spotLight.outerCutOff", _spotLight->getOuterCutOff());
+                _glProgram->setFloat("spotLight.constant", _spotLight->getConstant());
+                _glProgram->setFloat("spotLight.linear", _spotLight->getLinear());
+                _glProgram->setFloat("spotLight.quadratic", _spotLight->getQuadratic());
+                _glProgram->setVec3("spotLight.ambient", _spotLight->getAmbient());
+                _glProgram->setVec3("spotLight.diffuse", _spotLight->getDiffuse());
+                _glProgram->setVec3("spotLight.specular", _spotLight->getSpecular());
+            }
+            _glProgram->setBool("enableSpotLight", (bool) _spotLight);
+            _spotLightDirty = false;
+        }
     }
 
-    // point light
-    if (_pointLightDirty) {
-        char tmp[100];
-        for (size_t index = 0; index < _capacityPointLight; index++) {
-
-            // sprintf(tmp, "pointLights[%lu].position", index);
-            _glProgram->setVec3("pointLights[" + std::to_string(index) + "].position", _pointLight[index]->getPosition());
-
-            sprintf(tmp, "pointLights[%lu].ambient", index);
-            _glProgram->setVec3(tmp, _pointLight[index]->getAmbient());
-
-            sprintf(tmp, "pointLights[%lu].diffuse", index);
-            _glProgram->setVec3(tmp, _pointLight[index]->getDiffuse());
-
-            sprintf(tmp, "pointLights[%lu].specular", index);
-            _glProgram->setVec3(tmp, _pointLight[index]->getSpecular());
-
-            sprintf(tmp, "pointLights[%lu].constant", index);
-            _glProgram->setFloat(tmp, _pointLight[index]->getConstant());
-
-            sprintf(tmp, "pointLights[%lu].linear", index);
-            _glProgram->setFloat(tmp, _pointLight[index]->getLinear());
-
-             sprintf(tmp, "pointLights[%lu].quadratic", index);
-            _glProgram->setFloat(tmp, _pointLight[index]->getQuadratic());
-
-        }
-        _glProgram->setInt("pointLightNumber", (int) _capacityPointLight);
-        _pointLightDirty = false;
+    else if (_materialType == MaterialType::REFLECT) {
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
     }
 
-    // spot light
-    if (_spotLightDirty) {
-        if (_spotLight) {
-            _glProgram->setVec3("spotLight.position", _spotLight->getPosition());
-            _glProgram->setVec3("spotLight.direction", _spotLight->getDirection());
-            _glProgram->setFloat("spotLight.cutOff", _spotLight->getCutOff());
-            _glProgram->setFloat("spotLight.outerCutOff", _spotLight->getOuterCutOff());
-            _glProgram->setFloat("spotLight.constant", _spotLight->getConstant());
-            _glProgram->setFloat("spotLight.linear", _spotLight->getLinear());
-            _glProgram->setFloat("spotLight.quadratic", _spotLight->getQuadratic());
-            _glProgram->setVec3("spotLight.ambient", _spotLight->getAmbient());
-            _glProgram->setVec3("spotLight.diffuse", _spotLight->getDiffuse());
-            _glProgram->setVec3("spotLight.specular", _spotLight->getSpecular());
-        }
-        _glProgram->setBool("enableSpotLight", (bool) _spotLight);
-        _spotLightDirty = false;
+    else {
+        ASSERT(false, "Invalid material type in Cube");
     }
 
     if (_enableBorder) {
@@ -250,6 +271,7 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     } else {
         glBindVertexArray(_vao);
         glDrawArrays(GL_TRIANGLES, 0, VERTICES_NUMBER);
+        CHECK_GL_ERROR_DEBUG();
         glBindVertexArray(0);
     }
     glDisable(GL_CULL_FACE);

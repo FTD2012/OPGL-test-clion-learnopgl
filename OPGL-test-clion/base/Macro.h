@@ -39,5 +39,16 @@
     #define BREAK_IF_ERR_LOG(condition, msg)
 #endif
 
+#ifdef DEBUG
+    #define CHECK_GL_ERROR_DEBUG() \
+    do { \
+        GLenum __error = glGetError(); \
+        if(__error) { \
+            printf("OpenGL error 0x%04X in %s %s %d\n", __error, __FILE__, __FUNCTION__, __LINE__); \
+        } \
+    } while (false)
+#else
+    #define CHECK_GL_ERROR_DEBUG()
+#endif
 
 #endif //OPGL_TEST_CLION_MACRO_H

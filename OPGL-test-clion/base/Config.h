@@ -68,6 +68,11 @@ extern const int ScreenWidth;
 extern const int ScreenHeight;
 
 /**
+ * 总帧数
+ */
+extern int frame;
+
+/**
  * 启用以启用图片渲染效果(Filter)
  */
 #define ENABLE_FBO

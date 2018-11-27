@@ -69,6 +69,8 @@ SET(OPGL_test_clion_SRCS
         Macro.h
         Constant.h
         Constant.cpp
+        Global.h
+        Global.cpp
         )
 
 # shared library

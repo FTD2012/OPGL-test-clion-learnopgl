@@ -5,6 +5,7 @@
 #include <external/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <Macro.h>
 
 /*
  * 告诉OpenGL渲染窗口的尺寸(视口Viewport)
@@ -213,6 +214,7 @@ int main() {
          * 检查触发时间
          */
         glfwPollEvents();
+        CHECK_GL_ERROR_DEBUG();
     }
 
     /* 删除着色器 */

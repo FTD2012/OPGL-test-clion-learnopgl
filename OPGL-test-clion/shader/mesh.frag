@@ -77,6 +77,7 @@ uniform ColorMaterial colorMaterial;
 uniform int materialType;
 uniform vec3 viewPos;
 
+uniform float time;
 uniform PointLight pointLights[NR_POINT_LIGHTS];
 uniform int pointLightNumber;
 
@@ -146,7 +147,6 @@ void main()
     } else {
 
         FragColor = vec4(Color, 1.0f);
-
     }
 
 }

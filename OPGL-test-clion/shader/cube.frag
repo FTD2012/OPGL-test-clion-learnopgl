@@ -133,7 +133,6 @@ void main()
         vec3 I = normalize(FragPos - viewPos);
         vec3 R = reflect(I, normalize(Normal));
         FragColor = vec4(texture(skybox, R).rgb, 1.0f);
-//        FragColor = vec4(0.5f);
     }
 
     // TODO: ljm >>> add refraction computation

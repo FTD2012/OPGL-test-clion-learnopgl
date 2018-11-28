@@ -7,6 +7,7 @@
 
 #include <Config.h>
 #include <loader/Loader.h>
+#include <Macro.h>
 
 Mesh::Mesh(std::vector<MeshVertex> &vertices, std::vector<unsigned int> &indices, std::vector<Texture> &textures)
 : _vertices(std::move(vertices))
@@ -29,6 +30,8 @@ Mesh::Mesh(std::vector<MeshVertex> &vertices, std::vector<unsigned int> &indices
     }
 
     setMaterial(diffuse, specular, normal, 32.0f);
+    CHECK_GL_ERROR_DEBUG();
+
 }
 
 Mesh::~Mesh() {
@@ -64,7 +67,7 @@ bool Mesh::init() {
 
     glBindVertexArray(0);
 
-    _glProgram = new Shader(mesh_vertexShaderSource, mesh_fragmentShaderSource);
+    _glProgram = new Shader(mesh_vertexShaderSource, mesh_fragmentShaderSource, mesh_geometryShaderSource);
 
     return true;
 }

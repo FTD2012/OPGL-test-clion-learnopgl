@@ -43,6 +43,7 @@ void Scene::enableCubeMap(bool isEnable) {
             glBindVertexArray(0);
 
             _cubeMapGlProgram = new Shader(cube_map_vertexShaderSource, cube_map_fragmentShaderSource);
+            ASSERT(_cubeMapGlProgram, "Invalid cube map shader!");
 
         } else {
             /// TODO: ljm >>> clear vertex、texture and shader

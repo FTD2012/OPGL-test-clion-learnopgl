@@ -5,6 +5,7 @@
 #include <render/object/LightObject.h>
 #include <Config.h>
 #include <loader/Loader.h>
+#include <GLFW/glfw3.h>
 
 LightObject::LightObject(const glm::vec3 &position)
 :  _glProgram(nullptr)
@@ -125,6 +126,7 @@ void LightObject::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const 
     _glProgram->setMat4("view", view);
     _glProgram->setMat4("projection", projection);
     _glProgram->setVec3("viewPos", viewPos);
+    _glProgram->setFloat("time", (float)glfwGetTime());
 
 
 

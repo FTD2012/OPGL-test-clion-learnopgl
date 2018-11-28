@@ -74,7 +74,6 @@ void Shader::link() {
             ASSERT(geometry, "Invalid geometry shader");
         }
 
-        glDeleteProgram(shaderProgram);
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);

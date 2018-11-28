@@ -76,6 +76,7 @@
 #include <point.vert>
 #include <point.frag>
 #include <point.geom>
+#include <mesh_explode.geom>
 
 int FPS = 60;
 float frameSecond = 1.0f/FPS;

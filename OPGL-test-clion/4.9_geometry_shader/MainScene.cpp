@@ -6,6 +6,7 @@
 
 #include <render/point/Point.h>
 #include <Config.h>
+#include <loader/Model.h>
 #include "MainScene.h"
 
 // Magic. Don't Move.
@@ -22,21 +23,22 @@ MainScene::MainScene() {
 }
 
 MainScene::~MainScene() {
-    
+
 }
 
 void MainScene::init() {
     this->drawWorld();
 
-    auto point = new Point();
-    point->drawPoint({0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f, 1.0f});
-    point->drawPoint({1.0f, 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f});
-    point->drawPoint({-1.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 1.0f, 1.0f});
-    point->drawPoint({0.0f, 0.0f, -1.0f}, {0.0f, 1.0f, 0.0f, 1.0f});
-    point->drawPoint({0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f});
+    auto *directionLight = new DirectionLight();
+    auto *pointLight = new PointLight({1.2f, 15.0f, 3.0f}, {0.05f, 0.05f, 0.05f}, {0.8f, 0.8f, 0.8f}, {1.0f, 1.0f, 1.0f}, 1.0f, 0.09f, 0.032f);
+    auto *spotLight = new SpotLight();
+    auto *nanoSuitModel = new Model("../../texture/nanosuit/nanosuit.obj");
+    nanoSuitModel->addDirectionLight(directionLight);
+    nanoSuitModel->addPointLight(pointLight);
+    addChild(nanoSuitModel);
+    addChild(pointLight);
 
-    this->addChild(point);
-
+//    enableCubeMap(true);
 }
 
 void MainScene::onDraw(const Camera &camera) {

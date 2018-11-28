@@ -233,6 +233,9 @@ void Cube::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     else {
         ASSERT(false, "Invalid material type in Cube");
     }
+    _glProgram->setInt("skybox", 2);
+    glActiveTexture(GL_TEXTURE2);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
 
     if (_enableBorder) {
         glEnable(GL_STENCIL_TEST);

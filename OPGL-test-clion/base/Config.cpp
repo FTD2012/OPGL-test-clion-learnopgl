@@ -72,6 +72,11 @@
 #include <mesh.vert>
 #include <mesh.frag>
 
+// 4.9
+#include <point.vert>
+#include <point.frag>
+#include <point.geom>
+
 int FPS = 60;
 float frameSecond = 1.0f/FPS;
 float deltaTime = 0.0f;

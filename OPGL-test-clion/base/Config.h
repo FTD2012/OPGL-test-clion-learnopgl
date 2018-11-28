@@ -41,6 +41,10 @@ extern const char *mesh_vertexShaderSource;
 extern const char *mesh_fragmentShaderSource;
 extern const char *single_color_vertexShaderSource;
 extern const char *single_color_fragmentShaderSource;
+extern const char *point_vertexShaderSource;
+extern const char *point_fragmentShaderSource;
+extern const char *point_geometryShaderSource;
+
 
 
 /**

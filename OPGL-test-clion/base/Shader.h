@@ -14,7 +14,7 @@
 
 class Shader {
 public:
-    Shader(const char *vShaderCode, const char *fShaderCode);
+    Shader(const char *vShaderCode, const char *fShaderCode, const char *gShaderCode = nullptr);
     ~Shader();
     void link();
     void use();
@@ -34,7 +34,8 @@ public:
     enum ShaderType {
         ShaderProgram,
         VertexShader,
-        FragmentShader
+        FragmentShader,
+        GeometryShader
     };
 
 protected:
@@ -43,8 +44,10 @@ protected:
 
 private:
     unsigned int shaderProgram;
+    bool         _enableGeometryShader;
     std::string  _vertexShader;
     std::string  _fragmentShader;
+    std::string  _geometryShader;
 
 };
 

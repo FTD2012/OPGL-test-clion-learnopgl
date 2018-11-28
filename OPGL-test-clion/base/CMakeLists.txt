@@ -57,6 +57,10 @@ SET(OPGL_test_clion_SRCS
         render/object/Object.h
         render/object/Object.cpp
 
+        render/point
+        render/point/Point.h
+        render/point/Point.cpp
+
         render/types
         render/types/types.h
         render/types/Enums.h

@@ -37,6 +37,11 @@ struct Tex2F {
     float v;
 };
 
+struct V3F_C4F {
+    Vec3F   vertices;
+    Color4F colors;
+};
+
 struct V3F_C4F_T2F {
     Vec3F   vertices;
     Color4F colors;

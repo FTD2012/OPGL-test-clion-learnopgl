@@ -7,7 +7,9 @@
 #include "Shader.h"
 #include "Macro.h"
 
-Shader::Shader(const char *vShaderCode, const char *fShaderCode) {
+Shader::Shader(const char *vShaderCode, const char *fShaderCode, const char *gShaderCode)
+: _enableGeometryShader(false)
+{
 
     /*
      * @deprecated
@@ -43,6 +45,11 @@ Shader::Shader(const char *vShaderCode, const char *fShaderCode) {
     _vertexShader = vShaderCode;
     _fragmentShader = fShaderCode;
 
+    if (gShaderCode) {
+        _geometryShader = gShaderCode;
+        _enableGeometryShader = (bool) gShaderCode;
+    }
+
     // 2. compile the source code
     link();
 
@@ -54,21 +61,34 @@ Shader::~Shader() {
 
 void Shader::link() {
     do {
-        unsigned int vertexShader = compileShader(_vertexShader.c_str(), ShaderType::VertexShader);
+        unsigned int vertexShader, fragmentShader, geometry = 0;
+
+        vertexShader = compileShader(_vertexShader.c_str(), ShaderType::VertexShader);
         ASSERT(vertexShader, "Invalid vertex shader");
 
-        unsigned int fragmentShader = compileShader(_fragmentShader.c_str(), ShaderType::FragmentShader);
+        fragmentShader = compileShader(_fragmentShader.c_str(), ShaderType::FragmentShader);
         ASSERT(fragmentShader, "Invalid fragment shader");
+
+        if (_enableGeometryShader) {
+            geometry = compileShader(_geometryShader.c_str(), ShaderType::GeometryShader);
+            ASSERT(geometry, "Invalid geometry shader");
+        }
 
         glDeleteProgram(shaderProgram);
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);
+        if (geometry) {
+            glAttachShader(shaderProgram, geometry);
+        }
         glLinkProgram(shaderProgram);
         if (!checkCompileErrors(shaderProgram, ShaderType::ShaderProgram)) break;
 
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
+        if (geometry) {
+            glDeleteShader(geometry);
+        }
 
     } while(0);
 }
@@ -107,21 +127,24 @@ unsigned int Shader::compileShader(const char *source, Shader::ShaderType type) 
     switch (type) {
         case ShaderType::VertexShader:
             shader = glCreateShader(GL_VERTEX_SHADER);
-            if (!shader) return (unsigned int)false;
-            glShaderSource(shader, 1, &source, nullptr);
-            glCompileShader(shader);
-            return checkCompileErrors(shader, type) ? shader : (unsigned int)false;
+            break;
+
+        case ShaderType::GeometryShader:
+            shader = glCreateShader(GL_GEOMETRY_SHADER);
+            break;
 
         case ShaderType::FragmentShader:
             shader = glCreateShader(GL_FRAGMENT_SHADER);
-            if (!shader) return (unsigned int)false;
-            glShaderSource(shader, 1, &source, nullptr);
-            glCompileShader(shader);
-            return checkCompileErrors(shader, type) ? shader : (unsigned int)false;
+            break;
 
         default:
-            return (unsigned int)false;
+            shader = 0;
     }
+
+    if (!shader) return (unsigned int)false;
+    glShaderSource(shader, 1, &source, nullptr);
+    glCompileShader(shader);
+    return checkCompileErrors(shader, type) ? shader : (unsigned int)false;
 }
 
 bool Shader::checkCompileErrors(unsigned int shader, Shader::ShaderType type) {
@@ -130,6 +153,7 @@ bool Shader::checkCompileErrors(unsigned int shader, Shader::ShaderType type) {
     switch (type) {
         case ShaderType::VertexShader:
         case ShaderType::FragmentShader:
+        case ShaderType::GeometryShader:
             glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
             if (!status) {
                 glGetShaderInfoLog(shader, 1024, nullptr, infoLog);

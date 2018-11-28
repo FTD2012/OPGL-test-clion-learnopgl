@@ -26,7 +26,7 @@ MainScene::~MainScene() {
 }
 
 void MainScene::init() {
-//    this->drawWorld();
+    this->drawWorld();
 
     auto point = new Point();
     point->drawPoint({0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f, 1.0f});

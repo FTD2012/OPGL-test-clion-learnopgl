@@ -35,10 +35,11 @@ void MainScene::init() {
     auto *nanoSuitModel = new Model("../../texture/nanosuit/nanosuit.obj");
     nanoSuitModel->addDirectionLight(directionLight);
     nanoSuitModel->addPointLight(pointLight);
+    nanoSuitModel->enableVisibleNormal(true);
     addChild(nanoSuitModel);
     addChild(pointLight);
 
-//    enableCubeMap(true);
+    enableCubeMap(true);
 }
 
 void MainScene::onDraw(const Camera &camera) {

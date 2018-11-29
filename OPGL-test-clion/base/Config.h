@@ -45,6 +45,8 @@ extern const char *point_vertexShaderSource;
 extern const char *point_fragmentShaderSource;
 extern const char *point_geometryShaderSource;
 extern const char *mesh_geometryShaderSource;
+extern const char *mesh_visible_normal_geometryShaderSource;
+extern const char *mesh_visible_normal_fragmentShaderSource;
 
 
 

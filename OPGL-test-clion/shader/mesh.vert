@@ -17,8 +17,7 @@ uniform mat4 view;
 uniform mat4 projection;
 uniform float time;
 
-void main()
-{
+void main() {
     gl_Position = projection * view * model * vec4(aPos, 1.0f);
     vs_out.FragPos = vec3(model * vec4(aPos, 1.0f));
     vs_out.Normal = mat3(transpose(inverse(model))) * aNormal;

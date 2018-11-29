@@ -20,10 +20,17 @@ public:
 
     bool init() override;
     void setMaterial(const std::string &diffusePath, const std::string &specularPath, const std::string &normalPath, float shininess = 32.0f);
-
+    void enableVisibleNormal(bool isEnable);
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
-
+    void onDrawNormal(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection);
 protected:
+
+    /**
+     * 可视化法线
+     */
+    bool                      _isEnableVisibleNormal;
+    Shader                   *_glNormalProgram;
+
 
     unsigned int              _normalTextureId;
 

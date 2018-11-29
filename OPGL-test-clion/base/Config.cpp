@@ -76,7 +76,14 @@
 #include <point.vert>
 #include <point.frag>
 #include <point.geom>
+
+// 爆破效果
 #include <mesh_explode.geom>
+
+// 可视化法线
+#include <mesh_visible_normal.geom>
+#include <mesh_visible_normal.frag>
+
 
 int FPS = 60;
 float frameSecond = 1.0f/FPS;

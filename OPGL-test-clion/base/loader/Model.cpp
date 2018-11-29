@@ -10,7 +10,9 @@
 #include <render/types/types.h>
 #include "Loader.h"
 
-Model::Model(const char *path) {
+Model::Model(const char *path)
+: _isEnableVisibleNormal(false)
+{
     loadModel(std::string(path));
 }
 
@@ -101,10 +103,27 @@ void Model::addPointLight(const PointLight *pointLight) {
     }
 }
 
+void Model::enableVisibleNormal(bool isEnable) {
+    if (_isEnableVisibleNormal == isEnable) {
+        return;
+    }
+    _isEnableVisibleNormal = isEnable;
+
+    for (auto &it : _meshes) {
+        it->enableVisibleNormal(isEnable);
+    }
+
+}
 
 void Model::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
     for (auto &it : _meshes) {
         it->onDraw(viewPos, view, projection);
+    }
+
+    if (_isEnableVisibleNormal) {
+        for (auto &it : _meshes) {
+            it->onDrawNormal(viewPos, view, projection);
+        }
     }
 
 }

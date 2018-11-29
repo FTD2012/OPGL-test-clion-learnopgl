@@ -20,6 +20,7 @@ public:
 
     void addDirectionLight(const DirectionLight *directionLight);
     void addPointLight(const PointLight *pointLight);
+    void enableVisibleNormal(bool isEnable);
 
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
@@ -32,6 +33,7 @@ private:
 
 
 private:
+    bool _isEnableVisibleNormal;
     std::vector<Mesh*> _meshes;
     const aiScene *_scene;
     std::string _directory;

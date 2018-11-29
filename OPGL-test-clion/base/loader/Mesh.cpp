@@ -8,11 +8,13 @@
 #include <Config.h>
 #include <loader/Loader.h>
 #include <Macro.h>
+#include <GLFW/glfw3.h>
 
 Mesh::Mesh(std::vector<MeshVertex> &vertices, std::vector<unsigned int> &indices, std::vector<Texture> &textures)
 : _vertices(std::move(vertices))
 , _indices(std::move(indices))
 , _textures(std::move(textures))
+, _isEnableVisibleNormal(false)
 {
     init();
 
@@ -81,6 +83,21 @@ void Mesh::setMaterial(const std::string &diffusePath, const std::string &specul
 
 }
 
+void Mesh::enableVisibleNormal(bool isEnable) {
+    if (_isEnableVisibleNormal == isEnable) {
+        return;
+    }
+    _isEnableVisibleNormal = isEnable;
+
+    if (isEnable) {
+        _glNormalProgram = new Shader(mesh_vertexShaderSource, mesh_visible_normal_fragmentShaderSource, mesh_visible_normal_geometryShaderSource);
+        printf("_glNormalProgram add = %x\n", _glNormalProgram);
+        ASSERT(_glNormalProgram, "Invalid program!");
+    } else {
+        delete _glNormalProgram;
+    }
+}
+
 void Mesh::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
     LightObject::onDraw(viewPos, view, projection);
 
@@ -95,4 +112,18 @@ void Mesh::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     glBindVertexArray(0);
 
 
+}
+
+void Mesh::onDrawNormal(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
+
+    _glNormalProgram->use();
+    _glNormalProgram->setMat4("model", _position);
+    _glNormalProgram->setMat4("view", view);
+    _glNormalProgram->setMat4("projection", projection);
+    _glNormalProgram->setVec3("viewPos", viewPos);
+    _glNormalProgram->setFloat("time", (float)glfwGetTime());
+
+    glBindVertexArray(_vao);
+    glDrawElements(GL_TRIANGLES, _indices.size(), GL_UNSIGNED_INT, 0);
+    glBindVertexArray(0);
 }

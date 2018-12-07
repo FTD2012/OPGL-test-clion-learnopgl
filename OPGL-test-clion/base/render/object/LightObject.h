@@ -45,6 +45,12 @@ public:
     void addSpotLight(const SpotLight *spotLight);
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
+public:
+
+    inline unsigned int getVao() {
+        return _vao;
+    }
+
 protected:
     /**
      * 材质
@@ -71,7 +77,6 @@ protected:
     glm::vec3                _diffuseColor;
     glm::vec3                _specularColor;
 
-    glm::mat4                _position;
     bool                     _dirty;
     unsigned int             _vao;
     unsigned int             _vbo;

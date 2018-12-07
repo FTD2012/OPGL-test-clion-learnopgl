@@ -15,6 +15,7 @@ Mesh::Mesh(std::vector<MeshVertex> &vertices, std::vector<unsigned int> &indices
 , _indices(std::move(indices))
 , _textures(std::move(textures))
 , _isEnableVisibleNormal(false)
+, _isEnableInstancing(false)
 {
     init();
 
@@ -70,7 +71,8 @@ bool Mesh::init() {
     glBindVertexArray(0);
 
     _glProgram = new Shader(mesh_vertexShaderSource, mesh_fragmentShaderSource, mesh_geometryShaderSource);
-
+    _glProgram->use();
+    _glProgram->setBool("enableInstancing", false);
     return true;
 }
 
@@ -83,6 +85,18 @@ void Mesh::setMaterial(const std::string &diffusePath, const std::string &specul
 
 }
 
+void Mesh::enableInstancing(bool isEnable, size_t size) {
+    if (_isEnableInstancing == isEnable) {
+        return;
+    }
+    _isEnableInstancing = isEnable;
+    _instancingSize = size;
+
+    _glProgram->use();
+    _glProgram->setBool("enableInstancing", isEnable);
+
+}
+
 void Mesh::enableVisibleNormal(bool isEnable) {
     if (_isEnableVisibleNormal == isEnable) {
         return;
@@ -91,11 +105,33 @@ void Mesh::enableVisibleNormal(bool isEnable) {
 
     if (isEnable) {
         _glNormalProgram = new Shader(mesh_vertexShaderSource, mesh_visible_normal_fragmentShaderSource, mesh_visible_normal_geometryShaderSource);
-        printf("_glNormalProgram add = %x\n", _glNormalProgram);
         ASSERT(_glNormalProgram, "Invalid program!");
     } else {
         delete _glNormalProgram;
     }
+}
+
+void Mesh::bindInstancingBuffer() {
+    GLsizei vec4Size = sizeof(glm::vec4);
+
+    glBindVertexArray(_vao);
+
+    glVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)0);
+    glVertexAttribPointer(6, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)(vec4Size));
+    glVertexAttribPointer(7, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)(2*vec4Size));
+    glVertexAttribPointer(8, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)(3*vec4Size));
+
+    glEnableVertexAttribArray(5);
+    glEnableVertexAttribArray(6);
+    glEnableVertexAttribArray(7);
+    glEnableVertexAttribArray(8);
+
+    glVertexAttribDivisor(5, 1);
+    glVertexAttribDivisor(6, 1);
+    glVertexAttribDivisor(7, 1);
+    glVertexAttribDivisor(8, 1);
+
+    glBindVertexArray(0);
 }
 
 void Mesh::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {
@@ -108,7 +144,11 @@ void Mesh::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::ma
     }
 
     glBindVertexArray(_vao);
-    glDrawElements(GL_TRIANGLES, _indices.size(), GL_UNSIGNED_INT, 0);
+    if (_isEnableInstancing) {
+        glDrawElementsInstanced(GL_TRIANGLES, _indices.size(), GL_UNSIGNED_INT, 0, _instancingSize);
+    } else {
+        glDrawElements(GL_TRIANGLES, _indices.size(), GL_UNSIGNED_INT, 0);
+    }
     glBindVertexArray(0);
 
 

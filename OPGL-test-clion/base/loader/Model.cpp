@@ -12,6 +12,7 @@
 
 Model::Model(const char *path)
 : _isEnableVisibleNormal(false)
+, _isEnableInstancing(false)
 {
     loadModel(std::string(path));
 }
@@ -103,6 +104,32 @@ void Model::addPointLight(const PointLight *pointLight) {
     }
 }
 
+void Model::enableInstancing(bool isEnable, std::vector<glm::mat4> modelMatrices) {
+    if (_isEnableInstancing == isEnable) {
+        return;
+    }
+
+    if (isEnable) {
+        glGenBuffers(1, &_instancingVbo);
+        glBindBuffer(GL_ARRAY_BUFFER, _instancingVbo);
+        glBufferData(GL_ARRAY_BUFFER, modelMatrices.size() * sizeof(glm::mat4), &modelMatrices[0], GL_STATIC_DRAW);
+
+        for (auto &it : _meshes) {
+            it->enableInstancing(true, modelMatrices.size());
+            it->bindInstancingBuffer();
+        }
+
+//        glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    } else {
+        // TODO: ljm >>> remove vertex
+        for (auto &it : _meshes) {
+            it->enableInstancing(false, 0);
+        }
+    }
+
+}
+
 void Model::enableVisibleNormal(bool isEnable) {
     if (_isEnableVisibleNormal == isEnable) {
         return;
@@ -113,6 +140,12 @@ void Model::enableVisibleNormal(bool isEnable) {
         it->enableVisibleNormal(isEnable);
     }
 
+}
+
+void Model::setPosition(const glm::vec3 &position) {
+    for (auto &it : _meshes) {
+        it->setPosition(position);
+    }
 }
 
 void Model::onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) {

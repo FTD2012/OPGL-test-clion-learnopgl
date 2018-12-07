@@ -95,59 +95,60 @@ void main()
      *     COLOR   = 2
      * };
      */
+     FragColor = vec4(Color, 1.0f);
 
-    if (materialType == 1 || materialType == 2) {
-        // properties
-        float shininess;
-        vec3 norm = normalize(Normal), viewDir = normalize(viewPos - FragPos), color, ambientColor, diffuseColor, specularColor, result;
-
-        if (materialType == 1) {
-            color = Color * vec3(texture(textureMaterial.diffuse, TexCoords));
-        } else if (materialType == 2) {
-            color = Color * colorMaterial.diffuse;
-        }
-
-        // use texture as material
-        if (materialType == 1) {
-            ambientColor = vec3(texture(textureMaterial.diffuse, TexCoords));
-            diffuseColor = ambientColor;
-            specularColor = vec3(texture(textureMaterial.specular, TexCoords));
-            shininess = textureMaterial.shininess;
-        }
-        // use color as material
-        else if (materialType == 2) {
-            ambientColor = colorMaterial.ambient;
-            diffuseColor = colorMaterial.diffuse;
-            specularColor = colorMaterial.specular;
-            shininess = colorMaterial.shininess;
-        }
-        // == =====================================================
-        // Our lighting is set up in 3 phases: directional, point lights and an optional flashlight
-        // For each phase, a calculate function is defined that calculates the corresponding color
-        // per lamp. In the main() function we take all the calculated colors and sum them up for
-        // this fragment's final color.
-        // == =====================================================
-
-        // phase 1: directional lighting
-        result = CalcDirLight(dirLight, norm, viewDir, ambientColor, diffuseColor, specularColor, shininess);
-
-        // phase 2: point lights
-        for(int i = 0; i < min(pointLightNumber, NR_POINT_LIGHTS); i++) {
-            result += CalcPointLight(pointLights[i], norm, FragPos, viewDir, ambientColor, diffuseColor, specularColor, shininess);
-        }
-
-        // phase 3: spot light
-        result += CalcSpotLight(spotLight, norm, FragPos, viewDir, ambientColor, diffuseColor, specularColor, shininess);
-
-        // Tip: 因为没有无法使用发线贴图，所以不计算光照
-        result = vec3(1.0f);
-
-        FragColor = vec4(result * color, 1.0f);
-
-    } else {
-
-        FragColor = vec4(Color, 1.0f);
-    }
+//    if (materialType == 1 || materialType == 2) {
+//        // properties
+//        float shininess;
+//        vec3 norm = normalize(Normal), viewDir = normalize(viewPos - FragPos), color, ambientColor, diffuseColor, specularColor, result;
+//
+//        if (materialType == 1) {
+//            color = Color * vec3(texture(textureMaterial.diffuse, TexCoords));
+//        } else if (materialType == 2) {
+//            color = Color * colorMaterial.diffuse;
+//        }
+//
+//        // use texture as material
+//        if (materialType == 1) {
+//            ambientColor = vec3(texture(textureMaterial.diffuse, TexCoords));
+//            diffuseColor = ambientColor;
+//            specularColor = vec3(texture(textureMaterial.specular, TexCoords));
+//            shininess = textureMaterial.shininess;
+//        }
+//        // use color as material
+//        else if (materialType == 2) {
+//            ambientColor = colorMaterial.ambient;
+//            diffuseColor = colorMaterial.diffuse;
+//            specularColor = colorMaterial.specular;
+//            shininess = colorMaterial.shininess;
+//        }
+//        // == =====================================================
+//        // Our lighting is set up in 3 phases: directional, point lights and an optional flashlight
+//        // For each phase, a calculate function is defined that calculates the corresponding color
+//        // per lamp. In the main() function we take all the calculated colors and sum them up for
+//        // this fragment's final color.
+//        // == =====================================================
+//
+//        // phase 1: directional lighting
+//        result = CalcDirLight(dirLight, norm, viewDir, ambientColor, diffuseColor, specularColor, shininess);
+//
+//        // phase 2: point lights
+//        for(int i = 0; i < min(pointLightNumber, NR_POINT_LIGHTS); i++) {
+//            result += CalcPointLight(pointLights[i], norm, FragPos, viewDir, ambientColor, diffuseColor, specularColor, shininess);
+//        }
+//
+//        // phase 3: spot light
+//        result += CalcSpotLight(spotLight, norm, FragPos, viewDir, ambientColor, diffuseColor, specularColor, shininess);
+//
+//        // Tip: 因为没有无法使用发线贴图，所以不计算光照
+//        result = vec3(1.0f);
+//
+//        FragColor = vec4(result * color, 1.0f);
+//
+//    } else {
+//
+//        FragColor = vec4(Color, 1.0f);
+//    }
 
 }
 

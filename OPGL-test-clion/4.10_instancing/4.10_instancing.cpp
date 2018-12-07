@@ -243,10 +243,10 @@ int main() {
          */
         auto currentTime = (float)glfwGetTime();
         deltaTime = currentTime - lastFrame;
-        if (deltaTime < frameSecond) {
-            usleep((unsigned int)((frameSecond-deltaTime)*10e3));
-            continue;
-        }
+//        if (deltaTime < frameSecond) {
+//            usleep((unsigned int)((frameSecond-deltaTime)*10e3));
+//            continue;
+//        }
         lastFrame = currentTime;
 
         // TODO: ljm >>> add log
@@ -259,36 +259,53 @@ int main() {
         }
 #endif
 
-        std::cout << "currentFrame: " << frame++ << std::endl;
-
+//        std::cout << "currentFrame: " << frame++ << std::endl;
+        double a, b;
 
 
         /*
          * 处理用户输入
          */
+        a = glfwGetTime();
         processInput(window);
+        b = glfwGetTime();
+        std::cout << "processInput time = " << b - a << std::endl;
 
         /*
          * 渲染
          */
+        a = glfwGetTime();
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        b = glfwGetTime();
+        std::cout << "glClear time = " << b - a << std::endl;
 
 
         // render
+        a = glfwGetTime();
         mainScene->onDraw(camera);
+        b = glfwGetTime();
+        std::cout << "draw scene time = " << b - a << std::endl;
 
         /*
          * 交换缓冲区
          */
+        a = glfwGetTime();
         glfwSwapBuffers(window);
+        b = glfwGetTime();
+        std::cout << "glfwSwapBuffers time = " << b - a << std::endl;
 
         /*
          * 检查触发时间
          */
+        a = glfwGetTime();
         glfwPollEvents();
-
-        CHECK_GL_ERROR_DEBUG();
+        b = glfwGetTime();
+        std::cout << "glfwPollEvents time = " << b - a << std::endl;
+        a = glfwGetTime();
+//        CHECK_GL_ERROR_DEBUG();
+        b = glfwGetTime();
+        std::cout << "CHECK_GL_ERROR_DEBUG time = " << b - a << std::endl;
     }
 
     delete mainScene;

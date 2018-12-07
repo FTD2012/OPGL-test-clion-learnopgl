@@ -36,7 +36,7 @@ void MainScene::init() {
     nanoSuitModel->addDirectionLight(directionLight);
     nanoSuitModel->addPointLight(pointLight);
     nanoSuitModel->enableVisibleNormal(true);
-    addChild(nanoSuitModel);
+//    addChild(nanoSuitModel);
     addChild(pointLight);
 
     enableCubeMap(true);

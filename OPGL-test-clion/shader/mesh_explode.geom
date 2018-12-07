@@ -40,12 +40,7 @@ void main() {
     vec3 normal = getTriangleNormal();
 
     for (int i = 0; i < 3; i++) {
-        if (i == 0) {
-            gl_Position = expolde(gl_in[i].gl_Position, normal);
-        } else {
-//            gl_Position = gl_in[i].gl_Position;
-            gl_Position = expolde(gl_in[i].gl_Position, normal);
-        }
+        gl_Position = expolde(gl_in[i].gl_Position, normal);
 
         FragPos   = gs_in[i].FragPos;
         Normal    = gs_in[i].Normal;

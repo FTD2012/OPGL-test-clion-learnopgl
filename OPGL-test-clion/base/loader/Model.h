@@ -20,8 +20,9 @@ public:
 
     void addDirectionLight(const DirectionLight *directionLight);
     void addPointLight(const PointLight *pointLight);
+    void enableInstancing(bool isEnable, std::vector<glm::mat4> modelMatrices);
     void enableVisibleNormal(bool isEnable);
-
+    void setPosition(const glm::vec3 &position) override;
     void onDraw(const glm::vec3 &viewPos, const glm::mat4 &view, const glm::mat4 &projection) override;
 
 private:
@@ -33,10 +34,22 @@ private:
 
 
 private:
+
+    /**
+     * 实例化
+     */
+    bool _isEnableInstancing;
+    unsigned int _instancingVbo;
+
+    /**
+     * 可视化发现
+     */
     bool _isEnableVisibleNormal;
     std::vector<Mesh*> _meshes;
     const aiScene *_scene;
     std::string _directory;
+
+
     
 };
 
